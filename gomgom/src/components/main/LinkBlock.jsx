@@ -6,7 +6,8 @@ function LinkBlock(){
         <div style={{backgroundColor:"#FAF9F6",height: "290px",display:"flex",justifyContent:"center"}}>
             <div style={{
                 backgroundColor:"#E9E5DA",height: "120px",width:"1024px",marginTop:"85px",borderRadius: "96px",
-                paddingLeft:"59px",paddingRight:"39px",display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center"
+                paddingLeft:"59px",paddingRight:"39px",display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center",marginRight:"15%",
+                marginLeft:"15%",
             }}>
                 <div style={{display:"flex",flexDirection:"row"}}>
                     <img src={bearImg} style={{width:"110px",height:"82px",marginRight:"53px"}} alt="" />

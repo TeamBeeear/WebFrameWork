@@ -3,7 +3,7 @@ import bearImg from "../../img/bearHi.png"
 
 function MainContent(){
     return(
-        <div style={{backgroundColor:"#67594C",height: "448px"}}>
+        <div style={{backgroundColor:"#67594C",height: "448px",position:"relative"}}>
             <div style={{ display:"flex",
                         flexDirection: "row",
                         justifyContent:"space-between",
@@ -23,10 +23,11 @@ function MainContent(){
                         <p>곰곰에서 고민을 나눠주세요</p>
                     </div>
                 </div>
-                <button style={{borderRadius:"32px",backgroundColor:"#FFAB5D",width:"176px",height:"64px",marginTop:"174px"}}>
+                <button style={{borderRadius:"32px",backgroundColor:"#FFAB5D",width:"176px",height:"64px",marginTop:"174px",border:"none",
+                                color:"#FFF",fontSize:"20px",fontWeight:"700"}}>
                     고민 나누기</button>
             </div>
-            {/* <img src={bearImg} style={{width:"919px",height:"164px"}} alt="" /> */}
+            <img src={bearImg} style={{width:"919px",height:"164px",position:"absolute",bottom:"0",transform: "translateX(-50%)"}} alt="" />
         </div> 
     )
 }

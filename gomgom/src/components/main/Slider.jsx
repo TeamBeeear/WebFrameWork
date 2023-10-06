@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderLeftBtn from "../../img/SliderLeftBtn.png";
 import SliderRightBtn from "../../img/SliderRightBtn.png";
+import SliderContent from "./SliderContent";
 
 function Slider(){
     const btnStyle = {
@@ -11,15 +12,15 @@ function Slider(){
         height:"48px",
     }
     const CustomPrevArrow = (props) => (
-        <div className="slick-prev" onClick={props.onClick}>
-          <img style={btnStyle} src={SliderLeftBtn}></img>
+        <div className="slick-prev" onClick={props.onClick} style={{marginRight:"20px"}}>
+          {/* <img style={btnStyle} src={SliderLeftBtn}></img> */}
         </div>
     );
     
 
     const CustomNextArrow = (props) => (
         <div className="slick-next" onClick={props.onClick}>
-         <img style={btnStyle} src={SliderRightBtn}></img>
+         {/* <img style={btnStyle} src={SliderRightBtn}></img> */}
         </div>
     );
 
@@ -37,28 +38,31 @@ function Slider(){
             <p style={{fontSize: "20px",
                         fontWeight: "700",
                         lineHeight: "100%",
-                        color:"#67594C"}}>곰곰이의 고민</p>
-            <Slide {...settings}>
-                <div>
-                    <div>1</div>
-                </div>
-                <div>
-                    <div>2</div>
-                </div>
-                <div>
-                    <div>3</div>
-                </div>
-                <div>
-                    <div>4</div>
-                </div>
-                <div>
-                    <div>5</div>
-                </div>
-                <div>
-                    <div>6</div>
-                </div>
-                {/* Add more divs as needed */}
-            </Slide>
+                        color:"#67594C",marginTop:"0px",paddingTop:"60px"}}>곰곰이의 고민</p>
+
+            <div style={{marginLeft:"10%",marginRight:"10%"}}>
+                <Slide {...settings}>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    <div>
+                        <SliderContent/>
+                    </div>
+                    {/* Add more divs as needed */}
+                </Slide>
+            </div>
         </div>
         
     )
