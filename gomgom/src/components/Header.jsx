@@ -18,19 +18,19 @@ function Header(){
     //       console.error('데이터를 보내는 중 오류 발생:', error);
     //     }
     //   }
-    const fetchData = async () => {
-      console.log("클릭함");
-      try {
-        const response = await axios.get('http://localhost:3000/test/1'); // Use axios.get for a GET request
-        setResponseMessage(response.data.message);
-        console.log("성공");
-      } catch (error) {
-        console.error('데이터를 가져오는 중 오류 발생:', error);
-      }
-    }
+    // const fetchData = async () => {
+    //   console.log("클릭함");
+    //   try {
+    //     const response = await axios.get('http://localhost:3000/test/1'); // Use axios.get for a GET request
+    //     setResponseMessage(response.data.message);
+    //     console.log("성공");
+    //   } catch (error) {
+    //     console.error('데이터를 가져오는 중 오류 발생:', error);
+    //   }
+    // }
     return(
         <div>
-            <img onClick={fetchData} src={logoImg} style={{width:"142px",height:"27px,",marginTop:"40px"}}></img>
+            <img src={logoImg} style={{width:"142px",height:"27px,",marginTop:"40px"}}></img>
         </div>
     )
 }
