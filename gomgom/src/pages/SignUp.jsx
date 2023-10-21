@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import "../css/SignUp.css";
 import userIcon from "../img/userIcon.png"
+import Footer from '../components/Footer';
 
 
 const SignUp= () => {
@@ -47,6 +48,7 @@ const SignUp= () => {
                     disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
                 >완료</button>
             </form>
+            <Footer />
         </div>
     );
 }

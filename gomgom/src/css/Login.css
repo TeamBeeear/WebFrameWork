@@ -49,8 +49,23 @@ body {
     margin-bottom: 78px;
 }
 
-.signup-submit {
+.login-submit {
+    width: 340px;
+    height: 75px;
+    background: #FFAB5D;
+    border-radius: 44px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 88px;
     margin-bottom: 42px;
+    border: none;
+
+    color: white;
+    font-size: 24px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
 }
 
 .to-signup {
@@ -60,7 +75,7 @@ body {
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
-    margin-bottom: 277px;
+    margin-bottom: 256px;
 }
 
 @media (max-width: 767px) {

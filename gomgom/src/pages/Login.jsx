@@ -37,7 +37,7 @@ const SignUp= () => {
             <form className="signup-form">
                     <input type="input" className="id-input" placeholder="아이디를 입력하세요." onChange={handleIdChange} />
                     <input type="password" className="passwd-input" placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
-                <button type="submit" className="signup-submit" style={{
+                <button type="submit" className="login-submit" style={{
                     background: id && password ? '#FFAB5D' : '#E9E5DA'}}
                     disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
                 >로그인</button>
