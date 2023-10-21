@@ -61,13 +61,13 @@
 }
 
 .id-input, .passwd-input {
-    width: 557px;
+    width: 557px; /* 화면 너비에 따라 가로 크기 조절 (반응형) */
     height: 80px;
     background: white;
     border-radius: 24px;
     border: 2px solid #E9E5DA;
     display: block;
-    margin-left: 440px;
+    margin: 0 auto; /* 가운데 정렬 */
     margin-bottom: 22px; /* 각 입력 필드 사이의 간격 조절 */
     margin-top: 10px;
 
@@ -79,6 +79,7 @@
     padding-left: 31px;
     word-wrap: break-word;
 }
+
 
 .id-input::placeholder, .passwd-input::placeholder {
     color: #D2CDBC;
@@ -104,6 +105,13 @@
     .passwd-heading {
         margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
         margin-left: 40px;
+        text-align: left;
+    }
+    .id-input,
+    .passwd-input {
+        margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
+        margin-left: 40px;
+        margin-bottom: 22px;
         text-align: left;
     }
 }
