@@ -109,6 +109,7 @@
     }
     .id-input,
     .passwd-input {
+        width: 370px;
         margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
         margin-left: 40px;
         margin-bottom: 22px;

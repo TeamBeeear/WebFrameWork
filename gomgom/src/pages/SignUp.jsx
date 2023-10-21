@@ -6,7 +6,7 @@ import userIcon from "../img/userIcon.png"
 import Footer from '../components/Footer';
 
 
-const SignUp= () => {
+const SignUp = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [selectedImage, setSelectedImage] = useState(userIcon);

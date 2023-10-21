@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import "../css/SignUp.css";
 import "../css/Login.css";
-import userIcon from "../img/userIcon.png"
 import gomgom from "../img/mainLinkBear.png"
 import Footer from '../components/Footer';
 
 
-const SignUp= () => {
+const Login = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
 
@@ -48,4 +46,4 @@ const SignUp= () => {
     );
 }
 
-export default SignUp;
+export default Login;
