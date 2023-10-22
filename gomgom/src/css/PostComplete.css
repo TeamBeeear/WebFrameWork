@@ -1,16 +1,16 @@
 .complete-text {
-    color: '#67594C';
+    color: #67594C;
     font-size: 24px;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', sans-serif;
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
 }
 
 .complete-detail {
-    color: '#67594C';
+    color: #67594C;
     font-size: 18px;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     line-height: 28.80px;
     word-wrap: break-word;
@@ -24,24 +24,23 @@
     display: block;
     margin: 0 auto;
     margin-top: 88px;
-    margin-bottom: 42px;
+    margin-bottom: 32px;
     border: none;
 
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Pretendard', sans-serif;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 20px;
     word-wrap: break-word;
 }
 
 .move-to-mypage {
-    color: #606067;
-    font-size: 24px;
-    font-family: 'Pretendard';
+    color: #67594C;
+    font-size: 20px;
+    font-family: 'Pretendard', sans-serif;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 20px;
     word-wrap: break-word;
-    margin-top: 32px;
     margin-bottom: 300px;
 }
