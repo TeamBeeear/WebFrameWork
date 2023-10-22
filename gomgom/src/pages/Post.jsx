@@ -36,7 +36,6 @@ const options = [
 ];
 
 
-
 const Post = () => {
     const [optionImage1, setOptionImage1] = useState(null);
     const [optionImage2, setOptionImage2] = useState(null);
@@ -75,18 +74,19 @@ const Post = () => {
         fontFamily: "Pretendard",
         fontWeight: "700",
         lineHeight: "15px",
-        wordWrap: "break-word",
+        wordWrap: "break-word"
     }
 
     const worryOptionStyle = {
-        width: "680px",
-        height: "80px",
+        width: "654px",
+        height: "74px",
         background: "white",
         border: "2px solid #E9E5DA",
         borderRadius: "8px",
         display: "block",
         marginBottom: "16px",
-        paddingLeft: "10px",
+        paddingLeft: "20px",
+        marginTop: "5px",
 
         color: '#67594C',
         fontSize: "20px",
@@ -101,8 +101,9 @@ const Post = () => {
         height: '80px',
         position: 'relative',
         marginBottom: "17px",
-        marginRight: "23px",
-        borderRadius: "6px"
+        marginRight: "10px",
+        borderRadius: "6px",
+        marginTop: "2px"
       };
     
       const innerImageStyle = {
@@ -124,7 +125,7 @@ const Post = () => {
                 <input type="input" className="worry-title-input" placeholder="제목을 입력하세요." />
                 <p className="option-content" style={titleStyle}>선택지 내용</p>
                 <div className="option-group">
-                    <div className="defaultImg" style={outerImageStyle} onClick={() => document.getElementById('fileInput1').click()}>
+                    <div className="option-img" style={outerImageStyle} onClick={() => document.getElementById('fileInput1').click()}>
                         {optionImage1 ? (
                             <img src={optionImage1} style={outerImageStyle} alt="Selected Image" />
                         ) : (

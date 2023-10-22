@@ -1,11 +1,11 @@
 .worry-title {
     margin-top: 64px;
-    margin-right: 49em;
+    margin-right: 47em;
 }
 
 .worry-title-input {
-    width: 770px;
-    height: 75px;
+    width: 743px;
+    height: 73px;
     background: white;
     border-radius: 8px;
     border-style: none;
@@ -17,6 +17,7 @@
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
+    margin-top: 5px;
 }
 
 .worry-title-input::placeholder {
@@ -30,7 +31,12 @@
 
 .option-content {
     margin-top: 55px;
-    margin-right: 49em;
+    margin-right: 47em;
+}
+
+.option-group {
+    display: flex;
+    margin-left: 21em;
 }
 
 .worry-option-1::placeholder, .worry-option-2::placeholder {
@@ -42,12 +48,6 @@
     word-wrap: break-word;
 }
 
-.option-group {
-    display: flex;
-    align-items: center; /* 수직 가운데 정렬 */
-    margin-left: 20em;
-}
-
 .worry-description {
     margin-top: 132px;
     margin-right: 49em;
@@ -55,14 +55,15 @@
 
 .description {
     resize: none;
-    width: 770px;
-    height: 116px;
+    width: 701px;
+    height: 94px;
     background: white;
     border-radius: 8px;
     border-style: none;
     padding-left: 28px;
     padding-right: 41px;
     padding-top: 20px;
+    margin-top: 5px;
 
     color: #67594C;
     font-size: 16px;
@@ -83,7 +84,7 @@
 
 .worry-category {
     margin-top: 64px;
-    margin-right: 49em;
+    margin-right: 47em;
 }
 
 .categories {
@@ -93,8 +94,18 @@
     border: 2px solid #E9E5DA;
     border: none;
     border-radius: 8px;
-    margin-left: 300px;
+    margin-top: 20px;
+    margin-left: 330px;
     margin-bottom: 91px;
+}
+
+.categories::placeholder {
+    color: #D2CDBC;
+    font-size: 16px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    line-height: 25.60px;
+    word-wrap: break-word;
 }
 
 .css-13cymwt-control {
@@ -107,19 +118,14 @@
     height: 60px;
 }
 
-.css-1jqq78o-placeholder {
-    margin-right: 10000px;
-}
-
-.categories .select-selected  {
+.css-1fdsijx-ValueContainer {
     color: #D2CDBC;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Pretendard';
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
-    background-color: lightblue;
-    margin-right: 28px;
+    margin-right: 60px;
 }
 
 .custom-option {
@@ -128,10 +134,14 @@
     position: relative;
     color: #67594C;
     font-size: 18px;
-    font-family: 'Pretendard', sans-serif; /* 원하는 폰트로 변경 */
+    font-family: 'Pretendard', sans-serif;
     font-weight: 400;
     word-wrap: break-word;
-    margin-top: 26px;
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    margin-left: 16px;
 }
 
 .css-1u9des2-indicatorSeparator {
@@ -142,8 +152,12 @@
 .custom-option input[type="radio"] {
     width: 30px;
     height: 30px;
-    position: absolute;
-    left: 24px; /* 라디오 버튼의 위치 설정 */
+    margin-right: 8px;
+}
+
+.custom-option label {
+    display: flex;
+    align-items: center;
 }
 
 .post-worry {
@@ -166,11 +180,43 @@
     margin-right: 330px;
 }
 
+
 @media (max-width: 768px) {
-    .worry-title, .option-content,
+    .worry-title, .option-content, 
     .worry-description, .worry-category {
-        margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
+        margin: 0; 
         margin-left: 40px;
         text-align: left;
+        margin-top: 64px;
+        margin-bottom: 10px;
+    }
+
+    .worry-title-input, .description {
+        width: 370px;
+        margin: 0;
+        margin-left: 40px;
+        margin-bottom: 22px;
+        margin-top: 16px;
+        text-align: left;
+    }
+    
+    .option-group {
+        width: 450px;
+        margin: 0;
+        margin-left: 40px;
+        margin-bottom: 22px;
+        text-align: left;
+    }
+
+    .categories {
+        width: 200px;
+        margin: 0;
+        margin-left: 40px;
+        margin-bottom: 22px;
+        text-align: left;
+    }
+
+    .post-worry {
+        margin-right: 50px;
     }
 }
