@@ -60,16 +60,28 @@
     word-wrap: break-word;
 }
 
-.id-input {
-    font-size: 20px;
-    width: 557px;
+.id-input, .passwd-input {
+    width: 557px; /* 화면 너비에 따라 가로 크기 조절 (반응형) */
     height: 80px;
     background: white;
     border-radius: 24px;
     border: 2px solid #E9E5DA;
+    display: block;
+    margin: 0 auto; /* 가운데 정렬 */
+    margin-bottom: 22px; /* 각 입력 필드 사이의 간격 조절 */
+    margin-top: 10px;
+
+    color: #67594C;
+    font-size: 24px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    line-height: 38.40px;
+    padding-left: 31px;
+    word-wrap: break-word;
 }
 
-.id-input::placeholder {
+
+.id-input::placeholder, .passwd-input::placeholder {
     color: #D2CDBC;
     font-size: 18px;
     font-family: 'Pretendard', sans-serif;
@@ -88,38 +100,22 @@
     word-wrap: break-word;
 }
 
-.passwd-input {
-    font-size: 20px;
-    width: 557px;
-    height: 80px;
-    background: white;
-    border-radius: 24px;
-    border: 2px solid #E9E5DA;
-}
-
-.passwd-input::placeholder {
-    color: #D2CDBC;
-    font-size: 18px;
-    font-family: 'Pretendard', sans-serif;
-    font-weight: 500;
-    line-height: 18px;
-    word-wrap: break-word;
-}
-
-@media (max-width: 768px) {
-    .id-input, .passwd-input {
-      /* width: 100%; 화면 너비에 따라 가로 크기 조절 */
-      height: auto; /* 세로 크기를 자동으로 조절하여 가로 세로 비율 유지 */
-    }
-}
-
 @media (max-width: 768px) {
     .id-heading,
     .passwd-heading {
-      margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
-      text-align: left;
+        margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
+        margin-left: 40px;
+        text-align: left;
     }
-  }
+    .id-input,
+    .passwd-input {
+        width: 370px;
+        margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
+        margin-left: 40px;
+        margin-bottom: 22px;
+        text-align: left;
+    }
+}
 
 .signup-submit {
     width: 340px;
@@ -129,8 +125,8 @@
     display: block;
     margin: 0 auto;
     margin-top: 88px;
-    border: none;
     margin-bottom: 170px;
+    border: none;
 
     color: white;
     font-size: 24px;
@@ -138,13 +134,4 @@
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
-  }
-
-@media (max-width: 768px) {
-    .signup-submit {
-      width: 340px; 
-      /* width: 100%  화면 너비에 따라 가로 크기 조절 */
-      height: auto; /* 세로 크기를 자동으로 조절하여 가로 세로 비율 유지 */
-    }
 }
-

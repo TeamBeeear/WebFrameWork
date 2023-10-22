@@ -5,6 +5,8 @@ import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import Post from './pages/Post';
+import PostComplete from './pages/PostComplete';
 
 function App(){
   const [hello, setHello] = useState('')
@@ -21,6 +23,8 @@ function App(){
             <Route path="/" element={<Main />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/post" element={<Post />} />
+            <Route path="/post-complete" element={<PostComplete />} />
           </Routes>
       </BrowserRouter>
       <div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import logoImg from '../img/gomgom.png';
 import axios from 'axios'
 function Header(){
@@ -30,7 +31,9 @@ function Header(){
     // }
     return(
         <div>
-            <img src={logoImg} style={{width:"142px",height:"27px,",marginTop:"40px"}}></img>
+            <Link to="/">
+                <img src={logoImg} style={{width:"142px",height:"27px,",marginTop:"40px"}}></img>
+            </Link>
         </div>
     )
 }

@@ -1,0 +1,176 @@
+.worry-title {
+    margin-top: 64px;
+    margin-right: 49em;
+}
+
+.worry-title-input {
+    width: 770px;
+    height: 75px;
+    background: white;
+    border-radius: 8px;
+    border-style: none;
+    padding-left: 24px;
+
+    color: #67594C;
+    font-size: 24px;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.worry-title-input::placeholder {
+    color: #D2CDBC;
+    font-size: 24px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    line-height: 38.40px;
+    word-wrap: break-word;
+}
+
+.option-content {
+    margin-top: 55px;
+    margin-right: 49em;
+}
+
+.worry-option-1::placeholder, .worry-option-2::placeholder {
+    color: #D2CDBC;
+    font-size: 20px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    line-height: 32px;
+    word-wrap: break-word;
+}
+
+.option-group {
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    margin-left: 20em;
+}
+
+.worry-description {
+    margin-top: 132px;
+    margin-right: 49em;
+}
+
+.description {
+    resize: none;
+    width: 770px;
+    height: 116px;
+    background: white;
+    border-radius: 8px;
+    border-style: none;
+    padding-left: 28px;
+    padding-right: 41px;
+    padding-top: 20px;
+
+    color: #67594C;
+    font-size: 16px;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    line-height: 25.60px;
+    word-wrap: break-word;
+}
+
+.description::placeholder {
+    color: #D2CDBC;
+    font-size: 16px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    line-height: 25.60px;
+    word-wrap: break-word;
+}
+
+.worry-category {
+    margin-top: 64px;
+    margin-right: 49em;
+}
+
+.categories {
+    width: 203px;
+    height: 60px;
+    background: white;
+    border: 2px solid #E9E5DA;
+    border: none;
+    border-radius: 8px;
+    margin-left: 300px;
+    margin-bottom: 91px;
+}
+
+.css-13cymwt-control {
+    width: 203px;
+    height: 60px;
+}
+
+.css-t3ipsp-control {
+    width: 203px;
+    height: 60px;
+}
+
+.css-1jqq78o-placeholder {
+    margin-right: 10000px;
+}
+
+.categories .select-selected  {
+    color: #D2CDBC;
+    font-size: 16px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    line-height: 25.60px;
+    word-wrap: break-word;
+    background-color: lightblue;
+    margin-right: 28px;
+}
+
+.custom-option {
+    width: 202px;
+    height: 50px;
+    position: relative;
+    color: #67594C;
+    font-size: 18px;
+    font-family: 'Pretendard', sans-serif; /* 원하는 폰트로 변경 */
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-top: 26px;
+}
+
+.css-1u9des2-indicatorSeparator {
+    display: none;
+}
+
+  
+.custom-option input[type="radio"] {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 24px; /* 라디오 버튼의 위치 설정 */
+}
+
+.post-worry {
+    width: 176px;
+    height: 64px;
+    background: #FFAB5D;
+    border-radius: 32px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 88px;
+    margin-bottom: 297px;
+    border: none;
+
+    color: white;
+    font-size: 20px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    word-wrap: break-word;
+    margin-right: 330px;
+}
+
+@media (max-width: 768px) {
+    .worry-title, .option-content,
+    .worry-description, .worry-category {
+        margin: 0; /* 화면이 작아질 때 왼쪽과 오른쪽 여백 제거 */
+        margin-left: 40px;
+        text-align: left;
+    }
+}

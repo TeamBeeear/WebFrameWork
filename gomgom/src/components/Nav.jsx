@@ -20,11 +20,17 @@ function Nav(){
         margin:"auto 0",
         marginLeft:"20px"
     }
+
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit'
+    };
+
     return(
         <div style={navStyle}>
             <div></div>
             <p>메인</p>
-            <p>고민올리기</p>
+            <Link to="/post" style={linkStyle}><p>고민올리기</p></Link>
             <p>게시판</p>
             <p>곰곰이</p>
             <div>
