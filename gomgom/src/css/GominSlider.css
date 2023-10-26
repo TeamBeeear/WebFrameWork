@@ -1,0 +1,15 @@
+.slick-prev:before,
+.slick-next:before {
+  color: #67594c80;
+  font-size: 3rem;
+}
+
+.slick-prev {
+  /* 화살표 위치 조정 */
+  left: -10%;
+}
+
+.slick-next {
+  /* 화살표 위치 조정 */
+  right: 4%;
+}

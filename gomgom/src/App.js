@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Post from './pages/Post';
 import PostComplete from './pages/PostComplete';
 import GominPost from './pages/GominPost';
+import GomGomBoard from './pages/GomGomBoard';
+import GomGomBoardDetail from './pages/GomGomBoardDetail';
 
 function App(){
   const [hello, setHello] = useState('')
@@ -27,6 +29,8 @@ function App(){
             <Route path="/post" element={<Post />} />
             <Route path="/post-complete" element={<PostComplete />} />
             <Route path="/gomin-post" element={<GominPost />} />
+            <Route path="/gomgom-board" element={<GomGomBoard />} />
+            <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
           </Routes>
       </BrowserRouter>
       <div>
