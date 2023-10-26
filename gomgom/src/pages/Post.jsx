@@ -120,7 +120,7 @@ const Post = () => {
             <Header />
             <Nav />
             <div className="separator-line"></div>
-            <form className="signup-form">
+            <form className="post-form">
                 <p className="worry-title" style={titleStyle}>고민 제목<br/></p>
                 <input type="input" className="worry-title-input" placeholder="제목을 입력하세요." />
                 <p className="option-content" style={titleStyle}>선택지 내용</p>
