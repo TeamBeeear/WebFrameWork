@@ -13,7 +13,7 @@ function Main(){
             <Header/>
             <Nav/>
             <MainContent/>
-            <Slider/>
+            <Slider style={{backgroundColor:"#D2CDBC"}}/>
             <LinkBlock/>
             <WorriedBoxContainer/>
             <Footer/>

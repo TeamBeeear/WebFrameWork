@@ -6,7 +6,7 @@ import SliderLeftBtn from "../../img/SliderLeftBtn.png";
 import SliderRightBtn from "../../img/SliderRightBtn.png";
 import SliderContent from "./SliderContent";
 
-function Slider(){
+function Slider({ style }){
     const btnStyle = {
         width:"48px",
         height:"48px",
@@ -33,14 +33,16 @@ function Slider(){
         nextArrow: <CustomNextArrow />, 
       };    
 
+
     return(
-        <div style={{backgroundColor:"#D2CDBC",height: "385px"}}>
+        <div style={{...style, height: "385px"}}>
             <p style={{fontSize: "20px",
                         fontWeight: "700",
                         lineHeight: "100%",
                         color:"#67594C",marginTop:"0px",paddingTop:"60px"}}>곰곰이의 고민</p>
 
-            <div style={{marginLeft:"10%",marginRight:"10%"}}>
+
+            <div style={{marginLeft:"10%"}}> {/* marginRight:"10%" 삭제 */}
                 <Slide {...settings}>
                     <div>
                         <SliderContent/>
