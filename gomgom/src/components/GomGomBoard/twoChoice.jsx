@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
 
-function twoChoice({gominText, gominPercent}){
+function twoChoice({gominText, gominPercent, onClick, selected}){
     const frame = { 
         width: "20.0625rem",
         height: "5.5rem",
         flexShrink: "0",
         borderRadius: "0.5rem",
-        border: "2px solid var(--e-9-e-5-da, #E9E5DA)",
-        background: "var(--faf-9-f-6, #FAF9F6)", 
+        border: selected ? "2px solid var(--67594-c, #67594C)" : "2px solid var(--e-9-e-5-da, #E9E5DA)",
+        background: selected ? "var(--67594-c, #67594C)" : "var(--faf-9-f-6, #FAF9F6)",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center", 
+        marginBottom:"6.8%", 
+        marginTop:"3.8%"
     }
     const gomintext = { 
-        color: "var(--d-2-cdbc, #D2CDBC)",
+        color: selected? "var(--faf-9-f-6, #FAF9F6)" : "var(--d-2-cdbc, #D2CDBC)", 
         fontFamily: "Pretendard",
         fontSize: "1.25rem",
         fontStyle: "normal",
@@ -22,7 +24,7 @@ function twoChoice({gominText, gominPercent}){
         marginTop:"0.69rem"
     }
     const percenttext = { 
-        color: "var(--d-2-cdbc, #D2CDBC)",
+        color: selected? "var(--faf-9-f-6, #FAF9F6)" : "var(--d-2-cdbc, #D2CDBC)", 
         fontFamily: "Pretendard",
         fontSize: "1.25rem",
         fontStyle: "normal",
@@ -33,7 +35,7 @@ function twoChoice({gominText, gominPercent}){
     }
 
     return (
-        <div style={frame}>
+        <div style={frame} onClick={onClick}>
            <p style={gomintext}>
             {gominText}
            </p>
