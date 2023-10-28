@@ -13,7 +13,7 @@ function GomGomBoard(){
     const [responseEntityTestResult, setResponseEntityTestResult] = useState("");
     
     useEffect(() => { //통신코드
-        axios.get('/board') //http://localhost:8080생략
+        axios.get('/api/board') //http://localhost:8080생략
         .then(response => setBoard(response.data))
         .catch(error => console.log(error))
 
