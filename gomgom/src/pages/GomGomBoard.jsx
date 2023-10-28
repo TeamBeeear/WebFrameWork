@@ -8,28 +8,16 @@ import TodayGomin from "../components/GomGomBoard/TodayGomin";
 import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer"; 
 
 function GomGomBoard(){
-    const [board, setBoard] = useState('')
-    const [basicTestResult, setBasicTestResult] = useState("");
-    const [responseEntityTestResult, setResponseEntityTestResult] = useState("");
-    
-    useEffect(() => { //통신코드
-        axios.get('/board') //http://localhost:8080생략
-        .then(response => setBoard(response.data))
-        .catch(error => console.log(error))
+    const [data, setData] = useState('')
 
-        // axios.get('/test/string') //http://localhost:8080생략
-        // .then(response => setBasicTestResult(response.data))
-        // .catch(error => console.log(error))
-
-        // axios.get('/test/response-entity') //http://localhost:8080생략
-        // .then(response => setResponseEntityTestResult(response.data))
-        // .catch(error => console.log(error))
+    useEffect(() => {
+        axios.get('/board')
+            .then(response => setData(response.data))
+            .catch(error => console.log(error))
     }, []);
 
     return (
         <div>
-              <p>{basicTestResult}</p>
-              <p>{responseEntityTestResult}</p>
             <Header />
             <Nav />
             <GominSlider/>

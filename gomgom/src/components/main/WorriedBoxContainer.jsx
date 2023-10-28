@@ -36,7 +36,7 @@ function WorriedBoxContainer(){
     const [data, setData] = useState('')
 
     useEffect(() => {
-        axios.get('/board')
+        axios.get('/board/1')
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
