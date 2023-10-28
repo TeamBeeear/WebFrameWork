@@ -17,6 +17,7 @@ function TodayGomin(){
         <div style={{paddingTop:"3.81rem"}}>
             <p style={text}>고민을 한 곳에 모았어요</p>
                 <div style={{ display: "flex", gap: "1.25rem", justifyContent:"center"}}>
+                <GominCategory category="전체" />
                 <GominCategory category="대인관계" />
                 <GominCategory category="연애" />
                 <GominCategory category="교육" />
