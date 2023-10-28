@@ -38,6 +38,7 @@ const Login = () => {
           }
         })
         .catch((error) => {
+          setError('아이디나 비밀번호를 확인하세요.'); // 에러 메시지 설정
           console.error('로그인 요청 중 오류 발생:', error);
         });
     }
@@ -46,6 +47,16 @@ const Login = () => {
       // 페이지 이동 처리
       window.location.href = '/signup';
     };
+
+    const errorStyle = {
+      color: '#67594C',
+      fontSize: '18px',
+      fontFamily: 'Pretendard, sans-serif',
+      fontWeight: 500,
+      lineHeight: '28.80px',
+      marginRight: '20rem', 
+      wordWrap: 'break-word'
+    }
 
 
     return (
@@ -59,14 +70,14 @@ const Login = () => {
             <form className="login-form">
                 <input type="input" className="id-input" placeholder="아이디를 입력하세요." onChange={handleIdChange} />
                 <input type="password" className="passwd-input" placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
-                </form>
-                <button type="submit" className="login-submit" style={{
-                    background: id && password ? '#FFAB5D' : '#E9E5DA'}}
-                    disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
-                    onClick={handleLoginClick}
-                >로그인</button>
-                <p className="to-signup" onClick={handleSignupClick} style={{cursor: "pointer"}}>회원가입</p>
-            
+                {error && <p style={errorStyle}>{error}</p>}
+            </form>
+            <button type="submit" className="login-submit" style={{
+                background: id && password ? '#FFAB5D' : '#E9E5DA'}}
+                disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
+                onClick={handleLoginClick}
+            >로그인</button>
+            <p className="to-signup" onClick={handleSignupClick} style={{cursor: "pointer"}}>회원가입</p>
             <Footer />
         </div>
     );
