@@ -21,7 +21,7 @@ const Login = () => {
 
       const handleSignupClick = () => {
         // 페이지 이동 처리
-        window.location.href = '/signup';
+        window.location.href = '/';
       };
 
     return (
@@ -32,7 +32,7 @@ const Login = () => {
             <img src={gomgom} className="gomgom-img"></img>
             <p className="title1">고민하지말고,<br/></p>
             <p className="title2">곰곰에서 고민을 나누어요</p>
-            <form className="signup-form">
+            <form className="login-form">
                     <input type="input" className="id-input" placeholder="아이디를 입력하세요." onChange={handleIdChange} />
                     <input type="password" className="passwd-input" placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
                 <button type="submit" className="login-submit" style={{
