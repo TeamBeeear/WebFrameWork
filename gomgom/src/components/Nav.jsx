@@ -31,7 +31,7 @@ function Nav(){
             <div></div>
             <p>메인</p>
             <Link to="/post" style={linkStyle}><p>고민올리기</p></Link>
-            <Link to="/gomgom-board" style={linkStyle}><p>게시판</p></Link>
+            <Link to="/board" style={linkStyle}><p>게시판</p></Link>
             <Link to="/gomgom-board/detail" style={linkStyle}><p>곰곰이</p></Link>
             <div className="separator-line"></div>
             <div>

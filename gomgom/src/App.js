@@ -12,13 +12,6 @@ import GomGomBoard from './pages/GomGomBoard';
 import GomGomBoardDetail from './pages/GomGomBoardDetail';
 
 function App(){
-  const [hello, setHello] = useState('')
-
-  useEffect(() => {
-    axios.get('/test/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -29,7 +22,7 @@ function App(){
             <Route path="/post" element={<Post />} />
             <Route path="/post-complete" element={<PostComplete />} />
             <Route path="/gomin-post" element={<GominPost />} />
-            <Route path="/gomgom-board" element={<GomGomBoard />} />
+            <Route path="/board" element={<GomGomBoard />} />
             <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
           </Routes>
       </BrowserRouter>
