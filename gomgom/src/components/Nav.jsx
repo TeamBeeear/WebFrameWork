@@ -29,7 +29,7 @@ function Nav(){
     return(
         <div style={navStyle}>
             <div></div>
-            <p>메인</p>
+            <Link to = '/' style={linkStyle}><p>메인</p></Link>
             <Link to="/post" style={linkStyle}><p>고민올리기</p></Link>
             <Link to="/board" style={linkStyle}><p>게시판</p></Link>
             <Link to="/gomgom-board/detail" style={linkStyle}><p>곰곰이</p></Link>

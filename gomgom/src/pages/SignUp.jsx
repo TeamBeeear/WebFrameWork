@@ -61,32 +61,32 @@ const SignUp = () => {
         marginBottom: "1.5rem"
       }
 
-      const inputStyle = {
-        width: '557px',
-        height: '80px',
-        background: 'white',
-        borderRadius: '24px',
-        border: '2px solid #E9E5DA',
-        display: 'block',
-        margin: '0 auto 22px', // 간격을 마지막에 추가
-        marginTop: '10rem',
-        color: '#67594C',
-        fontSize: '24px',
-        fontFamily: 'Pretendard, sans-serif',
-        fontWeight: 700,
-        lineHeight: '38.40px',
-        paddingLeft: '31px',
-        wordWrap: 'break-word',
-      };
+      // const inputStyle = {
+      //   width: '557px',
+      //   height: '80px',
+      //   background: 'white',
+      //   borderRadius: '24px',
+      //   border: '2px solid #E9E5DA',
+      //   display: 'block',
+      //   margin: '0 auto 22px', // 간격을 마지막에 추가
+      //   marginTop: '10rem',
+      //   color: '#67594C',
+      //   fontSize: '24px',
+      //   fontFamily: 'Pretendard, sans-serif',
+      //   fontWeight: 700,
+      //   lineHeight: '38.40px',
+      //   paddingLeft: '31px',
+      //   wordWrap: 'break-word',
+      // };
       
-      const placeholderStyle = {
-        color: '#D2CDBC',
-        fontSize: '18px',
-        fontFamily: 'Pretendard, sans-serif',
-        fontWeight: 500,
-        lineHeight: '18%',
-        wordWrap: 'break-word',
-      };
+      // const placeholderStyle = {
+      //   color: '#D2CDBC',
+      //   fontSize: '18px',
+      //   fontFamily: 'Pretendard, sans-serif',
+      //   fontWeight: 500,
+      //   lineHeight: '18%',
+      //   wordWrap: 'break-word',
+      // };
 
 
     return (
@@ -101,9 +101,9 @@ const SignUp = () => {
                 <input type="file" id="fileInput" style={{ display: "none" }} accept="image/*" onChange={handleImageUpload} />
                 사진 등록</label>
                 <p style={SignupCategoryStyle}>아이디</p>
-                <input type="input" className="id-input" style={inputStyle} placeholder="아이디를 입력하세요." onChange={handleIdChange} />
+                <input type="input" className="id-input"  placeholder="아이디를 입력하세요." onChange={handleIdChange} />
                 <p style={SignupCategoryStyle}>비밀번호</p>
-                <input type="password" className="passwd-input" style={inputStyle} placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
+                <input type="password" className="passwd-input" placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
                 <button type="submit" className="signup-submit" style={{
                     background: id && password ? '#FFAB5D' : '#E9E5DA'}}
                     disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
