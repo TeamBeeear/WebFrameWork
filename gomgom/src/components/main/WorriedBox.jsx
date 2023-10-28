@@ -4,15 +4,23 @@ import chatIcon from "../../img/worriedBoxIcon1.png"
 import heartIcon from "../../img/worriedBoxIcon2.png"
 import userIcon from "../../img/userIcon.png"
 
-function WorriedBox(){
+function WorriedBox({
+    firstSelectionContent,
+    secondSelectionContent,
+    title,
+    commentsCount,
+    heartsCount,
+    content,
+    userId
+}){
     const data = [
         {
           imgSrc: worriedImg, // 이미지 URL
-          question: "문제 1", // 문제 텍스트
+          question: firstSelectionContent, // 문제 텍스트
         },
         {
           imgSrc: worriedImg,
-          question: "문제 2",
+          question: secondSelectionContent,
         },
       ];
     
@@ -109,15 +117,15 @@ function WorriedBox(){
         <div style={{width:"580px",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
-                    <p style={titleFontStyle}>제목</p>
+                    <p style={titleFontStyle}>{title}</p>
                     <div style={rowflexStyle}>
                         <div style={rowflexStyle}>
                             <img style={iconSizeStyle} src={chatIcon} alt="" />
-                            <p style={numFontStyle}>숫자</p>
+                            <p style={numFontStyle}>{commentsCount}</p>
                         </div>
                         <div style={rowflexStyle}>
                             <img style={iconSizeStyle} src={heartIcon} alt="" />
-                            <p style={numFontStyle}>숫자</p>
+                            <p style={numFontStyle}>{heartsCount}</p>
                         </div>
                     </div>
                 </div>
@@ -131,12 +139,12 @@ function WorriedBox(){
                         </div>
                     ))}
                 </div>
-                <div style={contentFontStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at rem hic obcaecati ut quidem placeat dignissimos, impedit asperiores recusandae ducimus rerum culpa, laudantium nemo sequi. Accusantium similique temporibus velit?</div>
+                <div style={contentFontStyle}>{content}</div>
             </div>
             <div style={rowSpaceFlexStyle}>
                 <div style={rowflexStyle}>
                     <img src={userIcon} style={userIconSizeStyle} alt="" />
-                    <p style={userNameFontStyle}>작성자 이름</p>
+                    <p style={userNameFontStyle}>{userId}</p>
                 </div>
                 <div style={timeFontStyle}>시간</div>
             </div>
