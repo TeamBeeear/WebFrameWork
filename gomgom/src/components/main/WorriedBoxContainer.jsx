@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import WorriedBox from "./WorriedBox";
+import axios from 'axios';
 
 function WorriedBoxContainer(){
     const titleDivStyle={
@@ -32,6 +33,13 @@ function WorriedBoxContainer(){
         lineHeight: "160%",
         margin:"auto 0"
     }
+    const [data, setData] = useState('')
+
+    useEffect(() => {
+        axios.get('/board/1')
+            .then(response => setData(response.data))
+            .catch(error => console.log(error))
+    }, []);
     return(
         <div style={{backgroundColor:"#FAF9F6"}}>
             <div style={{marginRight:"8%",marginLeft:"8%"}}>
@@ -42,9 +50,17 @@ function WorriedBoxContainer(){
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                        <WorriedBox/>
+                    {Array.isArray(data) && data.map(item => (
+                        <WorriedBox key={item.postId} data={item}
+                        title={item.title}
+                        content={item.content}
+                        commentsCount={item.commentsCount}
+                        heartsCount={item.heartsCount}
+                        userId={item.userId}
+                        firstSelectionContent={item.firstSelectionContent}
+                        secondSelectionContent={item.secondSelectionContent}
+                        />
+                    ))}
                     </div>
                     <div style={colDivStyle}>
                         <WorriedBox/>
