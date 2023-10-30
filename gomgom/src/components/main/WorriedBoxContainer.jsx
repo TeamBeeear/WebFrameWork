@@ -50,24 +50,41 @@ function WorriedBoxContainer(){
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
-                    {Array.isArray(data) && data.map(item => (
-                        <WorriedBox key={item.postId} data={item}
-                        title={item.title}
-                        content={item.content}
-                        commentsCount={item.commentsCount}
-                        heartsCount={item.heartsCount}
-                        userId={item.userId}
-                        firstSelectionContent={item.firstSelectionContent}
-                        secondSelectionContent={item.secondSelectionContent}
-                        />
-                    ))}
+                        {Array.isArray(data) && data.map((item, index) => (
+                            index % 2 === 0 ? ( // 짝수번째 요소
+                                <WorriedBox
+                                    key={item.postId}
+                                    data={item}
+                                    title={item.title}
+                                    content={item.content}
+                                    commentsCount={item.commentsCount}
+                                    heartsCount={item.heartsCount}
+                                    userId={item.userId}
+                                    firstSelectionContent={item.firstSelectionContent}
+                                    secondSelectionContent={item.secondSelectionContent}
+                                />
+                            ) : null
+                        ))}
                     </div>
                     <div style={colDivStyle}>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                        <WorriedBox/>
+                        {Array.isArray(data) && data.map((item, index) => (
+                            index % 2 === 1 ? ( // 홀수번째 요소
+                                <WorriedBox
+                                    key={item.postId}
+                                    data={item}
+                                    title={item.title}
+                                    content={item.content}
+                                    commentsCount={item.commentsCount}
+                                    heartsCount={item.heartsCount}
+                                    userId={item.userId}
+                                    firstSelectionContent={item.firstSelectionContent}
+                                    secondSelectionContent={item.secondSelectionContent}
+                                />
+                            ) : null
+                        ))}
                     </div>
                 </div>
+
             </div>
             
         </div>
