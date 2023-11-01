@@ -2,7 +2,9 @@ import React,{useEffect, useState} from "react";
 import WorriedBox from "./WorriedBox";
 import axios from 'axios';
 
-function WorriedBoxContainer(){
+function WorriedBoxContainer({
+    url
+}){
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
@@ -36,7 +38,7 @@ function WorriedBoxContainer(){
     const [data, setData] = useState('')
 
     useEffect(() => {
-        axios.get('/posts')
+        axios.get(url)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
