@@ -80,7 +80,9 @@ function WorriedBoxContainer({
                                     heartsCount={item.heartsCount}
                                     userId={item.userId}
                                     firstSelectionContent={item.firstSelectionContent}
+                                    firstSelectionVotePercentage = {item.firstSelectionVotePercentage}
                                     secondSelectionContent={item.secondSelectionContent}
+                                    secondSelectionVotePercentage={item.secondSelectionVotePercentage}
                                 />
                             ) : null
                         ))}

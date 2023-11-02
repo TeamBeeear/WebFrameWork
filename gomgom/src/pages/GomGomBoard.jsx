@@ -9,27 +9,26 @@ import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer";
 
 function GomGomBoard(){
     const [board, setBoard] = useState('')
-    const [basicTestResult, setBasicTestResult] = useState("");
-    const [responseEntityTestResult, setResponseEntityTestResult] = useState("");
     
-    useEffect(() => { //통신코드
-        axios.get('/api/board') //http://localhost:8080생략
-        .then(response => setBoard(response.data))
-        .catch(error => console.log(error))
+    // useEffect(() => { //통신코드
+    //     axios.get('/board') 
+    //     .then(response => setBoard(response.data))
+    //     .catch(error => console.log(error))
+    // }, []);
 
-        // axios.get('/test/string') //http://localhost:8080생략
-        // .then(response => setBasicTestResult(response.data))
-        // .catch(error => console.log(error))
 
-        // axios.get('/test/response-entity') //http://localhost:8080생략
-        // .then(response => setResponseEntityTestResult(response.data))
-        // .catch(error => console.log(error))
+    useEffect(() => {
+        axios.get('/api/board') 
+            .then(response => {
+                // 응답 데이터를 JSON 객체로 파싱하여 상태로 설정
+                const parsedData = JSON.parse(response.data);
+                setBoard(parsedData);
+            })
+            .catch(error => console.log(error))
     }, []);
 
     return (
         <div>
-              <p>{basicTestResult}</p>
-              <p>{responseEntityTestResult}</p>
             <Header />
             <Nav />
             <GominSlider/>

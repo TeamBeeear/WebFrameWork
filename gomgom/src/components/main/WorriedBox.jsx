@@ -11,7 +11,9 @@ function WorriedBox({
     commentsCount,
     heartsCount,
     content,
-    userId
+    userId,
+    firstSelectionVotePercentage,
+    secondSelectionVotePercentage
 }){
     const data = [
         {

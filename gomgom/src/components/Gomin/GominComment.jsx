@@ -29,7 +29,6 @@ function GominComment(){
         width: "60%",
         height:"30%",
         reSize: "vertical",
-        marginLeft: "3.19rem",
         marginTop:"1.25rem"
     }
     const imagePostButton = { 
@@ -48,10 +47,10 @@ function GominComment(){
             <div style={{display:"flex", paddingTop:"2.5rem", justifyContent:"center"}}>
                 <div style={commentSubStyle}>
                         <textarea style={commentAbout} placeholder="곰곰이의 고민에 댓글을 써주세요."/>
-                        <button style={imagePostButton}>
+                        {/* <button style={imagePostButton}>
                             <img src={imageUpload}/>
-                        </button>
-                    </div>
+                        </button> */}
+                </div>
                     <button style={gominPostButton}>
                         <img src={gominPost}/>
                     </button>

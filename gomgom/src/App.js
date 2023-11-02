@@ -42,10 +42,6 @@ function App(){
             <Route path="/gomgom-board/detail" element={<ProtectedRoute><GomGomBoardDetail /></ProtectedRoute>} />
           </Routes>
       </BrowserRouter>
-      <div>
-      {/* 백엔드에서 가져온 데이터입니다 : {hello} */}
-      {/* 위에 일단 각주처리 */}
-      </div>
     </div>
   );
 }
