@@ -23,6 +23,7 @@ function App(){
             <Route path="/post-complete" element={<PostComplete />} />
             <Route path="/gomin-post" element={<GominPost />} />
             <Route path="/board" element={<GomGomBoard />} />
+            <Route path="/board/:boardId" element={<GomGomBoard />} />
             <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
           </Routes>
       </BrowserRouter>
