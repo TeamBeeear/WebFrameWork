@@ -2,7 +2,9 @@ import React,{useEffect, useState} from "react";
 import WorriedBox from "./WorriedBox";
 import axios from 'axios';
 
-function WorriedBoxContainer(){
+function WorriedBoxContainer({
+    url
+}){
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
@@ -36,7 +38,7 @@ function WorriedBoxContainer(){
     const [data, setData] = useState('')
 
     useEffect(() => {
-        axios.get('/board/1')
+        axios.get(url)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
@@ -50,24 +52,41 @@ function WorriedBoxContainer(){
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
-                    {Array.isArray(data) && data.map(item => (
-                        <WorriedBox key={item.postId} data={item}
-                        title={item.title}
-                        content={item.content}
-                        commentsCount={item.commentsCount}
-                        heartsCount={item.heartsCount}
-                        userId={item.userId}
-                        firstSelectionContent={item.firstSelectionContent}
-                        secondSelectionContent={item.secondSelectionContent}
-                        />
-                    ))}
+                        {Array.isArray(data) && data.map((item, index) => (
+                            index % 2 === 0 ? ( // 짝수번째 요소
+                                <WorriedBox
+                                    key={item.postId}
+                                    data={item}
+                                    title={item.title}
+                                    content={item.content}
+                                    commentsCount={item.commentsCount}
+                                    heartsCount={item.heartsCount}
+                                    userId={item.userId}
+                                    firstSelectionContent={item.firstSelectionContent}
+                                    secondSelectionContent={item.secondSelectionContent}
+                                />
+                            ) : null
+                        ))}
                     </div>
                     <div style={colDivStyle}>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                        <WorriedBox/>
+                        {Array.isArray(data) && data.map((item, index) => (
+                            index % 2 === 1 ? ( // 홀수번째 요소
+                                <WorriedBox
+                                    key={item.postId}
+                                    data={item}
+                                    title={item.title}
+                                    content={item.content}
+                                    commentsCount={item.commentsCount}
+                                    heartsCount={item.heartsCount}
+                                    userId={item.userId}
+                                    firstSelectionContent={item.firstSelectionContent}
+                                    secondSelectionContent={item.secondSelectionContent}
+                                />
+                            ) : null
+                        ))}
                     </div>
                 </div>
+
             </div>
             
         </div>
