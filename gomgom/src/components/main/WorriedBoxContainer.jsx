@@ -5,6 +5,7 @@ import axios from 'axios';
 function WorriedBoxContainer({
     url
 }){
+    
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
@@ -19,6 +20,11 @@ function WorriedBoxContainer({
     const colDivStyle={
         display:"flex",
         flexDirection:"column",
+    }
+    const colRightDivStyle={
+        display:"flex",
+        flexDirection:"column",
+        marginLeft:"20px"
     }
     const firstTitleFontStyle={
         // marginTop:"0px",
@@ -35,6 +41,13 @@ function WorriedBoxContainer({
         lineHeight: "160%",
         margin:"auto 0"
     }
+    const LeftsecondTitleFontStyle={
+        color: "#FAF9F6",
+        fontSize: "12px",
+        fontWeight: "600",
+        lineHeight: "160%",
+        margin:"auto 0"
+    }
     const [data, setData] = useState('')
 
     useEffect(() => {
@@ -43,10 +56,15 @@ function WorriedBoxContainer({
             .catch(error => console.log(error))
     }, []);
     return(
-        <div style={{backgroundColor:"#FAF9F6"}}>
-            <div style={{marginRight:"8%",marginLeft:"8%"}}>
+        <div style={{backgroundColor:"#FAF9F6",
+        display:"flex",
+        justifyContent:"center",
+        }}>
+            <div style={{
+                width:"1024px",
+            }}>
                 <div style={titleDivStyle}>
-                    <div></div>
+                    <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
                     <p style={firstTitleFontStyle}>오늘의 고민들</p>
                     <p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
                 </div>
@@ -64,11 +82,12 @@ function WorriedBoxContainer({
                                     userId={item.userId}
                                     firstSelectionContent={item.firstSelectionContent}
                                     secondSelectionContent={item.secondSelectionContent}
+                                    nminutesAgo={item.nminutesAgo}
                                 />
                             ) : null
                         ))}
                     </div>
-                    <div style={colDivStyle}>
+                    <div style={colRightDivStyle}>
                         {Array.isArray(data) && data.map((item, index) => (
                             index % 2 === 1 ? ( // 홀수번째 요소
                                 <WorriedBox
@@ -80,9 +99,8 @@ function WorriedBoxContainer({
                                     heartsCount={item.heartsCount}
                                     userId={item.userId}
                                     firstSelectionContent={item.firstSelectionContent}
-                                    firstSelectionVotePercentage = {item.firstSelectionVotePercentage}
                                     secondSelectionContent={item.secondSelectionContent}
-                                    secondSelectionVotePercentage={item.secondSelectionVotePercentage}
+                                    nminutesAgo={item.nminutesAgo}
                                 />
                             ) : null
                         ))}

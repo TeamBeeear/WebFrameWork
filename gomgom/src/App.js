@@ -35,7 +35,8 @@ function App(){
             <Route path="/" element={<Main />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} />
+            <Route path="/post" element={<Post />} />
+            {/* <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} /> */}
             <Route path="/post-complete" element={<ProtectedRoute><PostComplete /></ProtectedRoute>} />
             <Route path="/gomin-post" element={<ProtectedRoute><GominPost /></ProtectedRoute>} />
             <Route path="/board" element={<ProtectedRoute><GomGomBoard /></ProtectedRoute>} />

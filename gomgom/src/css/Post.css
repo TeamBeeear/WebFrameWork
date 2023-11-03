@@ -36,6 +36,7 @@
 
 .option-group {
     display: flex;
+    flex-direction: row;
     margin-left: 26em;
 }
 
