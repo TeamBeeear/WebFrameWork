@@ -10,6 +10,7 @@ import PostComplete from './pages/PostComplete';
 import GominPost from './pages/GominPost';
 import GomGomBoard from './pages/GomGomBoard';
 import GomGomBoardDetail from './pages/GomGomBoardDetail';
+import GomGomAI from './pages/GomGomAI';
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ function App(){
             <Route path="/gomin-post" element={<GominPost />} />
             <Route path="/board" element={<GomGomBoard />} />
             <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
+            <Route path="/gomgom-ai" element={<GomGomAI />} />
             {/* 리디렉션 처리는 페이지 통신 처리 후 나중에 설정 */}
             {/* <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} />
             <Route path="/post-complete" element={<ProtectedRoute><PostComplete /></ProtectedRoute>} />
