@@ -9,7 +9,6 @@ function AskToGomGomExplain(){
         fontSize: "20px",
         fontWeight: "500",
         lineHeight: "100%",
-        margin:"auto 0"
     }
 
     const paragraphStyle = {
