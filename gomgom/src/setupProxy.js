@@ -8,7 +8,7 @@ module.exports = function(app) {
             changeOrigin: true,
         })
     );
-  
+
     app.use(
         '/posts',
         createProxyMiddleware({
@@ -24,4 +24,13 @@ module.exports = function(app) {
             changeOrigin: true,
         })
     );
+
+    app.use(
+        '/api/gpt',
+        createProxyMiddleware({
+            target: 'http://localhost:8080',
+            changeOrigin: true,
+        })
+    );
+
 };
