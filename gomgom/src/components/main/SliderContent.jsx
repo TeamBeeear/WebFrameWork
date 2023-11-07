@@ -1,7 +1,9 @@
 import React from "react";
 import img from "../../img/sliderImg.png"
 
-function SliderContent(){
+function SliderContent({
+    title
+}){
     const boxStyle={
         width:"280px",
         height:"220px",
@@ -24,7 +26,7 @@ function SliderContent(){
     }
     const textStyle={
         color:"#FFF",
-        fontSize: "18px",
+        fontSize: "15px",
         fontWeight: "700",
         lineHeight: "160%",
         textAlign:"center",
@@ -34,7 +36,7 @@ function SliderContent(){
             <div style={boxStyle}>
                 <img src={img} style={imgStyle} alt="" />
                 <div style={textContainerStyle}>
-                    <p style={textStyle}>저메추 해주세요!</p>
+                    <p style={textStyle}>{title}</p>
                 </div>
             </div>
         </div>

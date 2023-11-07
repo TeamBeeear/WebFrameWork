@@ -10,10 +10,17 @@ function LinkBlock(){
                 marginLeft:"15%",
             }}>
                 <div style={{display:"flex",flexDirection:"row"}}>
-                    <img src={bearImg} style={{width:"110px",height:"82px",marginRight:"53px"}} alt="" />
+                    <img src={bearImg} style={{width:"110px",height:"82px",marginRight:"53px",paddingTop:"16px"}} alt="" />
                     <div style={{textAlign:"left"}}>
-                        <p>고민에 대한 짧은 해답을 듣고 싶다면?</p>
-                        <p>곰곰이에게 물어봐~</p>
+                        <p style={{
+                            width:"240px",
+                            height:"23px"
+                        }}>고민에 대한 짧은 해답을 듣고 싶다면?</p>
+                        <p style={{
+                            width:"156px",
+                            height:"32px",
+                            fontSize:"20px"
+                        }}>곰곰이에게 물어봐~</p>
                     </div>
                 </div>
                 <button style={{height: "64px",width:"179px",border:"none",borderRadius: "32px",backgroundColor:"#FAF9F6"}}>

@@ -1,11 +1,14 @@
 import React,{useEffect, useState} from "react";
-import WorriedBox from "./WorriedBox";
+import WorriedBox from "../main/WorriedBox";
 import axios from 'axios';
 
-function WorriedBoxContainer({
-    url
-}){
+function WorriedBoxContainer({ id = 'test1', category = 1 }) {
     
+    const apiUrl = `/api/my-page?id=${id}&category=${category}`;
+
+    const [data, setData] = useState('');
+    // URL에 id와 category 쿼리 매개변수를 포함시킴
+
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
@@ -48,13 +51,14 @@ function WorriedBoxContainer({
         lineHeight: "160%",
         margin:"auto 0"
     }
-    const [data, setData] = useState('')
 
     useEffect(() => {
-        axios.get(url)
+        // 새로운 쿼리 매개변수를 포함한 업데이트된 URL로 GET 요청 보냄
+        axios.get(apiUrl)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
-    }, []);
+    }, [apiUrl]); // id나 category가 변경될 때 useEffect가 다시 실행되도록 apiUrl을 의존성으로 지정
+
     return(
         <div style={{backgroundColor:"#FAF9F6",
         display:"flex",
@@ -64,9 +68,9 @@ function WorriedBoxContainer({
                 width:"1024px",
             }}>
                 <div style={titleDivStyle}>
-                    <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
+                    {/* <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
                     <p style={firstTitleFontStyle}>오늘의 고민들</p>
-                    <p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
+                    <p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p> */}
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
@@ -106,9 +110,7 @@ function WorriedBoxContainer({
                         ))}
                     </div>
                 </div>
-
             </div>
-            
         </div>
     )
 }

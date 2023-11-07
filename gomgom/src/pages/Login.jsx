@@ -1,8 +1,6 @@
 import React, {useState, useRef} from 'react';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
-import "../css/SignUp.css";
-import "../css/Login.css";
 import gomgom from "../img/mainLinkBear.png"
 import Footer from '../components/Footer';
 import axios from 'axios';
@@ -49,6 +47,33 @@ const Login = () => {
       window.location.href = '/signup';
     };
 
+    const gomgomImgStyle = {
+        width: '110px',
+        height: '82px',
+        margin: '0 auto',
+        marginTop: '5rem',
+    };
+
+    const title1Style = {
+        color: '#67594C',
+        fontSize: '24px',
+        fontFamily: 'Pretendard, sans-serif',
+        fontWeight: 700,
+        wordWrap: 'break-word',
+        marginTop: '2rem',
+        marginBottom: '1rem',
+    };
+      
+      const title2Style = {
+        color: '#67594C',
+        fontSize: '32px',
+        fontFamily: 'Pretendard, sans-serif',
+        fontWeight: 900,
+        wordWrap: 'break-word',
+        marginTop: '0.25rem',
+        marginBottom: '3rem',
+    };
+
     const errorStyle = {
       color: '#67594C',
       fontSize: '18px',
@@ -57,27 +82,39 @@ const Login = () => {
       lineHeight: '28.80px',
       marginRight: '20rem', 
       wordWrap: 'break-word'
-    }
+    };
+
+    const toSignupStyle = {
+        color: "#606067",
+        fontSize: "24px",
+        fontFamily: "Pretendard",
+        fontWeight: 700,
+        lineHeight: "24px",
+        wordWrap: "break-word",
+        marginBottom: "15rem",
+        cursor: "pointer"
+      };
 
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Header />
             <Nav />
             <div className="separator-line"></div>
-            <img src={gomgom} className="gomgom-img"></img>
-            <p className="title1">고민하지말고,<br/></p>
-            <p className="title2">곰곰에서 고민을 나누어요</p>
+            <img src={gomgom} style={gomgomImgStyle}></img>
+            <p style={title1Style}>고민하지말고,<br/></p>
+            <p style={title2Style}>곰곰에서 고민을 나누어요</p>
             <form className="login-form">
                 <input type="input" className="id-input" placeholder="아이디를 입력하세요." onChange={handleIdChange} />
                 <input type="password" className="passwd-input" placeholder="비밀번호를 입력하세요." onChange={handlePasswordChange} />
                 {error && <p style={errorStyle}>{error}</p>}
-            <button type="submit" className="login-submit" style={{
+            <button type="submit" className="submit" style={{
+                marginBottom: "2rem",
                 background: id && password ? '#FFAB5D' : '#E9E5DA'}}
                 disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
                 onClick={handleLoginClick}
             >로그인</button>
             </form>
-            <p className="to-signup" onClick={handleSignupClick} style={{cursor: "pointer"}}>회원가입</p>
+            <p onClick={handleSignupClick} style={toSignupStyle}>회원가입</p>
             <Footer />
         </div>
     );

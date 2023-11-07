@@ -11,7 +11,8 @@ function WorriedBox({
     commentsCount,
     heartsCount,
     content,
-    userId
+    userId,
+    nminutesAgo
 }){
     const data = [
         {
@@ -29,7 +30,8 @@ function WorriedBox({
         background: "#FFF",
         boxShadow: "0px 2px 4px 0px rgba(210, 205, 189, 0.50)",
         padding: "24px 20px 15px 20px",
-        height:"fit-content"
+        height:"fit-content",
+        width:"30em"
     }
     const rowflexStyle = {
         display:"flex",
@@ -73,8 +75,8 @@ function WorriedBox({
         marginRight:"10px",
     }
     const textDivStyle={
-        width:"178px",
-        height:"70px",
+        width:"7em",
+        height:"3.5em",
         borderRadius:"8px",
         border:"2px solid #E9E5DA",
         backgroundColor:"#FAF9F6",
@@ -106,15 +108,15 @@ function WorriedBox({
         marginLeft:"10px"
     }
     const imgSizeStyle={
-        width:"72px",
-        height:"72px"
+        width:"4.5em",
+        height:"4.5em"
     }
     const verticalCenterStyle={
         margin:"auto 0",
     }
     
     return(
-        <div style={{width:"580px",height:"fit-content",paddingBottom:"45px"}}>
+        <div style={{width:"30em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
                     <p style={titleFontStyle}>{title}</p>
@@ -146,7 +148,7 @@ function WorriedBox({
                     <img src={userIcon} style={userIconSizeStyle} alt="" />
                     <p style={userNameFontStyle}>{userId}</p>
                 </div>
-                <div style={timeFontStyle}>시간</div>
+                <div style={timeFontStyle}>{nminutesAgo}</div>
             </div>
         </div>
     )
