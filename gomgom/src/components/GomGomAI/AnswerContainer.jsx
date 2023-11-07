@@ -12,173 +12,180 @@ const AnswerContainer = () => {
     const [isTextareaDisabled, setIsTextareaDisabled] = useState(false);
 
     const handleInputChange = (e) => {
-    if (!isTextareaDisabled) {
-        setQuestion(e.target.value);
-    }
+        if (!isTextareaDisabled) {
+            setQuestion(e.target.value);
+        }
     };
 
     const handleKeyDown = (e) => {
-    if (e.key === "Enter" && !isTextareaDisabled) {
-        handleSubmit(e);
-    }
+        if (e.key === "Enter" && !isTextareaDisabled) {
+            handleSubmit(e);
+        }
     };
 
     const changeImage = () => {
-    if (question) {
-        setImageSrc(GominGomGom);
-    } else {
-        setImageSrc(NormalGomGom);
-    }
+        if (question) {
+            setImageSrc(GominGomGom);
+        } else {
+            setImageSrc(NormalGomGom);
+        }
     };
 
     const handleShowAnswerClick = () => {
-    setShowAnswer(false);
-    setAnswer("");
-    setImageSrc(NormalGomGom);
-    setIsTextareaDisabled(false);
+        setShowAnswer(false);
+        setAnswer("");
+        setImageSrc(NormalGomGom);
+        setIsTextareaDisabled(false);
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsTextareaDisabled(true);
-    fetch("http://localhost:8080/api/gpt", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-        setAnswer(data.answer);
-        setQuestion("");
-
-        // answer 값이 있을 때만 setShowAnswer를 true로 설정
-        if (data.answer) {
-            setShowAnswer(true);
-        } else {
-            setShowAnswer(false);
-        }
+        e.preventDefault();
+        setIsTextareaDisabled(true);
+        fetch("http://localhost:8080/api/gpt", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ question }),
         })
-        .catch((error) => {
-        console.error("Error:", error);
-        });
-    setIsTextareaDisabled(false);
+            .then((response) => response.json())
+            .then((data) => {
+            setAnswer(data.answer);
+            setQuestion("");
+
+            if (data.answer) {
+                setShowAnswer(true);
+            } else {
+                setShowAnswer(false);
+            }
+            })
+            .catch((error) => {
+            console.error("Error:", error);
+            });
+
+        setIsTextareaDisabled(false);
+
     };
 
     useEffect(() => {
-    if (answer) {
-        setImageSrc(AnswerGomGom);
-    } else {
-        setImageSrc(NormalGomGom);
-    }
-    }, [answer]);
+        if (answer) {
+            setImageSrc(AnswerGomGom);
+        } else {
+            setImageSrc(NormalGomGom);
+        }
+        }, [answer]);
 
     const containerStyle = {
-    marginTop: "25px",
-    marginBottom: "50px",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "24px",
+        marginTop: "2em", // 25px
+        marginBottom: "3em", // 50px
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "24px",
     };
 
     const worryBoxContentsStyle = {
-    width: "680px",
-    height: "248px",
-    flexShrink: 0,
-    borderRadius: "24px",
-    background: "var(--ffffff, #FFF)",
-    boxShadow: "0px 2px 4px 0px rgba(210, 205, 189, 0.50)",
-    textAlign: "center",
-    border: "1px solid #FFF",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: "50px",
+        width: "680px",
+        height: "248px",
+        flexShrink: 0,
+        borderRadius: "24px",
+        boxShadow: answer? "none" : "0px 2px 4px 0px rgba(210, 205, 189, 0.50)",
+        textAlign: "center",
+        border: "1px solid #FFF",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: "2em",
     };
 
-    const lineHeightValue = answer ? "1.5" : "248px";
+    const lineHeightValue = answer ? "" : "248px";
 
     const worryTextStyle = {
-    width: "100%",
-    height: "100%",
-    border: "none",
-    resize: "none",
-    outline: "none",
-    textAlign: "center",
-    verticalAlign: "middle",
-    color: "var(--D2CDBC, #D2CDBC)",
-    fontSize: "24px",
-    fontWeight: "700",
-    borderRadius: "24px",
-    whiteSpace: answer ? "pre-wrap" : "nowrap", // answer 값이 있을 때 줄바꿈 허용, 없을 때는 허용하지 않음
-    lineHeight: lineHeightValue, // 동적으로 결정된 lineHeight 값 적용
-    ...(answer
-        ? {
-          cursor: "pointer", // 커서를 숨김
-          caretColor: "transparent", // 커서 색상을 투명하게 설정
-        }
-        : {}),
+        width: "100%",
+        height: "100%",
+        border: "none",
+        resize: "none",
+        outline: "none",
+
+        textAlign: "center",
+        verticalAlign: "middle",
+        justifyContent: "center",
+        alignItems : "center",
+
+        color: "var(--D2CDBC, #D2CDBC)",
+        background: answer ? "var(--E9E5DA, #E9E5DA)" : "var(--ffffff, #FFF)",
+        fontSize: "24px",
+        fontWeight: "700",
+        borderRadius: "24px",
+        whiteSpace: answer ? "pre-wrap" : "nowrap", // answer 값이 있을 때 줄바꿈 허용, 없을 때는 허용하지 않음
+        lineHeight: lineHeightValue, // 동적으로 결정된 lineHeight 값 적용
+        ...(answer
+            ? {
+            cursor: "pointer", // 커서를 숨김
+            caretColor: "transparent", // 커서 색상을 투명하게 설정
+            }
+            : {}),
+        wordBreak: "keep-all",
     };
 
     const placeholderStyle = {
-    color: "var(--67594C, #67594C)",
-    letterSpacing: "-1.8px",
+        color: "var(--67594C, #67594C)",
+        letterSpacing: "-1px",
+        wordSpacing: "-2px",
     };
 
     const imgBtnStyle = {
-    border: "none",
-    backgroundColor: "transparent",
+        border: "none",
+        backgroundColor: "transparent",
     };
 
     const btnImgStyle = {
-    backgroundColor: "transparent",
+        backgroundColor: "transparent",
     };
 
-  // Answer를 보이는 버튼 추가
+  // 다시하기 버튼
     const showAnswerButtonStyle = {
-    margin: "10px",
-    padding: "10px 20px",
-    fontSize: "20px",
-    cursor: "pointer",
-    color: "var(--67594C, #67594C)",
-    backgroundColor: "#FAF9F6",
-    fontWeight: "700",
-    borderRadius: "24px",
-    alignItems: "center",
+        margin: "1.5em",
+        padding: "10px 20px",
+        fontSize: "20px",
+        cursor: "pointer",
+        color: "var(--67594C, #67594C)",
+        backgroundColor: "#FAF9F6",
+        fontWeight: "700",
+        borderRadius: "24px",
+        alignItems: "center",
     };
 
     const refreshIconStyle = {
-    marginRight: "8px", // 아이콘과 텍스트 사이의 간격 조절을 위해 추가한 스타일
+        marginRight: "0.8em", // 8px
     };
 
     return (
     <div style={containerStyle}>
         <form onSubmit={handleSubmit}>
-        <div className="worry-box">
             <div className="worry-box-contents" style={worryBoxContentsStyle}>
-            <textarea
-                className="worry-text"
-                name="question"
-                placeholder="고민을 간단히 적어주세요"
-                onBlur={changeImage}
-                value={answer || question}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                disabled={isTextareaDisabled}
-                style={{ ...worryTextStyle, ...placeholderStyle }}
-                wrap="soft"
-            />
+                <textarea
+                    className="worry-text"
+                    name="question"
+                    placeholder="고민을 간단히 적어주세요"
+                    onBlur={changeImage}
+                    value={answer || question}
+                    onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
+                    disabled={isTextareaDisabled}
+                    style={{ ...worryTextStyle, ...placeholderStyle }}
+                    wrap="soft"
+                />    
             </div>
-        </div>
-        {showAnswer && (
-            <button style={showAnswerButtonStyle} onClick={handleShowAnswerClick}>
-            <img src={RefreshBtn} alt="Refresh" style={refreshIconStyle} />
-            다시하기
-            </button>
-        )}
+        
+            {showAnswer && (
+                    <button style={showAnswerButtonStyle} onClick={handleShowAnswerClick}>
+                    <img src={RefreshBtn} alt="Refresh" style={refreshIconStyle} />
+                    다시하기
+                    </button>
+                )}
+            
         <div className="image-box">
             <button
             type="submit"
