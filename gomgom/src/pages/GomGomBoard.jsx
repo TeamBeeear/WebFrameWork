@@ -12,14 +12,14 @@ function GomGomBoard(){
     const [board, setBoard] = useState(''); 
     const { boardId } = useParams();
 
-    useEffect(() => { //특정 -> 오류 수정 중
-        axios.get(`/board/${boardId}`) 
-            .then(response => {
-                console.log(response.data); // 데이터 형태 확인
-                setBoard(response.data); // JSON.parse()를 호출하지 않습니다.
-            })
-            .catch(error => console.log(error));
-      }, [boardId]);
+    // useEffect(() => { //특정 -> 확인 완료
+    //     axios.get(`/board/${boardId}`) 
+    //         .then(response => {
+    //             console.log(response.data); // 데이터 형태 확인
+    //             setBoard(response.data); // JSON.parse()를 호출하지 않습니다.
+    //         })
+    //         .catch(error => console.log(error));
+    //   }, [boardId]);
 
     useEffect(() => { //전체 -> 확인 완료 
         axios.get('/api/board') 
