@@ -37,7 +37,7 @@ function Slider({ style }){
     const [data, setData] = useState('')
 
     useEffect(() => {
-          axios.get('/gomgom-post/all')
+          axios.get('api/gomgom-post/all')
               .then(response => setData(response.data))
               .catch(error => console.log(error))
       }, []);

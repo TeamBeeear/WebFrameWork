@@ -23,7 +23,7 @@ const Login = () => {
       e.preventDefault();
     
     // 서버에 로그인 요청을 보내고 응답을 처리
-    axios.post('/login', { userId: id, userPw: password })
+    axios.post('/api/login', { userId: id, userPw: password })
         .then((response) => {
             if (response.status === 200) {
                 const userId = response.data.userId; // userId 추출
