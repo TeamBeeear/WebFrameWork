@@ -32,7 +32,7 @@ function TodayGomin(){
     const handleClick = (category) => {
         const boardId = categoryToBoardId[category];
         console.log(`Button clicked. category: ${category}, boardId: ${boardId}`); 
-        axios.get(`/board/${boardId}`) 
+        axios.get(`/api/board/${boardId}`) 
             .then(response => {
                 console.log(response.data);
                 setBoard(response.data);
