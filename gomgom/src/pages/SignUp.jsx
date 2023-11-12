@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Login.css";
+import "../css/Whole.css";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import userIcon from "../img/userIcon.png";

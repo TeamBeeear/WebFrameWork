@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import GomGomImage from "../components/Login/GomGomImage";
-import LoginForm from "../components/Login/LoginForm";
 import PageTitle from "../components/Login/PageTitle";
+import InputField from "../components/Signup/InputField";
+import SubmitButton from "../components/Signup/SubmitButton";
 import SignupLink from "../components/Login/SignupLink";
 import Footer from "../components/Footer";
 import axios from "axios";
@@ -68,7 +69,17 @@ const Login = () => {
     marginTop: "0.25rem",
     marginBottom: "3rem",
   };
-  
+
+  const errorStyle = {
+    color: "#67594C",
+    fontSize: "18px",
+    fontFamily: "Pretendard, sans-serif",
+    fontWeight: 500,
+    lineHeight: "28.80px",
+    marginRight: "20rem", 
+    wordWrap: "break-word"
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Header />
@@ -76,14 +87,22 @@ const Login = () => {
       <GomGomImage />
       <PageTitle text="고민하지말고," style={pageTitleStyle} />
       <PageTitle text="곰곰에서 고민을 나누어요" style={pageTitle2Style} />
-      <LoginForm
-        handleIdChange={handleIdChange}
-        handlePasswordChange={handlePasswordChange}
-        handleLoginClick={handleLoginClick}
-        id={id}
-        password={password}
-        error={error}
+      <form className="login-form">
+      <InputField
+        type="text"
+        placeholder="아이디를 입력하세요."
+        onChange={handleIdChange}
+        value={id}
       />
+      <InputField
+        type="password"
+        placeholder="비밀번호를 입력하세요."
+        onChange={handlePasswordChange}
+        value={password}
+      />
+        {error && <p style={errorStyle}>{error}</p>}
+        <SubmitButton onClick={handleLoginClick} isDisabled={!id || !password} buttonText={"로그인"} />
+      </form>
       <SignupLink handleSignupClick={handleSignupClick} />
       <Footer />
     </div>

@@ -9,6 +9,7 @@ const SignupLink = ({ handleSignupClick }) => {
     lineHeight: "24px",
     wordWrap: "break-word",
     marginBottom: "15rem",
+    marginTop: "-11rem",
     cursor: "pointer"
   };
 
