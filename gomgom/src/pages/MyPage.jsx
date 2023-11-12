@@ -6,7 +6,7 @@ import CategoryBtn from "../components/MyPage/CategoryBtn"
 import Footer from '../components/Footer';
 
 function MyPage(){
-
+    const userId = sessionStorage.getItem("userId");
     const [selectedCategory, setSelectedCategory] = useState(1);
 
   const handleCategoryChange = (category) => {
@@ -18,7 +18,7 @@ function MyPage(){
             <Header />
             <Nav />
             <CategoryBtn onButtonClick={handleCategoryChange} />
-            <WorriedBoxContainer id="test1" category={selectedCategory} />
+            <WorriedBoxContainer id={userId} category={selectedCategory} />
             <Footer/>
         </div>
     );
