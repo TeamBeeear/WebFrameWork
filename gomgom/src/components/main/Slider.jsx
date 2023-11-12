@@ -59,7 +59,7 @@ function Slider({ style }){
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item) => (
                     <div>
-                        <Link to='/gomin-post' style={linkStyle}><SliderContent title={item.title}/></Link>
+                        <Link to={`/gomin-post?id=${item.id}`} style={linkStyle}><SliderContent title={item.title}/></Link>
                     </div>
                 ))}
                 </Slide>
