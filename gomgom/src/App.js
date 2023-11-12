@@ -12,6 +12,7 @@ import GomGomBoard from './pages/GomGomBoard';
 import GomGomBoardDetail from './pages/GomGomBoardDetail';
 import GomGomAI from './pages/GomGomAI';
 import MyPage from './pages/MyPage';
+import UserGominTitle from './components/GomGomBoard/UserGominTitle'; 
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ function App(){
             <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
             <Route path="/gomgom-ai" element={<GomGomAI />} />
             <Route path="/my-page" element={<MyPage />} />
+            <Route path="/heart" element={<UserGominTitle />} />
             {/* 리디렉션 처리는 페이지 통신 처리 후 나중에 설정 */}
             {/* <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} />
             <Route path="/post-complete" element={<ProtectedRoute><PostComplete /></ProtectedRoute>} />

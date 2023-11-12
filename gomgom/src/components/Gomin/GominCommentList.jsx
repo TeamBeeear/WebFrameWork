@@ -54,7 +54,7 @@ function GominCommentList({
                     <img src={sunde}/>
                 </div>
             </div>
-            <div style={{width:"68.25rem", height:"0.125rem", background:"#FAF9F6", paddingTop:"0.87rem"}}/>
+            <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>
         </div>
     )
 }
