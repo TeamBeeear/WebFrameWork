@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const LoginForm = ({ handleIdChange, handlePasswordChange, handleLoginClick, id, password, error }) => {
   const errorStyle = {
-    color: '#67594C',
-    fontSize: '18px',
-    fontFamily: 'Pretendard, sans-serif',
+    color: "#67594C",
+    fontSize: "18px",
+    fontFamily: "Pretendard, sans-serif",
     fontWeight: 500,
-    lineHeight: '28.80px',
-    marginRight: '20rem', 
-    wordWrap: 'break-word'
+    lineHeight: "28.80px",
+    marginRight: "20rem", 
+    wordWrap: "break-word"
   };
 
   return (
@@ -18,7 +18,7 @@ const LoginForm = ({ handleIdChange, handlePasswordChange, handleLoginClick, id,
       {error && <p style={errorStyle}>{error}</p>}
       <button type="submit" className="submit" style={{
         marginBottom: "2rem",
-        background: id && password ? '#FFAB5D' : '#E9E5DA'}}
+        background: id && password ? "#FFAB5D" : "#E9E5DA"}}
         disabled={!id || !password} // 입력 필드가 비어 있을 때 버튼 비활성화
         onClick={handleLoginClick}
       >로그인</button>

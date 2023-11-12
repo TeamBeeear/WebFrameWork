@@ -3,7 +3,7 @@ body {
 }
 
 .separator-line {
-    width: 100%; /* 가로 크기 100%로 설정 (반응형) */
+    width: 100%;
     height: 4px;
     left: 0;
     top: 115px;
@@ -11,8 +11,8 @@ body {
     background: #E9E5DA;
 }
 
-.id-input, .passwd-input {
-    width: 557px; /* 화면 너비에 따라 가로 크기 조절 (반응형) */
+.input-field {
+    width: 557px;
     height: 80px;
     background: white;
     border-radius: 24px;
@@ -31,7 +31,7 @@ body {
     word-wrap: break-word;
 }
 
-.id-input::placeholder, .passwd-input::placeholder {
+.input-field::placeholder {
     color: #D2CDBC;
     font-size: 18px;
     font-family: 'Pretendard', sans-serif;
@@ -57,15 +57,3 @@ body {
     line-height: 24px;
     word-wrap: break-word;
 }
-
-/* 
-@media (max-width: 768px) {
-    .id-input,
-    .passwd-input {
-        width: 370px;
-        margin: 0; 
-        margin-left: 40px;
-        margin-bottom: 22px;
-        text-align: left;
-    }
-} */

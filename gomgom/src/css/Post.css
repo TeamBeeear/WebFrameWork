@@ -1,7 +1,8 @@
+/* placeholder에 대한 스타일 지정 */
 .worry-title-input::placeholder {
     color: #D2CDBC;
     font-size: 24px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     line-height: 38.40px;
     word-wrap: break-word;
@@ -10,7 +11,7 @@
 .worry-option-1::placeholder, .worry-option-2::placeholder {
     color: #D2CDBC;
     font-size: 20px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     line-height: 32px;
     word-wrap: break-word;
@@ -19,12 +20,13 @@
 .description::placeholder {
     color: #D2CDBC;
     font-size: 16px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
 }
 
+/* Select 라이브러리의 컴포넌트에 대한 스타일 지정 */
 .categories {
     width: 12.5rem;
     margin-left: 23rem;
@@ -34,7 +36,7 @@
 .categories::placeholder {
     color: #D2CDBC;
     font-size: 16px;
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
@@ -53,7 +55,7 @@
 .css-1fdsijx-ValueContainer {
     color: #D2CDBC;
     font-size: 18px;
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
@@ -66,7 +68,7 @@
     position: relative;
     color: #67594C;
     font-size: 18px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     word-wrap: break-word;
     margin-top: 13px;
