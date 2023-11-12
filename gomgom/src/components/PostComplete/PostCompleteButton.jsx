@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostCompleteButton = () => {
     const navigate = useNavigate();
@@ -13,32 +13,32 @@ const PostCompleteButton = () => {
     };
 
     const moveToBoardStyle =  {
-        width: '340px',
-        height: '75px',
-        background: '#FFAB5D',
-        borderRadius: '44px',
-        display: 'block',
-        margin: '0 auto',
-        marginTop: '88px',
-        marginBottom: '32px',
-        border: 'none',
-        color: 'white',
-        fontSize: '20px',
-        fontFamily: 'Pretendard, sans-serif',
+        width: "340px",
+        height: "75px",
+        background: "#FFAB5D",
+        borderRadius: "44px",
+        display: "block",
+        margin: "0 auto",
+        marginTop: "88px",
+        marginBottom: "32px",
+        border: "none",
+        color: "white",
+        fontSize: "20px",
+        fontFamily: "Pretendard, sans-serif",
         fontWeight: 700,
-        lineHeight: '20px',
-        wordWrap: 'break-word',
+        lineHeight: "20px",
+        wordWrap: "break-word",
         cursor: "pointer"
     };
     
     const moveToMypageStyle = {
-        color: '#67594C',
-        fontSize: '20px',
-        fontFamily: 'Pretendard, sans-serif',
+        color: "#67594C",
+        fontSize: "20px",
+        fontFamily: "Pretendard, sans-serif",
         fontWeight: 700,
-        lineHeight: '20px',
-        wordWrap: 'break-word',
-        marginBottom: '300px',
+        lineHeight: "20px",
+        wordWrap: "break-word",
+        marginBottom: "300px",
         cursor: "pointer"
         
     }

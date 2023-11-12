@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
 const PostCompleteText = () => {
     const completeTextStyle = {
-        color: '#67594C',
-        fontSize: '24px',
-        fontFamily: 'Pretendard, sans-serif',
+        color: "#67594C",
+        fontSize: "24px",
+        fontFamily: "Pretendard, sans-serif",
         fontWeight: 700,
-        lineHeight: '24px',
-        wordWrap: 'break-word',
+        lineHeight: "24px",
+        wordWrap: "break-word",
     };
     
     const completeDetailStyle = {
-        color: '#67594C',
-        fontSize: '18px',
-        fontFamily: 'Pretendard, sans-serif',
+        color: "#67594C",
+        fontSize: "18px",
+        fontFamily: "Pretendard, sans-serif",
         fontWeight: 500,
-        lineHeight: '28.80px',
-        wordWrap: 'break-word',
+        lineHeight: "28.80px",
+        wordWrap: "break-word",
     };
 
     return (

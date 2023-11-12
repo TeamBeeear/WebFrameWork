@@ -2,32 +2,14 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
-import Footer from '../components/Footer';
-import "../css/Post.css";
+import WorryTitle from '../components/GominPost/WorryTitle';
 import WorryTitleInput from '../components/GominPost/WorryTitleInput';
 import WorryOption from '../components/GominPost/WorryOption';
 import WorryDescription from '../components/GominPost/WorryDescription';
 import WorryCategory from '../components/GominPost/WorryCategory';
 import SubmitButton from '../components/GominPost/SubmitButton';
+import Footer from '../components/Footer';
 import axios from 'axios';
-
-// // 카테고리 커스텀 컴포넌트
-// const CustomOption = (props) => {
-//     const { innerProps, label, isSelected, isDisabled, selectProps, value } = props;
-  
-//     // 선택된 항목인 경우, checked 클래스 추가
-//     const isChecked = isSelected ? 'checked' : '';
-  
-//     // 선택된 항목이 비활성화된 경우, disabled 클래스 추가
-//     const isDisabledClass = isDisabled ? 'disabled' : '';
-  
-//     return (
-//       <div {...innerProps} className={`custom-option ${isChecked} ${isDisabledClass}`}>
-//         <input type="radio" value={label} name={selectProps.inputId} checked={isSelected}
-//           onChange={() => selectProps.onChange({ label, value })} disabled={isDisabled}/>{label}
-//       </div>
-//     );
-// };
 
 const options = [
     { id: 1, value: 'relationship', label: '대인관계' },
@@ -64,8 +46,8 @@ const Post = () => {
     const handleImageUpload2 = (event) => {
         const file = event.target.files[0];
         if (file) {
-            const imageURL = URL.createObjectURL(file);
-            setOptionImage2(imageURL);
+            const imageURL2 = URL.createObjectURL(file);
+            setOptionImage2(imageURL2);
         }
     };
 
@@ -82,8 +64,8 @@ const Post = () => {
         });
 
         try {
-            // POST 요청 보내기
             const response = await axios.post('/api/post', {
+                // POST 요청 보낼 데이터
                 title: title,
                 content: content,
                 userId: userId,
@@ -91,19 +73,11 @@ const Post = () => {
                 firstSelectionContent: firstSelectionContent,
                 secondSelectionContent: secondSelectionContent
             });
-
-            // 응답 확인
             console.log('응답 데이터:', response.data);
-
-            // 페이지 이동
             navigate('/post-complete');
         } catch (error) {
-            // 오류 처리
-            console.error('게시글 작성 실패:', error);
+            console.error('게시글 작성 실패:', error); // 오류 처리
         }
-
-
-        // 페이지 이동
         navigate('/post-complete');
     };
 
@@ -111,21 +85,12 @@ const Post = () => {
       setSelectedOption(value.id);
     }
 
-    const titleStyle = {
-        color: "rgba(103.06, 88.99, 76.01, 0.50)",
-        fontSize: "15px",
-        fontFamily: "Pretendard",
-        fontWeight: "700",
-        lineHeight: "15px",
-        wordWrap: "break-word"
-    }
-
     const outerImageStyle = {
         width: '80px', 
         height: '80px',
         position: 'relative',
         marginBottom: "17px",
-        marginRight: "10px",
+        marginRight: "1rem",
         borderRadius: "6px",
         marginTop: "2px"
       };
@@ -134,22 +99,28 @@ const Post = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
             <Header />
             <Nav />
+            <WorryTitle titleText={"고민 제목"} />
             <WorryTitleInput setTitle={setTitle} />
+            <WorryTitle titleText={"선택지"} />
             <WorryOption
-            outerImageStyle={outerImageStyle}
-            handleImageUpload={handleImageUpload1}
-            optionImage={optionImage1}
-            setSelectionContent={setFirstSelectionContent}
-            placeholder="선택지 1"
+                id={1}
+                outerImageStyle={outerImageStyle}
+                handleImageUpload={handleImageUpload1}
+                optionImage={optionImage1}
+                setSelectionContent={setFirstSelectionContent}
+                placeholder="선택지 1"
             />
             <WorryOption
-            outerImageStyle={outerImageStyle}
-            handleImageUpload={handleImageUpload2}
-            optionImage={optionImage2}
-            setSelectionContent={setSecondSelectionContent}
-            placeholder="선택지 2"
+                id={2}
+                outerImageStyle={outerImageStyle}
+                handleImageUpload={handleImageUpload2}
+                optionImage={optionImage2}
+                setSelectionContent={setSecondSelectionContent}
+                placeholder="선택지 2"
             />
+            <WorryTitle titleText={"설명"} />
             <WorryDescription setContent={setContent} />
+            <WorryTitle titleText={"카테고리"} />
             <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
             <SubmitButton onClick={handlePostClick} buttonText="고민 올리기" />
             <Footer />
