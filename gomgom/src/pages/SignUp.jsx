@@ -1,16 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import "../css/Login.css";
 import userIcon from "../img/userIcon.png"
 import Footer from '../components/Footer';
+import axios from 'axios';
 
 
 const SignUp = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [selectedImage, setSelectedImage] = useState(userIcon);
-
+    const [imageData, setImageData] = useState(null); // 사용자의 이미지 데이터
+    const navigate = useNavigate();
+  
     const handleIdChange = (e) => {
         setId(e.target.value);
       };
@@ -25,12 +29,35 @@ const SignUp = () => {
         if (file) {
           const imageURL = URL.createObjectURL(file);
           setSelectedImage(imageURL); // 파일을 선택해서 받아온 url로 이미지 설정
-        }
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            setImageData(reader.result); // Base64로 인코딩된 이미지 데이터 설정
+          };
+          reader.readAsDataURL(file);
+          }
       };
 
-      const handleSignupClick = () => {
-        window.location.href = '/login'; // 로그인 페이지로 이동
-      };
+      const handleSignupClick = async (e) => {
+        e.preventDefault();
+      
+        try {
+          const response = await axios.post('/api/signup', { 
+            userId: id, 
+            userPw: password,
+            userImage: imageData, // Base64로 인코딩된 이미지 데이터 서버로 전송
+          });
+      
+          const securedResponse = {
+            userId: response.data.userId,
+            userPw: '****',
+          };
+      
+          console.log('회원가입 응답:', securedResponse);
+          navigate('/login');
+        } catch (error) {
+          console.error('회원가입 실패:', error);
+        }
+      };     
 
       const separatorLineStyle = {
         width: '100%',
