@@ -36,7 +36,8 @@
 
 .option-group {
     display: flex;
-    margin-left: 21em;
+    flex-direction: row;
+    margin-left: 26em;
 }
 
 .worry-option-1::placeholder, .worry-option-2::placeholder {
@@ -95,7 +96,7 @@
     border: none;
     border-radius: 8px;
     margin-top: 20px;
-    margin-left: 330px;
+    margin-left: 410px;
     margin-bottom: 91px;
 }
 

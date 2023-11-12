@@ -15,7 +15,7 @@ function Main(){
             <MainContent/>
             <Slider style={{backgroundColor:"#D2CDBC"}}/>
             <LinkBlock/>
-            <WorriedBoxContainer/>
+            <WorriedBoxContainer url = 'api/posts'/>
             <Footer/>
         </div>
     )

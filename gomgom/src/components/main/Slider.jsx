@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import Slide from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderLeftBtn from "../../img/SliderLeftBtn.png";
 import SliderRightBtn from "../../img/SliderRightBtn.png";
 import SliderContent from "./SliderContent";
+import axios from 'axios';
 
 function Slider({ style }){
     const btnStyle = {
@@ -33,7 +34,13 @@ function Slider({ style }){
         nextArrow: <CustomNextArrow />, 
       };    
 
+    const [data, setData] = useState('')
 
+    useEffect(() => {
+          axios.get('api/gomgom-post/all')
+              .then(response => setData(response.data))
+              .catch(error => console.log(error))
+      }, []);
     return(
         <div style={{...style, height: "385px"}}>
             <p style={{fontSize: "20px",
@@ -44,25 +51,11 @@ function Slider({ style }){
 
             <div style={{marginLeft:"10%"}}> {/* marginRight:"10%" 삭제 */}
                 <Slide {...settings}>
+                {Array.isArray(data) && data.map((item) => (
                     <div>
-                        <SliderContent/>
+                        <SliderContent title={item.title}/>
                     </div>
-                    <div>
-                        <SliderContent/>
-                    </div>
-                    <div>
-                        <SliderContent/>
-                    </div>
-                    <div>
-                        <SliderContent/>
-                    </div>
-                    <div>
-                        <SliderContent/>
-                    </div>
-                    <div>
-                        <SliderContent/>
-                    </div>
-                    {/* Add more divs as needed */}
+                ))}
                 </Slide>
             </div>
         </div>
