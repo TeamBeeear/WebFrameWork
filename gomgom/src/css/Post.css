@@ -1,109 +1,42 @@
-.worry-title {
-    margin-top: 64px;
-    margin-right: 47em;
-}
-
-.worry-title-input {
-    width: 743px;
-    height: 73px;
-    background: white;
-    border-radius: 8px;
-    border-style: none;
-    padding-left: 24px;
-
-    color: #67594C;
-    font-size: 24px;
-    font-family: 'Pretendard';
-    font-weight: 700;
-    line-height: 24px;
-    word-wrap: break-word;
-    margin-top: 5px;
-}
-
+/* placeholder에 대한 스타일 지정 */
 .worry-title-input::placeholder {
     color: #D2CDBC;
     font-size: 24px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     line-height: 38.40px;
     word-wrap: break-word;
 }
 
-.option-content {
-    margin-top: 55px;
-    margin-right: 47em;
-}
-
-.option-group {
-    display: flex;
-    flex-direction: row;
-    margin-left: 26em;
-}
-
 .worry-option-1::placeholder, .worry-option-2::placeholder {
     color: #D2CDBC;
     font-size: 20px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 700;
     line-height: 32px;
-    word-wrap: break-word;
-}
-
-.worry-description {
-    margin-top: 132px;
-    margin-right: 49em;
-}
-
-.description {
-    resize: none;
-    width: 701px;
-    height: 94px;
-    background: white;
-    border-radius: 8px;
-    border-style: none;
-    padding-left: 28px;
-    padding-right: 41px;
-    padding-top: 20px;
-    margin-top: 5px;
-
-    color: #67594C;
-    font-size: 16px;
-    font-family: 'Pretendard';
-    font-weight: 400;
-    line-height: 25.60px;
     word-wrap: break-word;
 }
 
 .description::placeholder {
     color: #D2CDBC;
     font-size: 16px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
 }
 
-.worry-category {
-    margin-top: 64px;
-    margin-right: 47em;
-}
-
+/* Select 라이브러리의 컴포넌트에 대한 스타일 지정 */
 .categories {
-    width: 203px;
-    height: 60px;
-    background: white;
-    border: 2px solid #E9E5DA;
-    border: none;
-    border-radius: 8px;
-    margin-top: 20px;
-    margin-left: 410px;
-    margin-bottom: 91px;
+    width: 12.5rem;
+    margin-left: 23rem;
+    margin-bottom: 5rem;
 }
 
 .categories::placeholder {
     color: #D2CDBC;
     font-size: 16px;
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
@@ -122,7 +55,7 @@
 .css-1fdsijx-ValueContainer {
     color: #D2CDBC;
     font-size: 18px;
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 500;
     line-height: 25.60px;
     word-wrap: break-word;
@@ -135,7 +68,7 @@
     position: relative;
     color: #67594C;
     font-size: 18px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: "Pretendard", sans-serif;
     font-weight: 400;
     word-wrap: break-word;
     margin-top: 13px;
@@ -159,65 +92,4 @@
 .custom-option label {
     display: flex;
     align-items: center;
-}
-
-.post-worry {
-    width: 176px;
-    height: 64px;
-    background: #FFAB5D;
-    border-radius: 32px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 88px;
-    margin-bottom: 297px;
-    border: none;
-
-    color: white;
-    font-size: 20px;
-    font-family: 'Pretendard', sans-serif;
-    font-weight: 700;
-    line-height: 20px;
-    word-wrap: break-word;
-    margin-right: 330px;
-}
-
-
-@media (max-width: 768px) {
-    .worry-title, .option-content, 
-    .worry-description, .worry-category {
-        margin: 0; 
-        margin-left: 40px;
-        text-align: left;
-        margin-top: 64px;
-        margin-bottom: 10px;
-    }
-
-    .worry-title-input, .description {
-        width: 370px;
-        margin: 0;
-        margin-left: 40px;
-        margin-bottom: 22px;
-        margin-top: 16px;
-        text-align: left;
-    }
-    
-    .option-group {
-        width: 450px;
-        margin: 0;
-        margin-left: 40px;
-        margin-bottom: 22px;
-        text-align: left;
-    }
-
-    .categories {
-        width: 200px;
-        margin: 0;
-        margin-left: 40px;
-        margin-bottom: 22px;
-        text-align: left;
-    }
-
-    .post-worry {
-        margin-right: 50px;
-    }
 }

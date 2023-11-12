@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/bearHi.png"
+import { useNavigate } from "react-router-dom";
 
 function MainContent(){
-
     const navigate = useNavigate();
 
     const handleButtonClick = () => {

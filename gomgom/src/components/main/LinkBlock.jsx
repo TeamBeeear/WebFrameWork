@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/mainLinkBear.png"
+import { useNavigate } from "react-router-dom";
 
 function LinkBlock(){
-
     const navigate = useNavigate();
     const handleButtonClick = () => {
         navigate("/gomgom-ai");

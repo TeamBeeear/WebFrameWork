@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import userIcon from '../img/userIcon.png';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import userIcon from "../img/userIcon.png";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
     const [userId, setUserId] = useState(null); // 초기에 null로 설정
     const navigate = useNavigate(); // useNavigate 훅 추가
 
     useEffect(() => {
-        const storedUserId = sessionStorage.getItem('userId'); // 세션 스토리지에서 userId 불러오기
+        const storedUserId = sessionStorage.getItem("userId"); // 세션 스토리지에서 userId 불러오기
         if (storedUserId) {
             setUserId(storedUserId);
         }
@@ -19,35 +19,35 @@ function Nav() {
 
     const handleLogout = () => {
       setUserId(null); // userId 상태를 빈 문자열로 설정
-      sessionStorage.removeItem('userId'); // 로컬 스토리지에서 삭제
+      sessionStorage.removeItem("userId"); // 로컬 스토리지에서 삭제
 
       // 로그아웃 후 로그인 페이지로 리다이렉트
-      navigate('/login');
+      navigate("/login");
     };
 
     const navStyle = {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginRight: '20%',
-      marginLeft: '20%',
-      color: '#67594C',
-      fontSize: '16px',
-      fontWeight: '700',
-      lineHeight: '100%',
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginRight: "20%",
+      marginLeft: "20%",
+      color: "#67594C",
+      fontSize: "16px",
+      fontWeight: "700",
+      lineHeight: "100%",
     };
 
     const userIconSizeStyle = {
-      width: '30px',
-      height: '30px',
-      margin: 'auto 0',
-      marginLeft: '20px',
-      marginRight: '10px',
+      width: "30px",
+      height: "30px",
+      margin: "auto 0",
+      marginLeft: "20px",
+      marginRight: "10px",
     };
 
     const linkStyle = {
-      textDecoration: 'none',
-      color: 'inherit',
+      textDecoration: "none",
+      color: "inherit",
     };
 
     const logoutStyle = {
@@ -55,15 +55,16 @@ function Nav() {
       paddingRight: 10,
       paddingTop: 10,
       paddingBottom: 10,
-      background: '#E9E5DA',
+      background: "#E9E5DA",
       borderRadius: 17,
-      color: 'rgba(103, 88, 76, 0.50)',
-      border: 'none',
+      color: "rgba(103, 88, 76, 0.50)",
+      border: "none",
       fontSize: "14",
-      fontFamily: 'Pretendard',
-      fontWeight: "700%",
-      wordWrap: 'break-word',
-      marginLeft: '10px'
+      fontWeight: "100%",
+      fontFamily: "Pretendard",
+      fontWeight: "700",
+      wordWrap: "break-word",
+      marginLeft: "10px"
     };
 
     return (
@@ -75,10 +76,10 @@ function Nav() {
         <Link to="/gomgom-ai" style={linkStyle}><p>곰곰이</p></Link>
         <Link to="/my-page" style={linkStyle}><p>마이페이지</p></Link>
         <div className="separator-line"></div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           {isLoggedIn ? (
             // 로그인 상태일 때
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <img src={userIcon} style={userIconSizeStyle} alt="프로필 사진" />
               {userId ? `${userId}님 환영합니다` : null}
               <button onClick={handleLogout} style={logoutStyle}>로그아웃</button>
