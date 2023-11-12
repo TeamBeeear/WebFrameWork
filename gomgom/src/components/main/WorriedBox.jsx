@@ -6,6 +6,8 @@ import userIcon from "../../img/userIcon.png"
 import { Link } from "react-router-dom";
 
 function WorriedBox({
+    postId,
+    boardId,
     firstSelectionContent,
     secondSelectionContent,
     title,
@@ -120,7 +122,7 @@ function WorriedBox({
         <div style={{width:"30em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
-                    <Link to='/gomgom-board/detail'><p style={titleFontStyle}>{title}</p></Link>
+                    <Link  to={`/gomgom-board/detail?postId=${postId}&boardId=${boardId}`} ><p style={titleFontStyle}>{title}</p></Link>
                     <div style={rowflexStyle}>
                         <div style={rowflexStyle}>
                             <img style={iconSizeStyle} src={chatIcon} alt="" />
