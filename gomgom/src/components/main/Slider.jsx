@@ -26,6 +26,11 @@ function Slider({ style }){
         </div>
     );
 
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit',
+      };
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -54,7 +59,7 @@ function Slider({ style }){
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item) => (
                     <div>
-                        <Link to='/gomin-post'><SliderContent title={item.title}/></Link>
+                        <Link to={`/gomin-post?id=${item.id}`} style={linkStyle}><SliderContent title={item.title}/></Link>
                     </div>
                 ))}
                 </Slide>

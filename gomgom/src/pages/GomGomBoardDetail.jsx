@@ -26,7 +26,11 @@ function GomGomBoardDeatail(){
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/comment/'+boardId+'/'+postId)
-            .then(response => setCommentData(response.commentData))
+        .then(response => {
+            // response.data에 서버에서 받은 데이터가 들어 있음
+            console.log('Comment Data:', response.data);
+            setCommentData(response.data);
+        })
             .catch(error => console.log(error))
     }, []);
 
@@ -45,20 +49,14 @@ function GomGomBoardDeatail(){
             secondSelectionContent={data.secondSelectionContent}
             secondSelectionVotePercentage={data.secondSelectionVotePercentage}
             />
-             {Array.isArray(commentData) && commentData.map((item) => (
-                    <div>
-                        <UserCommentList
-                          userId={item.userId}
-                          content={item.content}
-                          nminutesAgo={item.nminutesAgo}
-                        />
-                       
-                    </div>
-                ))}
-                 <UserCommentList
-                 userId="22"
-                 content="2222"
-                 nminutesAgo="2"/>
+
+                {Array.isArray(commentData) && commentData.map((item) => (
+                    <UserCommentList
+                        userId={item.userId}
+                      content={item.content}
+                      nminutesAgo={item.nminutesAgo}
+                    />
+                    ))}              
             <GominComment />
         </div>
     );
