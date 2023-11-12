@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/mainLinkBear.png"
 import { useNavigate } from "react-router-dom";
 
