@@ -6,6 +6,7 @@ import SliderLeftBtn from "../../img/SliderLeftBtn.png";
 import SliderRightBtn from "../../img/SliderRightBtn.png";
 import SliderContent from "./SliderContent";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function Slider({ style }){
     const btnStyle = {
@@ -37,7 +38,7 @@ function Slider({ style }){
     const [data, setData] = useState('')
 
     useEffect(() => {
-          axios.get('/gomgom-post/all')
+          axios.get('api/gomgom-post/all')
               .then(response => setData(response.data))
               .catch(error => console.log(error))
       }, []);
@@ -53,7 +54,7 @@ function Slider({ style }){
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item) => (
                     <div>
-                        <SliderContent title={item.title}/>
+                        <Link to='/gomin-post'><SliderContent title={item.title}/></Link>
                     </div>
                 ))}
                 </Slide>

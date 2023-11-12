@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-function GominCategory({ category }){
+function GominCategory({ category, onClick }){
     const box = { 
         display: "inline-block", 
         padding: "0.625rem 1.25rem",
@@ -22,9 +22,9 @@ function GominCategory({ category }){
     }
 
     return (
-        <div style={box}>
+        <button onClick={onClick} style={box}>
            <p style={text}>{category}</p>
-        </div>
+        </button>
     );
 }
 

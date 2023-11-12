@@ -72,7 +72,8 @@ function Nav() {
         <Link to="/" style={linkStyle}><p>메인</p></Link>
         <Link to="/post" style={linkStyle}><p>고민올리기</p></Link>
         <Link to="/board" style={linkStyle}><p>게시판</p></Link>
-        <Link to="/gomgom-board/detail" style={linkStyle}><p>곰곰이</p></Link>
+        <Link to="/gomgom-ai" style={linkStyle}><p>곰곰이</p></Link>
+        <Link to="/my-page" style={linkStyle}><p>마이페이지</p></Link>
         <div className="separator-line"></div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {isLoggedIn ? (

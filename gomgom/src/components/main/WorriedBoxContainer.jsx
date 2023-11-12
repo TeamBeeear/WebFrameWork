@@ -74,6 +74,8 @@ function WorriedBoxContainer({
                             index % 2 === 0 ? ( // 짝수번째 요소
                                 <WorriedBox
                                     key={item.postId}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     data={item}
                                     title={item.title}
                                     content={item.content}
@@ -93,6 +95,8 @@ function WorriedBoxContainer({
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     title={item.title}
                                     content={item.content}
                                     commentsCount={item.commentsCount}

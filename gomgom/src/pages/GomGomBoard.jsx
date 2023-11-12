@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
@@ -8,19 +9,21 @@ import TodayGomin from "../components/GomGomBoard/TodayGomin";
 import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer"; 
 
 function GomGomBoard(){
-    const [board, setBoard] = useState('')
-    
-    // useEffect(() => { //통신코드
-    //     axios.get('/board') 
-    //     .then(response => setBoard(response.data))
-    //     .catch(error => console.log(error))
-    // }, []);
+    const [board, setBoard] = useState(''); 
+    const { boardId } = useParams();
 
+    // useEffect(() => { //특정 -> 확인 완료
+    //     axios.get(`/board/${boardId}`) 
+    //         .then(response => {
+    //             console.log(response.data); // 데이터 형태 확인
+    //             setBoard(response.data); // JSON.parse()를 호출하지 않습니다.
+    //         })
+    //         .catch(error => console.log(error));
+    //   }, [boardId]);
 
-    useEffect(() => {
+    useEffect(() => { //전체 -> 확인 완료 
         axios.get('/api/board') 
             .then(response => {
-                // 응답 데이터를 JSON 객체로 파싱하여 상태로 설정
                 const parsedData = JSON.parse(response.data);
                 setBoard(parsedData);
             })

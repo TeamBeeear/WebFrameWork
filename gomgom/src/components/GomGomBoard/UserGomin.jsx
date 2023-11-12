@@ -4,7 +4,16 @@ import TwoChoice from "../GomGomBoard/twoChoice";
 import UserGominText from "../GomGomBoard/UserGominText"; 
 import UserGominTitle from "../GomGomBoard/UserGominTitle";
 
-function UserGomin(){
+function UserGomin({
+    title,
+    content,
+    firstSelectionId,
+    firstSelectionContent,
+    firstSelectionVotePercentage,
+    secondSelectionId,
+    secondSelectionContent,
+    secondSelectionVotePercentage,
+}){
     const [selectedOption, setSelectedOption] = useState(null);
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
@@ -25,20 +34,20 @@ function UserGomin(){
                 <img src={userImg}/>
             </div>
             <div style={gominContent}>
-                <UserGominTitle gominTitle = "고양이 모래는 뭐가 좋을까요?"/>
-                <UserGominText gominContents = "취향이 참 까탈스런 고양이 인데요, 벤토나이트 쓰다가 자꾸 이불에 볼일을 봐서 화장실 모래가 문제인가 싶어 고민 올려요 ㅠㅠ 고양이 박사님들 도와주세요! "/>
+                <UserGominTitle gominTitle = {title}/>
+                <UserGominText gominContents = {content}/>
                 <div style={{display:"flex", gap:"1.5rem", justifyContent:"center"}}>
                     <TwoChoice 
-                        gominText="두부모래" 
-                        gominPercent="60%" 
-                        onClick={() => handleOptionSelect("두부모래")} 
-                        selected={selectedOption === "두부모래"} 
+                        gominText={firstSelectionContent}
+                        gominPercent={firstSelectionVotePercentage}
+                        onClick={() => handleOptionSelect(firstSelectionContent)} 
+                        selected={selectedOption === firstSelectionContent} 
                     />
                     <TwoChoice 
-                        gominText="종이모래" 
-                        gominPercent="40%" 
-                        onClick={() => handleOptionSelect("종이모래")} 
-                        selected={selectedOption === "종이모래"} 
+                        gominText={secondSelectionContent}
+                        gominPercent={secondSelectionVotePercentage}
+                        onClick={() => handleOptionSelect(secondSelectionContent)} 
+                        selected={selectedOption === secondSelectionContent} 
                     />
                 </div>
             </div>
