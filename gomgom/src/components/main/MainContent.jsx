@@ -1,7 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/bearHi.png"
 
 function MainContent(){
+
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate("/post");
+        window.scrollTo(0, 0);
+    };
+
     return(
         <div style={{backgroundColor:"#67594C",height: "448px",position:"relative"}}>
             <div style={{ display:"flex",
@@ -28,10 +37,12 @@ function MainContent(){
                         <p>곰곰에서 고민을 나눠주세요</p>
                     </div>
                 </div>
-                <button style={{borderRadius:"32px",backgroundColor:"#FFAB5D",width:"176px",marginTop:"174px",border:"none",
+                <button 
+                onClick={handleButtonClick}
+                style={{borderRadius:"32px",backgroundColor:"#FFAB5D",width:"176px",marginTop:"174px",border:"none",
                                 color:"#FFF",fontSize:"20px",fontWeight:"700",
                                 padding:"20px"}}>
-                    고민 나누기</button>
+                    고민 올리기</button>
             </div>
             <img src={bearImg} style={{width:"919px",height:"164px",position:"absolute",bottom:"0",transform: "translateX(-50%)"}} alt="" />
         </div> 
