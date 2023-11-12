@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import WorriedBox from "./WorriedBox";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function WorriedBoxContainer({
     url
@@ -66,7 +67,7 @@ function WorriedBoxContainer({
                 <div style={titleDivStyle}>
                     <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
                     <p style={firstTitleFontStyle}>오늘의 고민들</p>
-                    <p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
+                    <Link to='/board'><p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p></Link>
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
@@ -74,6 +75,8 @@ function WorriedBoxContainer({
                             index % 2 === 0 ? ( // 짝수번째 요소
                                 <WorriedBox
                                     key={item.postId}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     data={item}
                                     title={item.title}
                                     content={item.content}
@@ -93,6 +96,8 @@ function WorriedBoxContainer({
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     title={item.title}
                                     content={item.content}
                                     commentsCount={item.commentsCount}

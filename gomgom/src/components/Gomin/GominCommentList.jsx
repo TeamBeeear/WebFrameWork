@@ -2,7 +2,11 @@ import React from "react";
 import sunde from "../../img/sunde.png"; 
 import userImg from "../../img/smallUserImg.png"; 
 
-function GominCommentList(){
+function GominCommentList({
+    userId,
+    content,
+    nminutesAgo
+}){
     const idText = { 
         margin:"0", 
         color: "var(--67594-c, #67594C)",
@@ -41,16 +45,16 @@ function GominCommentList(){
                         <img src={userImg}/>
                     </div>
                     <div style={{textAlign:"start", marginLeft:"1rem"}}>
-                        <p style={idText}>작성자 아이디</p>
-                        <p style={commnetText}>한국인은 이열치열! 시원한 콩국수먹다 질리면 순대국은 어때?</p>
-                        <p style={timeText}>6시간 전</p>
+                        <p style={idText}>{userId}</p>
+                        <p style={commnetText}>{content}</p>
+                        <p style={timeText}>{nminutesAgo}</p>
                     </div>
                 </div>
                 <div style={{alignSelf:"flex-end", marginLeft:"14.06rem"}}>
                     <img src={sunde}/>
                 </div>
             </div>
-            <div style={{width:"68.25rem", height:"0.125rem", background:"#FAF9F6", paddingTop:"0.87rem"}}/>
+            <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>
         </div>
     )
 }

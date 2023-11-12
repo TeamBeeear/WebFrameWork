@@ -6,6 +6,7 @@ import SliderLeftBtn from "../../img/SliderLeftBtn.png";
 import SliderRightBtn from "../../img/SliderRightBtn.png";
 import SliderContent from "./SliderContent";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function Slider({ style }){
     const btnStyle = {
@@ -24,6 +25,11 @@ function Slider({ style }){
          {/* <img style={btnStyle} src={SliderRightBtn}></img> */}
         </div>
     );
+
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit',
+      };
 
     const settings = {
         infinite: true,
@@ -53,7 +59,7 @@ function Slider({ style }){
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item) => (
                     <div>
-                        <SliderContent title={item.title}/>
+                        <Link to={`/gomin-post?id=${item.id}`} style={linkStyle}><SliderContent title={item.title}/></Link>
                     </div>
                 ))}
                 </Slide>

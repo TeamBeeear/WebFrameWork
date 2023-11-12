@@ -1,13 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/mainLinkBear.png"
 import { useNavigate } from "react-router-dom";
 
 function LinkBlock(){
     const navigate = useNavigate();
-
-    const movetogomgomClick = () => {
+    const handleButtonClick = () => {
         navigate("/gomgom-ai");
-    }
+        window.scrollTo(0, 0);
+    };
 
     return(
         <div style={{backgroundColor:"#FAF9F6",height: "290px",display:"flex",justifyContent:"center"}}>
@@ -30,8 +31,9 @@ function LinkBlock(){
                         }}>곰곰이에게 물어봐~</p>
                     </div>
                 </div>
-                <button style={{height: "64px",width:"179px",border:"none",borderRadius: "32px",backgroundColor:"#FAF9F6"}}
-                                onClick={movetogomgomClick}>
+                <button 
+                onClick={handleButtonClick}
+                style={{height: "64px",width:"179px",border:"none",borderRadius: "32px",backgroundColor:"#FAF9F6"}}>
                     곰곰이 바로가기</button>
             </div>
         </div>
