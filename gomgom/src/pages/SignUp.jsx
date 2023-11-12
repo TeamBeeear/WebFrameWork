@@ -12,7 +12,7 @@ const SignUp = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [selectedImage, setSelectedImage] = useState(userIcon);
-    const [imageData, setImageData] = useState(null); // 사용자의 이미지 데이터
+    // const [imageData, setImageData] = useState(null); // 사용자의 이미지 데이터
     const navigate = useNavigate();
   
     const handleIdChange = (e) => {
@@ -29,11 +29,11 @@ const SignUp = () => {
         if (file) {
           const imageURL = URL.createObjectURL(file);
           setSelectedImage(imageURL); // 파일을 선택해서 받아온 url로 이미지 설정
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            setImageData(reader.result); // Base64로 인코딩된 이미지 데이터 설정
-          };
-          reader.readAsDataURL(file);
+          // const reader = new FileReader();
+          // reader.onloadend = () => {
+          //   setImageData(reader.result); // Base64로 인코딩된 이미지 데이터 설정
+          // };
+          // reader.readAsDataURL(file);
           }
       };
 
@@ -44,7 +44,7 @@ const SignUp = () => {
           const response = await axios.post('/api/signup', { 
             userId: id, 
             userPw: password,
-            userImage: imageData, // Base64로 인코딩된 이미지 데이터 서버로 전송
+            // userImage: imageData, // Base64로 인코딩된 이미지 데이터 서버로 전송
           });
       
           const securedResponse = {

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Footer from '../components/Footer';
@@ -6,6 +7,7 @@ import "../css/Post.css";
 import WorryOuterImg from "../img/worryDefaultImg1.png";
 import WorryInnerImg from "../img/worryDefaultImg2.png";
 import Select from 'react-select';
+import axios from 'axios';
 
 // 카테고리 커스텀 컴포넌트
 const CustomOption = (props) => {
@@ -26,19 +28,28 @@ const CustomOption = (props) => {
 };
 
 const options = [
-    { value: 'relationship', label: '대인관계' },
-    { value: 'love', label: '연애' },
-    { value: 'education', label: '교육' },
-    { value: 'life', label: '생활' },
-    { value: 'health', label: '건강' },
-    { value: 'pet', label: '반려동물' },
-    { value: 'other', label: '기타' }
+    { id: 1, value: 'relationship', label: '대인관계' },
+    { id: 2, value: 'love', label: '연애' },
+    { id: 3, value: 'education', label: '교육' },
+    { id: 4, value: 'life', label: '생활' },
+    { id: 5, value: 'health', label: '건강' },
+    { id: 6, value: 'pet', label: '반려동물' },
+    { id: 7, value: 'travel', label: '여행' },
+    { id: 8, value: 'shopping', label: '쇼핑' },
+    { id: 9, value: 'other', label: '기타' },
 ];
 
-
 const Post = () => {
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const userId = sessionStorage.getItem('userId');
+    const [firstSelectionContent, setFirstSelectionContent] = useState('');
+    const [secondSelectionContent, setSecondSelectionContent] = useState('');
     const [optionImage1, setOptionImage1] = useState(null);
     const [optionImage2, setOptionImage2] = useState(null);
+    const navigate = useNavigate();
+    const [selectedOption, setSelectedOption] = React.useState(null); // 카테고리 상태값
+    const boardId = selectedOption;
     
     const handleImageUpload1 = (event) => {
         const file = event.target.files[0];
@@ -56,16 +67,46 @@ const Post = () => {
         }
     };
 
-    const handlePostClick = (e) => {
+    const handlePostClick = async (e) => {
         e.preventDefault();
-        // 페이지 이동 처리
-        window.location.href = '/post-complete';
+
+        console.log('보낼 데이터:', {
+            title: title,
+            content: content,
+            userId: userId,
+            boardId: boardId,
+            firstSelectionContent: firstSelectionContent,
+            secondSelectionContent: secondSelectionContent
+        });
+
+        try {
+            // POST 요청 보내기
+            const response = await axios.post('/api/post', {
+                title: title,
+                content: content,
+                userId: userId,
+                boardId: boardId,
+                firstSelectionContent: firstSelectionContent,
+                secondSelectionContent: secondSelectionContent
+            });
+
+            // 응답 확인
+            console.log('응답 데이터:', response.data);
+
+            // 페이지 이동
+            navigate('/post-complete');
+        } catch (error) {
+            // 오류 처리
+            console.error('게시글 작성 실패:', error);
+        }
+
+
+        // 페이지 이동
+        navigate('/post-complete');
     };
 
-    const [selectedOption, setSelectedOption] = React.useState(null); // 카테고리 상태값
-
     const handleOptionChange = (value) => {
-      setSelectedOption(value);
+      setSelectedOption(value.id);
     }
 
     const titleStyle = {
@@ -122,8 +163,17 @@ const Post = () => {
             <div className="separator-line"></div>
             <form className="post-form">
                 <p className="worry-title" style={titleStyle}>고민 제목<br/></p>
-                <input type="input" className="worry-title-input" placeholder="제목을 입력하세요." />
-                <p className="option-content" style={titleStyle}>선택지 내용</p>
+                <input 
+                    type="input" 
+                    className="worry-title-input"
+                    placeholder="제목을 입력하세요." 
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <p 
+                    className="option-content"
+                    style={titleStyle}
+                    >선택지 내용
+                </p>
                 <div className="option-group">
                     <div className="option-img" style={outerImageStyle} onClick={() => document.getElementById('fileInput1').click()}>
                         {optionImage1 ? (
@@ -136,7 +186,12 @@ const Post = () => {
                         )}
                         <input type="file" id="fileInput1" style={{ display: "none" }} accept="image/*" onChange={handleImageUpload1} />
                     </div>
-                    <input type="input" className="worry-option-1" style={worryOptionStyle} placeholder="선택지 1" />
+                    <input 
+                        type="input"
+                        className="worry-option-1"
+                        style={worryOptionStyle}
+                        placeholder="선택지 1"
+                        onChange={(e) => setFirstSelectionContent(e.target.value)}/>
                 </div>
                 <div className="option-group">
                     <div className="defaultImg" style={outerImageStyle} onClick={() => document.getElementById('fileInput2').click()}>
@@ -150,17 +205,25 @@ const Post = () => {
                         )}
                         <input type="file" id="fileInput2" style={{ display: "none" }} accept="image/*" onChange={handleImageUpload2} />
                     </div>
-                    <input type="input" className="worry-option-2" style={worryOptionStyle} placeholder="선택지 2" />
+                    <input 
+                        type="input"
+                        className="worry-option-2"
+                        style={worryOptionStyle}
+                        placeholder="선택지 2"
+                        onChange={(e) => setSecondSelectionContent(e.target.value)}/>
                 </div>
                 <p className="worry-description" style={titleStyle}>설명</p>
-                <textarea className="description" placeholder="100자 내외의 짧은 설명을 적어주세요." />
+                <textarea 
+                    className="description"
+                    placeholder="100자 내외의 짧은 설명을 적어주세요."
+                    onChange={(e) => setContent(e.target.value)}/>
                 <p className="worry-category" style={titleStyle}>카테고리</p>
                 <Select options={options} components={{ Option: CustomOption }} isSearchable={false} // 검색 기능 미사용
                     inputId="customSelect" // 선택된 항목을 그룹화하기 위한 ID
-                    onChange={(selected) => handleOptionChange(selected.value)} className="categories"
+                    onChange={(selected) => handleOptionChange(selected)} className="categories"
                     placeholder="기타" 
                     defaultValue={options.find((option) => option.value === '기타')}
-                    value={selectedOption ? options.find((option) => option.value === selectedOption) : null}
+                    value={selectedOption ? options.find((option) => option.id === selectedOption.id) : null}
                 />
                 <button type="submit" className="post-worry" onClick={handlePostClick}>고민 올리기</button>
             </form>

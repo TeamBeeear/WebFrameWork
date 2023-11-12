@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import userIcon from '../img/userIcon.png';
 import { useNavigate } from 'react-router-dom';
 
-function Nav({ userImage }) {
+function Nav() {
     const [userId, setUserId] = useState(null); // 초기에 null로 설정
     const navigate = useNavigate(); // useNavigate 훅 추가
 
@@ -79,7 +79,7 @@ function Nav({ userImage }) {
           {isLoggedIn ? (
             // 로그인 상태일 때
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={userImage} style={userIconSizeStyle} alt="프로필 사진" />
+              <img src={userIcon} style={userIconSizeStyle} alt="프로필 사진" />
               {userId ? `${userId}님 환영합니다` : null}
               <button onClick={handleLogout} style={logoutStyle}>로그아웃</button>
             </div>
