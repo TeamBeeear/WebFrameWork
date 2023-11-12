@@ -117,12 +117,15 @@ function WorriedBox({
     const verticalCenterStyle={
         margin:"auto 0",
     }
-    
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit',
+      };
     return(
         <div style={{width:"30em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
-                    <Link  to={`/gomgom-board/detail?postId=${postId}&boardId=${boardId}`} ><p style={titleFontStyle}>{title}</p></Link>
+                    <Link  to={`/gomgom-board/detail?postId=${postId}&boardId=${boardId}` } style={linkStyle}><p style={titleFontStyle}>{title}</p></Link>
                     <div style={rowflexStyle}>
                         <div style={rowflexStyle}>
                             <img style={iconSizeStyle} src={chatIcon} alt="" />
