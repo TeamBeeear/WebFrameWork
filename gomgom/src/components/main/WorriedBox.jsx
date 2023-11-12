@@ -3,8 +3,11 @@ import worriedImg from "../../img/worriedImg.png"
 import chatIcon from "../../img/worriedBoxIcon1.png"
 import heartIcon from "../../img/worriedBoxIcon2.png"
 import userIcon from "../../img/userIcon.png"
+import { Link } from "react-router-dom";
 
 function WorriedBox({
+    postId,
+    boardId,
     firstSelectionContent,
     secondSelectionContent,
     title,
@@ -114,12 +117,15 @@ function WorriedBox({
     const verticalCenterStyle={
         margin:"auto 0",
     }
-    
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit',
+      };
     return(
         <div style={{width:"30em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
-                    <p style={titleFontStyle}>{title}</p>
+                    <Link  to={`/gomgom-board/detail?postId=${postId}&boardId=${boardId}` } style={linkStyle}><p style={titleFontStyle}>{title}</p></Link>
                     <div style={rowflexStyle}>
                         <div style={rowflexStyle}>
                             <img style={iconSizeStyle} src={chatIcon} alt="" />
