@@ -29,9 +29,27 @@ const Post = () => {
     const userId = sessionStorage.getItem("userId");
     const [firstSelectionContent, setFirstSelectionContent] = useState("");
     const [secondSelectionContent, setSecondSelectionContent] = useState("");
+    const [optionImage1, setOptionImage1] = useState(null);
+    const [optionImage2, setOptionImage2] = useState(null);
     const navigate = useNavigate();
     const [selectedOption, setSelectedOption] = React.useState(null); // 카테고리 상태값
     const boardId = selectedOption;
+    
+    const handleImageUpload1 = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const imageURL = URL.createObjectURL(file);
+            setOptionImage1(imageURL);
+        }
+    };
+    
+    const handleImageUpload2 = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const imageURL2 = URL.createObjectURL(file);
+            setOptionImage2(imageURL2);
+        }
+    };
 
     const handlePostClick = async (e) => {
         e.preventDefault();
@@ -60,34 +78,51 @@ const Post = () => {
         } catch (error) {
             console.error("게시글 작성 실패:", error); // 오류 처리
         }
+        navigate("/post-complete");
     };
 
     const handleOptionChange = (value) => {
       setSelectedOption(value.id);
     }
 
+    const outerImageStyle = {
+        width: "80px", 
+        height: "80px",
+        position: "relative",
+        marginBottom: "17px",
+        marginRight: "1rem",
+        borderRadius: "6px",
+        marginTop: "2px"
+      };
+
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column"}}>
             <Header />
             <Nav />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                <WorryTitle titleText={"고민 제목"} />
-                <WorryTitleInput setTitle={setTitle} />
-                <WorryTitle titleText={"선택지"} />
-                <WorryOption
-                    id={1}
-                    setSelectionContent={setFirstSelectionContent}
-                    placeholder="선택지 1"
-                />
-                <WorryOption
-                    id={2}
-                    setSelectionContent={setSecondSelectionContent}
-                    placeholder="선택지 2"
-                />
-                <WorryTitle titleText={"설명"} />
-                <WorryDescription setContent={setContent} />
-                <WorryTitle titleText={"카테고리"} />
-                <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
+            <WorryTitle titleText={"고민 제목"} />
+            <WorryTitleInput setTitle={setTitle} />
+            <WorryTitle titleText={"선택지"} />
+            <WorryOption
+                id={1}
+                outerImageStyle={outerImageStyle}
+                handleImageUpload={handleImageUpload1}
+                optionImage={optionImage1}
+                setSelectionContent={setFirstSelectionContent}
+                placeholder="선택지 1"
+            />
+            <WorryOption
+                id={2}
+                outerImageStyle={outerImageStyle}
+                handleImageUpload={handleImageUpload2}
+                optionImage={optionImage2}
+                setSelectionContent={setSecondSelectionContent}
+                placeholder="선택지 2"
+            />
+            <WorryTitle titleText={"설명"} />
+            <WorryDescription setContent={setContent} />
+            <WorryTitle titleText={"카테고리"} />
+            <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
             </div>
             <PostSubmitButton onClick={handlePostClick} buttonText="고민 올리기" />
             <Footer />
