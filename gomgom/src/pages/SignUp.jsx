@@ -57,7 +57,7 @@ const SignUp = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div>
       <Header />
       <Nav />
       <PageTitle text="회원가입" />

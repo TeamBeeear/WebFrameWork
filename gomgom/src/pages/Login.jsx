@@ -81,30 +81,30 @@ const Login = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <Header />
-      <Nav />
-      <GomGomImage />
-      <PageTitle text="고민하지말고," style={pageTitleStyle} />
-      <PageTitle text="곰곰에서 고민을 나누어요" style={pageTitle2Style} />
-      <form className="login-form">
-      <InputField
-        type="text"
-        placeholder="아이디를 입력하세요."
-        onChange={handleIdChange}
-        value={id}
-      />
-      <InputField
-        type="password"
-        placeholder="비밀번호를 입력하세요."
-        onChange={handlePasswordChange}
-        value={password}
-      />
-        {error && <p style={errorStyle}>{error}</p>}
-        <SubmitButton onClick={handleLoginClick} isDisabled={!id || !password} buttonText={"로그인"} />
-      </form>
-      <SignupLink handleSignupClick={handleSignupClick} />
-      <Footer />
+      <div>
+        <Header />
+        <Nav />
+        <GomGomImage />
+        <PageTitle text="고민하지말고," style={pageTitleStyle} />
+        <PageTitle text="곰곰에서 고민을 나누어요" style={pageTitle2Style} />
+        <form className="login-form">
+        <InputField
+          type="text"
+          placeholder="아이디를 입력하세요."
+          onChange={handleIdChange}
+          value={id}
+        />
+        <InputField
+          type="password"
+          placeholder="비밀번호를 입력하세요."
+          onChange={handlePasswordChange}
+          value={password}
+        />
+          {error && <p style={errorStyle}>{error}</p>}
+          <SubmitButton onClick={handleLoginClick} isDisabled={!id || !password} buttonText={"로그인"} />
+        </form>
+        <SignupLink handleSignupClick={handleSignupClick} />
+        <Footer />
     </div>
   );
 }
