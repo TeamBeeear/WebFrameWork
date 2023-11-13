@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import GominCategory from "../GomGomBoard/GominCategory";
 import axios from 'axios';
 
-function TodayGomin(){
+function TodayGomin({updateUrl}){
     const [board, setBoard] = useState(''); 
     const text = { 
         margin:"0", 
@@ -28,8 +28,14 @@ function TodayGomin(){
     };
     const handleClick = (category) => {
         const boardId = categoryToBoardId[category];
-        console.log(`Button clicked. category: ${category}, boardId: ${boardId}`); 
-        axios.get(`/api/board/${boardId}`) 
+        const newUrl = `/api/board/${boardId}`;
+
+        console.log(`Button clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
+
+        // Call the parent's updateUrl function to update the URL
+        updateUrl(newUrl);
+
+        axios.get(newUrl)
             .then(response => {
                 console.log(response.data);
                 setBoard(response.data);

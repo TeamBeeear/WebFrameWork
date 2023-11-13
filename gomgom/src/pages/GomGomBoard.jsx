@@ -14,6 +14,12 @@ function GomGomBoard(){
     const [board, setBoard] = useState(''); 
     const { boardId } = useParams();
 
+    const [gominUrl, setGominUrl] = useState('/api/posts');
+
+    const updateGominUrl = (newUrl) => {
+        setGominUrl(newUrl);
+    };
+
     // useEffect(() => { //특정 -> 확인 완료
     //     axios.get(`/board/${boardId}`) 
     //         .then(response => {
@@ -37,10 +43,10 @@ function GomGomBoard(){
             <Header />
             <Nav />
             <GominSlider/>
-            <TodayGomin/>
+            <TodayGomin updateUrl={updateGominUrl} />
             {/* <GominBoxContainer/> */}
             <div style={{display: 'flex', justifyContent: 'center', marginTop:'5%'}}>
-                <WorriedBoxs url = 'api/posts'/>
+                <WorriedBoxs url={gominUrl} />
             </div>
             <Footer/>
         </div>
