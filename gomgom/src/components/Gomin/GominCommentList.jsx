@@ -51,7 +51,7 @@ function GominCommentList({
                     </div>
                 </div>
                 <div style={{alignSelf:"flex-end", marginLeft:"14.06rem"}}>
-                    <img src={sunde}/>
+                    {/* <img src={sunde}/> */}
                 </div>
             </div>
             <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>

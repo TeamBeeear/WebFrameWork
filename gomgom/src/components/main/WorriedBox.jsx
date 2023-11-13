@@ -34,7 +34,7 @@ function WorriedBox({
         boxShadow: "0px 2px 4px 0px rgba(210, 205, 189, 0.50)",
         padding: "24px 20px 15px 20px",
         height:"fit-content",
-        width:"30em"
+        width:"27em"
     }
     const rowflexStyle = {
         display:"flex",
@@ -78,13 +78,13 @@ function WorriedBox({
         marginRight:"10px",
     }
     const textDivStyle={
-        width:"7em",
+        width:"10em",
         height:"3.5em",
         borderRadius:"8px",
         border:"2px solid #E9E5DA",
         backgroundColor:"#FAF9F6",
         color:"67594C",
-        fontSize: "20px",
+        fontSize: "16px",
         fontWeight: "700",
         lineHeight: "160%",
         textAlign:"center",
@@ -140,7 +140,7 @@ function WorriedBox({
                 <div style={rowSpaceFlexStyle} >
                     {data.map((item, innerIndex) => (
                         <div key={innerIndex} style={rowflexStyle}>
-                            <img src={item.imgSrc} style={imgSizeStyle} alt="" />
+                            {/* <img src={item.imgSrc} style={imgSizeStyle} alt="" /> */}
                             <div style={textDivStyle}>
                                 <p>{item.question}</p>
                             </div>

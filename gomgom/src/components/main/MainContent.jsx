@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import bearImg from "../../img/bearHi.png"
 
 function MainContent(){
-
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
