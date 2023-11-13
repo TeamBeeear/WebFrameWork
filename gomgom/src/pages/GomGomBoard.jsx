@@ -7,6 +7,7 @@ import GominSlider from "../components/GomGomBoard/GominSlider";
 import Footer from "../components/Footer";
 import TodayGomin from "../components/GomGomBoard/TodayGomin"; 
 import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer"; 
+import WorriedBoxContainer from '../components/main/WorriedBoxContainer';
 
 function GomGomBoard(){
     const [board, setBoard] = useState(''); 
@@ -21,14 +22,14 @@ function GomGomBoard(){
     //         .catch(error => console.log(error));
     //   }, [boardId]);
 
-    useEffect(() => { //전체 -> 확인 완료 
-        axios.get('/api/board') 
-            .then(response => {
-                const parsedData = JSON.parse(response.data);
-                setBoard(parsedData);
-            })
-            .catch(error => console.log(error))
-    }, []);
+    // useEffect(() => { //전체 -> 확인 완료 
+    //     axios.get('/api/board') 
+    //         .then(response => {
+    //             const parsedData = JSON.parse(response.data);
+    //             setBoard(parsedData);
+    //         })
+    //         .catch(error => console.log(error))
+    // }, []);
 
     return (
         <div>
@@ -36,7 +37,8 @@ function GomGomBoard(){
             <Nav />
             <GominSlider/>
             <TodayGomin/>
-            <GominBoxContainer/>
+            {/* <GominBoxContainer/> */}
+            <WorriedBoxContainer url = 'api/posts'/>
             <Footer/>
         </div>
     );
