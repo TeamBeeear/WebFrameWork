@@ -4,7 +4,6 @@ import axios from 'axios';
 
 function TodayGomin(){
     const [board, setBoard] = useState(''); 
-
     const text = { 
         margin:"0", 
         color: "var(--67594-c, #67594C)",
@@ -15,7 +14,6 @@ function TodayGomin(){
         lineHeight: "100%", 
         marginBottom:"2.19rem"
     }
-
     const categoryToBoardId = {
         "전체": 0,
         "대인관계": 1,
@@ -28,7 +26,6 @@ function TodayGomin(){
         "쇼핑": 8,
         "기타": 9
     };
-
     const handleClick = (category) => {
         const boardId = categoryToBoardId[category];
         console.log(`Button clicked. category: ${category}, boardId: ${boardId}`); 

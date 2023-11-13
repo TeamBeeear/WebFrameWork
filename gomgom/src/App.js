@@ -38,20 +38,14 @@ function App(){
             <Route path="/" element={<Main />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/post" element={<Post />} />
-            <Route path="/post-complete" element={<PostComplete />} />
-            <Route path="/gomin-post" element={<GominPost />} />
-            <Route path="/board" element={<GomGomBoard />} />
-            <Route path="/gomgom-board/detail" element={<GomGomBoardDetail />} />
-            <Route path="/gomgom-ai" element={<GomGomAI />} />
-            <Route path="/my-page" element={<MyPage />} />
-            <Route path="/heart" element={<UserGominTitle />} />
-            {/* 리디렉션 처리는 페이지 통신 처리 후 나중에 설정 */}
-            {/* <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} />
+            <Route path="/post" element={<ProtectedRoute><Post /></ProtectedRoute>} />
             <Route path="/post-complete" element={<ProtectedRoute><PostComplete /></ProtectedRoute>} />
             <Route path="/gomin-post" element={<ProtectedRoute><GominPost /></ProtectedRoute>} />
             <Route path="/board" element={<ProtectedRoute><GomGomBoard /></ProtectedRoute>} />
-            <Route path="/gomgom-board/detail" element={<ProtectedRoute><GomGomBoardDetail /></ProtectedRoute>} /> */}
+            <Route path="/gomgom-board/detail" element={<ProtectedRoute><GomGomBoardDetail /></ProtectedRoute>} />
+            <Route path="/gomgom-ai" element={<ProtectedRoute><GomGomAI /></ProtectedRoute>} />
+            <Route path="/my-page" element={<ProtectedRoute><MyPage /></ProtectedRoute>} />
+            <Route path="/heart" element={<ProtectedRoute><UserGominTitle /></ProtectedRoute>} />
           </Routes>
       </BrowserRouter>
     </div>

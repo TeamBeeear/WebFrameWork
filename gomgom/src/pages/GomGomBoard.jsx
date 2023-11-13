@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import TodayGomin from "../components/GomGomBoard/TodayGomin"; 
 import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer"; 
 import WorriedBoxContainer from '../components/main/WorriedBoxContainer';
+import WorriedBoxs from '../components/main/WorriedBoxs';
 
 function GomGomBoard(){
     const [board, setBoard] = useState(''); 
@@ -38,7 +39,9 @@ function GomGomBoard(){
             <GominSlider/>
             <TodayGomin/>
             {/* <GominBoxContainer/> */}
-            <WorriedBoxContainer url = 'api/posts'/>
+            <div style={{display: 'flex', justifyContent: 'center', marginTop:'5%'}}>
+                <WorriedBoxs url = 'api/posts'/>
+            </div>
             <Footer/>
         </div>
     );
