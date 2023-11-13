@@ -11,21 +11,22 @@ function GominBoxContainer(){
         display:"flex",
         flexDirection:"column",
     }
-
     return (
-        <div style={{marginRight:"8%",marginLeft:"8%", marginTop:"3%", marginBottom:"8%"}}>
-            <div style={separateDivStyle}>
-                    <div style={colDivStyle}>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                    </div>
-                    <div style={colDivStyle}>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                        <WorriedBox/>
-                    </div>
+        <div style={{display:'flex', justifyContent:'center'}}>
+            <div style={{marginRight:"8%",marginLeft:"8%", marginTop:"3%", marginBottom:"8%", width:'1024px'}}>
+                <div style={separateDivStyle}>
+                        <div style={colDivStyle}>
+                            <WorriedBox/>
+                            <WorriedBox/>
+                            <WorriedBox/>
+                        </div>
+                        <div style={colDivStyle}>
+                            <WorriedBox/>
+                            <WorriedBox/>
+                            <WorriedBox/>
+                        </div>
                 </div>
+            </div>
         </div>
     );
 }
