@@ -15,7 +15,7 @@ const WorryTitleInput = ({ setTitle }) => {
         fontWeight: "700",
         lineHeight: "24px",
         wordWrap: "break-word",
-        marginLeft: "23rem"
+        marginLeft: "4rem"
     } 
     
   return (

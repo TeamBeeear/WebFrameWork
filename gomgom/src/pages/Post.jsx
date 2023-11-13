@@ -96,9 +96,10 @@ const Post = () => {
       };
 
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column"}}>
             <Header />
             <Nav />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
             <WorryTitle titleText={"고민 제목"} />
             <WorryTitleInput setTitle={setTitle} />
             <WorryTitle titleText={"선택지"} />
@@ -122,6 +123,7 @@ const Post = () => {
             <WorryDescription setContent={setContent} />
             <WorryTitle titleText={"카테고리"} />
             <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
+            </div>
             <PostSubmitButton onClick={handlePostClick} buttonText="고민 올리기" />
             <Footer />
         </div>

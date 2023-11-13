@@ -18,7 +18,7 @@ const WorryDescription = ({ setContent }) => {
         fontWeight: "400",
         lineHeight: "25.60px",
         wordWrap: "break-word",
-        marginLeft: "23rem"
+        marginLeft: "4rem"
     };
     
   return (

@@ -33,7 +33,7 @@ const WorryOption = ({ id, outerImageStyle, handleImageUpload, optionImage,
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '23rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '4rem' }}>
           <div 
             className="option-img"
             style={outerImageStyle}
