@@ -13,13 +13,14 @@ import WorriedBoxs from '../components/main/WorriedBoxs';
 function GomGomBoard(){
     const [board, setBoard] = useState(''); 
     const { boardId } = useParams();
-
     const [gominUrl, setGominUrl] = useState('/api/posts');
-
     const updateGominUrl = (newUrl) => {
         setGominUrl(newUrl);
     };
-
+    useEffect(() => {
+        // gominUrl이 변경될 때마다 실행
+        console.log('gominUrl updated:', gominUrl);
+    }, [gominUrl]);
     // useEffect(() => { //특정 -> 확인 완료
     //     axios.get(`/board/${boardId}`) 
     //         .then(response => {
