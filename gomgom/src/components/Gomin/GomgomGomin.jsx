@@ -52,7 +52,7 @@ function GomgomGomin({
     } 
     const gomimImg = { 
         marginLeft: "1.75rem", 
-        marginTop:"6rem", 
+        // marginTop:"6rem", 
         alignSelf:"flex-end"
     }
 
