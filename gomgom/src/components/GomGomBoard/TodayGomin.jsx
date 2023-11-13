@@ -35,12 +35,12 @@ function TodayGomin({updateUrl}){
         // Call the parent's updateUrl function to update the URL
         updateUrl(newUrl);
 
-        axios.get(newUrl)
-            .then(response => {
-                console.log(response.data);
-                setBoard(response.data);
-            })
-            .catch(error => console.log(error));
+        // axios.get(newUrl)
+        //     .then(response => {
+        //         console.log(response.data);
+        //         setBoard(response.data);
+        //     })
+        //     .catch(error => console.log(error));
     };
 
     return (

@@ -18,6 +18,7 @@ function GomGomBoard(){
 
     const updateGominUrl = (newUrl) => {
         setGominUrl(newUrl);
+        console.log(newUrl);
     };
 
     // useEffect(() => { //특정 -> 확인 완료
