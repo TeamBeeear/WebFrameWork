@@ -71,7 +71,7 @@ function WorriedBoxContainer({
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
-                        {Array.isArray(data) && data.map((item, index) => (
+                        {Array.isArray(data) && data.reverse().map((item, index) => (
                             index % 2 === 0 ? ( // 짝수번째 요소
                                 <WorriedBox
                                     key={item.postId}
@@ -91,7 +91,7 @@ function WorriedBoxContainer({
                         ))}
                     </div>
                     <div style={colRightDivStyle}>
-                        {Array.isArray(data) && data.map((item, index) => (
+                        {Array.isArray(data) && data.reverse().map((item, index) => (
                             index % 2 === 1 ? ( // 홀수번째 요소
                                 <WorriedBox
                                     key={item.postId}
