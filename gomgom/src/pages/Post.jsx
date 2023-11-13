@@ -31,7 +31,7 @@ const Post = () => {
     const [secondSelectionContent, setSecondSelectionContent] = useState("");
     const navigate = useNavigate();
     const [selectedOption, setSelectedOption] = React.useState(null); // 카테고리 상태값
-    const boardId = selectedOption;
+    const boardId = selectedOption ? selectedOption.id : null;
 
     const handlePostClick = async (e) => {
         e.preventDefault();
@@ -63,31 +63,31 @@ const Post = () => {
     };
 
     const handleOptionChange = (value) => {
-      setSelectedOption(value.id);
+        setSelectedOption(value);
     }
 
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column"}}>
             <Header />
             <Nav />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                <WorryTitle titleText={"고민 제목"} />
-                <WorryTitleInput setTitle={setTitle} />
-                <WorryTitle titleText={"선택지"} />
-                <WorryOption
-                    id={1}
-                    setSelectionContent={setFirstSelectionContent}
-                    placeholder="선택지 1"
-                />
-                <WorryOption
-                    id={2}
-                    setSelectionContent={setSecondSelectionContent}
-                    placeholder="선택지 2"
-                />
-                <WorryTitle titleText={"설명"} />
-                <WorryDescription setContent={setContent} />
-                <WorryTitle titleText={"카테고리"} />
-                <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
+            <WorryTitle titleText={"고민 제목"} />
+            <WorryTitleInput setTitle={setTitle} />
+            <WorryTitle titleText={"선택지"} />
+            <WorryOption
+                id={1}
+                setSelectionContent={setFirstSelectionContent}
+                placeholder="선택지 1"
+            />
+            <WorryOption
+                id={2}
+                setSelectionContent={setSecondSelectionContent}
+                placeholder="선택지 2"
+            />
+            <WorryTitle titleText={"설명"} />
+            <WorryDescription setContent={setContent} />
+            <WorryTitle titleText={"카테고리"} />
+            <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
             </div>
             <PostSubmitButton onClick={handlePostClick} buttonText="고민 올리기" />
             <Footer />
