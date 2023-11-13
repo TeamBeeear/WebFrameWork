@@ -48,7 +48,7 @@ function UserGominTitle({ gominTitle }) {
         textAlign: "start",
         marginLeft: "3.7%",
         marginTop: "5%",
-        width: "35%",
+        width: "fit-content",
         height: "1.9375rem",
         flexShrink: "0",
         background: "var(--e-9-e-5-da, #E9E5DA)"
@@ -72,21 +72,25 @@ function UserGominTitle({ gominTitle }) {
         fontWeight: "500",
         lineHeight: "160%",
         margin: "0",
-        marginLeft: "43%",
+        // marginLeft: "60%",
         marginTop: "5%"
     };
 
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent:"space-between"}}>
             <div style={subBox}>
                 <p style={text}>{gominTitle}</p>
             </div>
+
+            <div style={{marginRight:"5%", display:"-webkit-inline-box", marginTop:"5%"}}>
             <p style={hearttext}>공감돼요!</p>
             <img
                 style={{ marginLeft: "0.63rem", marginTop: "4%", cursor: "pointer" }}
                 src={heartClicked ? HeartAfter : HeartBefore}
                 onClick={handleHeartClick}
             />
+            </div>
+
         </div>
     );
 }
