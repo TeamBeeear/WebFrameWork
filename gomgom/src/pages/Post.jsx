@@ -12,15 +12,15 @@ import Footer from "../components/Footer";
 import axios from "axios";
 
 const options = [
-    { id: 1, value: "relationship", label: "대인관계" },
-    { id: 2, value: "love", label: "연애" },
-    { id: 3, value: "education", label: "교육" },
-    { id: 4, value: "life", label: "생활" },
-    { id: 5, value: "health", label: "건강" },
-    { id: 6, value: "pet", label: "반려동물" },
-    { id: 7, value: "travel", label: "여행" },
-    { id: 8, value: "shopping", label: "쇼핑" },
-    { id: 9, value: "other", label: "기타" },
+    { value: "relationship", label: "대인관계" },
+    { value: "love", label: "연애" },
+    { value: "education", label: "교육" },
+    { value: "life", label: "생활" },
+    { value: "health", label: "건강" },
+    { value: "pet", label: "반려동물" },
+    { value: "travel", label: "여행" },
+    { value: "shopping", label: "쇼핑" },
+    { value: "other", label: "기타" },
 ];
 
 const Post = () => {
@@ -62,9 +62,10 @@ const Post = () => {
         }
     };
 
-    const handleOptionChange = (value) => {
-        setSelectedOption(value);
-    }
+    const handleOptionChange = (selectedOption) => {
+        setSelectedOption({ ...selectedOption,
+                            id: options.findIndex(option => option.value === selectedOption.value) + 1 });
+    };
 
     return (
         <div style={{ display: "flex", flexDirection: "column"}}>
@@ -87,7 +88,10 @@ const Post = () => {
             <WorryTitle titleText={"설명"} />
             <WorryDescription setContent={setContent} />
             <WorryTitle titleText={"카테고리"} />
-            <WorryCategory options={options} handleOptionChange={handleOptionChange} selectedOption={selectedOption} />
+            <WorryCategory 
+                options={options} 
+                handleOptionChange={handleOptionChange}
+                selectedOption={selectedOption} />
             </div>
             <PostSubmitButton onClick={handlePostClick} buttonText="고민 올리기" />
             <Footer />
