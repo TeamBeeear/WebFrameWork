@@ -26,29 +26,37 @@ const Login = () => {
 
   const handleLoginClick = (e) => {
     e.preventDefault();
-
-    // 서버에 로그인 요청을 보내고 응답을 처리
+  
+    // 서버에 로그인 요청을 보내고 응답 처리
     axios.post("/api/login", { userId: id, userPw: password })
       .then((response) => {
         if (response.status === 200) {
           const userId = response.data.userId; // userId 추출
-
-          // userId를 세션 스토리지에 저장
-          sessionStorage.setItem("userId", userId);
-
-          // 로그인 상태로 처리 후 메인 페이지로 이동
-          window.location.href = "/";
+          sessionStorage.setItem("userId", userId); // userId를 세션 스토리지에 저장
+          navigate("/"); // 로그인 상태로 처리 후 메인 페이지로 이동
         }
       })
       .catch((error) => {
-        setError("아이디나 비밀번호를 확인하세요."); // 에러 메시지 설정
+        if (error.response) {
+          // 에러 메시지 설정
+          if (error.response.status === 404) {
+            setError("아이디가 존재하지 않습니다.");
+          } else if (error.response.status === 401) {
+            setError("비밀번호가 일치하지 않습니다.");
+          } else {
+            setError("아이디나 비밀번호가 일치하지 않습니다.");
+          }
+        } else {
+          setError("로그인 요청 중 오류가 발생했습니다.");
+        }
         console.error("로그인 요청 중 오류 발생:", error);
       });
   };
-
+  
   const handleSignupClick = () => {
     navigate("/signup");
   };
+  
 
   const pageTitleStyle = {
     color: "#67594C",
@@ -76,7 +84,7 @@ const Login = () => {
     fontFamily: "Pretendard, sans-serif",
     fontWeight: 500,
     lineHeight: "28.80px",
-    marginRight: "20rem", 
+    marginRight: "22rem", 
     wordWrap: "break-word"
   };
 
