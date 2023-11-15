@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function Nav() {
     const [userId, setUserId] = useState(null); // 초기에 null로 설정
+    // 메인 페이지 컴포넌트에서 세션 스토리지에서 이미지를 가져와 사용
+    const profileImage = sessionStorage.getItem("profileImage");
     const navigate = useNavigate(); // useNavigate 훅 추가
 
     useEffect(() => {
@@ -43,6 +45,7 @@ function Nav() {
       margin: "auto 0",
       marginLeft: "20px",
       marginRight: "10px",
+      borderRadius: "50%"
     };
 
     const linkStyle = {
@@ -80,7 +83,8 @@ function Nav() {
           {isLoggedIn ? (
             // 로그인 상태일 때
             <div style={{ display: "flex", alignItems: "center" }}>
-              <img src={userIcon} style={userIconSizeStyle} alt="프로필 사진" />
+              {/* 세션 스토리지에 이미지가 있을 경우 해당 이미지를 보여줌 */}
+              <img src={profileImage || userIcon} style={userIconSizeStyle} alt="프로필 사진" />
               {userId ? `${userId}님 환영합니다` : null}
               <button onClick={handleLogout} style={logoutStyle}>로그아웃</button>
             </div>

@@ -30,8 +30,13 @@ const SignUp = () => {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const imageURL = URL.createObjectURL(file);
-      setSelectedImage(imageURL);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        setSelectedImage(base64String); // 이미지를 화면에 표시
+        sessionStorage.setItem("profileImage", base64String); // 세션 스토리지에 이미지 URL 저장
+      };
+      reader.readAsDataURL(file);
     }
   };
 
