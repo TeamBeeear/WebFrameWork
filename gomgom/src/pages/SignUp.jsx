@@ -16,6 +16,8 @@ import axios from "axios";
 const SignUp = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [idError, setIdError] = useState('');
+  // const [passwordError, setPasswordError] = useState('');
   const [selectedImage, setSelectedImage] = useState(userIcon);
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ const SignUp = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result;
-        setSelectedImage(base64String); // 이미지를 화면에 표시
+        setSelectedImage(base64String); // 이미지를 화면에 표시하기 위해 이미지를 Base64 형태로 인코딩
         sessionStorage.setItem("profileImage", base64String); // 세션 스토리지에 이미지 URL 저장
       };
       reader.readAsDataURL(file);
@@ -42,23 +44,38 @@ const SignUp = () => {
 
   const handleSignupClick = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post("/api/signup", {
         userId: id,
         userPw: password,
       });
-
+  
       const securedResponse = {
         userId: response.data.userId,
         userPw: "****",
       };
-
+  
       console.log("회원가입 응답:", securedResponse);
       navigate("/login");
     } catch (error) {
-      console.error("회원가입 실패:", error);
+      // 서버에서 반환한 에러에 따라 다른 메시지 설정
+      if (error.response.status === 409) {
+        setIdError("이미 존재하는 아이디입니다.");
+      } else {
+        console.error("회원가입 실패:", error);
+      }
     }
+  };
+
+  const errorStyle = {
+    color: "#67594C",
+    fontSize: "18px",
+    fontFamily: "Pretendard, sans-serif",
+    fontWeight: 500,
+    lineHeight: "28.80px",
+    marginRight: "22rem", 
+    wordWrap: "break-word"
   };
 
   return (
@@ -74,6 +91,7 @@ const SignUp = () => {
         onChange={handleIdChange}
         value={id}
       />
+      {idError && <p style={errorStyle}>{idError}</p>}
       <InputLabel text="비밀번호" />
       <InputField
         type="password"
