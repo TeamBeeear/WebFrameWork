@@ -12,7 +12,6 @@ function GominBox({
         height:'230px'
     }
 
-    
     return(
         <div>
             <div style={{marginTop:"4.25rem",  marginBottom:"7.5rem"}}>

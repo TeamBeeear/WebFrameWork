@@ -74,7 +74,6 @@ function GomgomGomin({
                         </p>
                     </div>
                     <div style={gomimImg}>
-                        {/* <img src={Guksu}/> */}
                         <img src={imagePath} style={imgSize}/>    
                     </div>
                 </div>

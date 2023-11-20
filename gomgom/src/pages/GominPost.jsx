@@ -17,8 +17,6 @@ import img6 from "../img/gominImg/GominImg6.jpeg";
 import img7 from "../img/gominImg/GominImg7.jpeg";
 import img8 from "../img/gominImg/GominImg8.jpeg";
 
-// 곰곰이 게시글
-
 function GominPost(){
     const location = useLocation();
     const id = new URLSearchParams(location.search).get("id");
@@ -46,11 +44,6 @@ function GominPost(){
         setImages(imagePaths);
     }, []);
 
-    const imgSize = { 
-        width:'177px', 
-        height:'230px'
-    }
-
     return (
         <div>
             <Header />
@@ -60,7 +53,6 @@ function GominPost(){
               title = {data.title}
               content = {data.content}
               imagePath={images[id - 1]}
-              style={imgSize}
             />
             {Array.isArray(commentData) && commentData.map((item) => (
                     <GominCommentList
