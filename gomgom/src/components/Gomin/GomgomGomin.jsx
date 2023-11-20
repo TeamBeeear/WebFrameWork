@@ -4,7 +4,8 @@ import Guksu from "../../img/guksu.png";
 
 function GomgomGomin({
     title,
-    content
+    content, 
+    imagePath
 }){
     const profile = {
         width:"7.5rem", 
@@ -52,8 +53,11 @@ function GomgomGomin({
     } 
     const gomimImg = { 
         marginLeft: "1.75rem", 
-        // marginTop:"6rem", 
         alignSelf:"flex-end"
+    }
+    const imgSize = { 
+        width:'177px', 
+        height:'230px'
     }
 
     return(
@@ -67,18 +71,11 @@ function GomgomGomin({
                         </div>
                         <p style={contentText}>
                             {content}
-                        {/* 요즘 날씨가 너무너무 덥죠.<br/>
-                        이렇게 더운 날이면 기력도 없고, 입맛도 없어지는것 같아요.<br/>
-                        그래도 잘 챙겨먹어야 힘이 나는거 아시죠?!<br/><br/>
-
-                        저는 요즘 시원~한 콩국수에 빠졌어요.<br/>
-                        얼음동동 띄운 콩국수 한그릇이면 속까지 시원해지더라구요 ㅎㅎ<br/><br/>
-
-                        여러분은 어떤 저녁 메뉴를 추천하시나요?<br/> */}
                         </p>
                     </div>
                     <div style={gomimImg}>
-                        <img src={Guksu}/>
+                        {/* <img src={Guksu}/> */}
+                        <img src={imagePath} style={imgSize}/>    
                     </div>
                 </div>
            </div>

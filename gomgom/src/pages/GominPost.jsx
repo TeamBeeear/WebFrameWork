@@ -7,30 +7,50 @@ import GominCommentList from '../components/Gomin/GominCommentList';
 import GominStyle from "../components/Gomin/GominStyle";
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import guksuImg from "../img/gominImg/guksu.png";
+import img1 from "../img/gominImg/GominImg1.jpeg";
+import img2 from "../img/gominImg/GominImg2.jpeg";
+import img3 from "../img/gominImg/GominImg3.jpeg";
+import img4 from "../img/gominImg/GominImg4.jpeg";
+import img5 from "../img/gominImg/GominImg5.jpeg";
+import img6 from "../img/gominImg/GominImg6.jpeg";
+import img7 from "../img/gominImg/GominImg7.jpeg";
+import img8 from "../img/gominImg/GominImg8.jpeg";
 
 // 곰곰이 게시글
 
 function GominPost(){
     const location = useLocation();
     const id = new URLSearchParams(location.search).get("id");
-
     const [data, setData] = useState('')
     const [commentData, setCommentData] = useState('')
-
+    const [images, setImages] = useState([]);
+    
     useEffect(() => {
         axios.get('http://localhost:8080/api/gomgom-post/'+id)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
+
     useEffect(() => {
         axios.get('http://localhost:8080/api/comment/'+id)
         .then(response => {
-            // response.data에 서버에서 받은 데이터가 들어 있음
             console.log('Comment Data:', response.data);
             setCommentData(response.data);
         })
             .catch(error => console.log(error))
     }, []);
+
+    useEffect(() => {
+        const imagePaths = [guksuImg, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2];
+        setImages(imagePaths);
+    }, []);
+
+    const imgSize = { 
+        width:'177px', 
+        height:'230px'
+    }
+
     return (
         <div>
             <Header />
@@ -39,6 +59,8 @@ function GominPost(){
             <GominBox 
               title = {data.title}
               content = {data.content}
+              imagePath={images[id - 1]}
+              style={imgSize}
             />
             {Array.isArray(commentData) && commentData.map((item) => (
                     <GominCommentList
