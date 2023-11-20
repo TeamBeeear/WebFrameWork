@@ -1,6 +1,5 @@
 import React from "react";
-import GomgomImg from "../../img/mainLinkBear.png"; 
-import Guksu from "../../img/guksu.png";
+import GomgomImg from "../../img/mainLinkBear.png";
 
 function GomgomGomin({
     title,

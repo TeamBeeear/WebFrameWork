@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import GominSlider from "../components/GomGomBoard/GominSlider";

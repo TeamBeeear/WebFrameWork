@@ -63,7 +63,6 @@ function Nav() {
         color: "rgba(103, 88, 76, 0.50)",
         border: "none",
         fontSize: "14",
-        fontWeight: "100%",
         fontFamily: "Pretendard",
         fontWeight: "700",
         wordWrap: "break-word",

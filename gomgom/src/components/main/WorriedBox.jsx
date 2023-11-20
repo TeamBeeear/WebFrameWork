@@ -46,10 +46,6 @@ function WorriedBox({
         justifyContent:"space-between",
         alignItems:"center"
     };
-    const colFlexStyle = {
-        display:"flex",
-        flexDirection:"cloumn",
-    };
     const titleFontStyle={
         color: "#67594C",
         fontSize: "20px",
@@ -110,13 +106,6 @@ function WorriedBox({
         marginRight:"8px",
         marginLeft:"10px"
     };
-    const imgSizeStyle={
-        width:"4.5em",
-        height:"4.5em"
-    };
-    const verticalCenterStyle={
-        margin:"auto 0",
-    };
     const linkStyle = {
         textDecoration: 'none',
         color: 'inherit',
@@ -150,7 +139,7 @@ function WorriedBox({
             </div>
             <div style={rowSpaceFlexStyle}>
                 <div style={rowflexStyle}>
-                    <img src={userIcon} style={userIconSizeStyle} alt="" />
+                    <img src={userIcon} style={userIconSizeStyle} alt="사용자 이미지" />
                     <p style={userNameFontStyle}>{userId}</p>
                 </div>
                 <div style={timeFontStyle}>{nminutesAgo}</div>

@@ -10,25 +10,18 @@ import Slider4 from "../../img/slider/Slider4.png";
 import Slider5 from "../../img/slider/Slider5.png";
 import Slider6 from "../../img/slider/Slider6.png";
 import Slider7 from "../../img/slider/Slider7.png";
-
 import SliderContent from "./SliderContent";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
 function Slider({ style }){
-    const btnStyle = {
-        width:"48px",
-        height:"48px",
-    }
     const CustomPrevArrow = (props) => (
         <div className="slick-prev" onClick={props.onClick} style={{marginRight:"20px"}}>
         </div>
     );
     
-
     const CustomNextArrow = (props) => (
         <div className="slick-next" onClick={props.onClick}>
-         {/* <img style={btnStyle} src={SliderRightBtn}></img> */}
         </div>
     );
 
