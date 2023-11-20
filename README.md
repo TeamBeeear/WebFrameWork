@@ -4,6 +4,8 @@
 | :------: |  :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/98332877?v=4" height=150 width=150> <br/>](https://github.com/MinseoKangQ) | [<img src="https://avatars.githubusercontent.com/u/107299318?v=4" height=150 width=150> <br/>](https://github.com/drimh) | [<img src="https://avatars.githubusercontent.com/u/102959791?v=4" height=150 width=150> <br/>](https://github.com/sycuuui) | [<img src="https://avatars.githubusercontent.com/u/122861956?v=4" height=150 width=150> <br/>](https://github.com/suzinlim) |
 
+<br />
+
 # Back-end 연동 방법
 ## 1. 파일 다운 받은 후, 압축 풀기
 파일명은 `gomgom-0.0.1-SNAPSHOT.jar`
@@ -26,6 +28,8 @@ nohup java –jar gomgom-0.0.1-SNAPSHOT.jar &
 
 * 테스트 할 경우, 위의 과정이 필요
 * 터미널 종료하면 API도 함께 종료
+
+<br /><br />
 
 # Getting Started with Create React App
 
@@ -97,6 +101,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<br /><br />
 
 # 사용한 라이브러리
 ## 1. React-Select
