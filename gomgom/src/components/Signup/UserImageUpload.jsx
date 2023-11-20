@@ -5,7 +5,7 @@ const UserImageUpload = ({ selectedImage, handleImageUpload }) => {
     width: "150px",
     height: "150px",
     objectFit: "cover",
-    borderRadius: "50px",
+    borderRadius: "50%",
     display: "block",
     margin: "0 auto",
   };

@@ -7,10 +7,19 @@ import GominSlider from "../components/GomGomBoard/GominSlider";
 import Footer from "../components/Footer";
 import TodayGomin from "../components/GomGomBoard/TodayGomin"; 
 import GominBoxContainer from "../components/GomGomBoard/GominBoxContainer"; 
+import WorriedBoxContainer from '../components/main/WorriedBoxContainer';
+import WorriedBoxs from '../components/main/WorriedBoxs';
 
 function GomGomBoard(){
     const [board, setBoard] = useState(''); 
     const { boardId } = useParams();
+
+    const [gominUrl, setGominUrl] = useState('/api/posts');
+
+    const updateGominUrl = (newUrl) => {
+        setGominUrl(newUrl);
+        console.log(newUrl);
+    };
 
     // useEffect(() => { //특정 -> 확인 완료
     //     axios.get(`/board/${boardId}`) 
@@ -21,22 +30,25 @@ function GomGomBoard(){
     //         .catch(error => console.log(error));
     //   }, [boardId]);
 
-    useEffect(() => { //전체 -> 확인 완료 
-        axios.get('/api/board') 
-            .then(response => {
-                const parsedData = JSON.parse(response.data);
-                setBoard(parsedData);
-            })
-            .catch(error => console.log(error))
-    }, []);
+    // useEffect(() => { //전체 -> 확인 완료 
+    //     axios.get('/api/board') 
+    //         .then(response => {
+    //             const parsedData = JSON.parse(response.data);
+    //             setBoard(parsedData);
+    //         })
+    //         .catch(error => console.log(error))
+    // }, []);
 
     return (
         <div>
             <Header />
             <Nav />
             <GominSlider/>
-            <TodayGomin/>
-            <GominBoxContainer/>
+            <TodayGomin updateUrl={updateGominUrl} />
+            {/* <GominBoxContainer/> */}
+            <div style={{display: 'flex', justifyContent: 'center', marginTop:'5%'}}>
+                <WorriedBoxs url={gominUrl} />
+            </div>
             <Footer/>
         </div>
     );

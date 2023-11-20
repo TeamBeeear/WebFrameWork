@@ -19,13 +19,13 @@ function WorriedBoxs({
         flexDirection:"column",
         marginLeft:"20px"
     }
-    const [data, setData] = useState('')
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get(url)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
-    }, []);
+    }, [url]);
     return(
         <div style={separateDivStyle}>
                     <div style={colDivStyle}>
