@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import GominCategory from "../GomGomBoard/GominCategory";
 import axios from 'axios';
 
@@ -42,6 +42,19 @@ function TodayGomin({updateUrl}){
         //     })
         //     .catch(error => console.log(error));
     };
+    useEffect(() => {
+        if (!updateUrl) return;
+
+        // updateUrl 함수를 호출하여 URL을 업데이트합니다.
+        const category = "전체"; // 예시로 "전체" 카테고리를 기본값으로 설정
+        const boardId = categoryToBoardId[category];
+        const newUrl = `/api/board/${boardId}`;
+
+        console.log(`Category clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
+
+        // Call the parent's updateUrl function to update the URL
+        updateUrl(newUrl);
+    }, [updateUrl]);
 
     return (
         <div style={{paddingTop:"3.81rem"}}>

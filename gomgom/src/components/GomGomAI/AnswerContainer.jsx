@@ -97,6 +97,7 @@ const AnswerContainer = () => {
         justifyContent: "center",
         alignItems: "center",
         marginBottom: "2em",
+        background: "var(--e-9-e-5-da, #E9E5DA)"
     };
 
     const lineHeightValue = answer ? "" : "248px";
@@ -160,6 +161,12 @@ const AnswerContainer = () => {
     const refreshIconStyle = {
         marginRight: "0.8em", // 8px
     };
+    const worryBoxContentsStyle2 = { 
+        width:"-webkit-fill-available", 
+        height:'unset', 
+        marginLeft:'50px', 
+        marginRight:'50px'
+    }
 
     return (
     <div style={containerStyle}>
