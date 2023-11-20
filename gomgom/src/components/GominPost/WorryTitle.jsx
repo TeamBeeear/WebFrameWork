@@ -14,7 +14,7 @@ const WorryTitle = ({titleText}) => {
 
     return (
         <p className="worry-description" style={titleStyle}>
-          {titleText}
+            {titleText}
         </p>
     );
 };

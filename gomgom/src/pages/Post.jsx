@@ -30,7 +30,7 @@ const Post = () => {
     const [firstSelectionContent, setFirstSelectionContent] = useState("");
     const [secondSelectionContent, setSecondSelectionContent] = useState("");
     const navigate = useNavigate();
-    const [selectedOption, setSelectedOption] = React.useState(null); // 카테고리 상태값
+    const [selectedOption, setSelectedOption] = useState(null); // 카테고리 상태값
     const boardId = selectedOption ? selectedOption.id : null;
 
     const handlePostClick = async (e) => {

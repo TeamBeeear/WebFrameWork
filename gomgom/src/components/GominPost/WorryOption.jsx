@@ -22,12 +22,12 @@ const WorryOption = ({ id, setSelectionContent, placeholder }) => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '4rem' }}>
-          <input
-            type="input"
-            className={`worry-option-${id}`}
-            style={worryOptionStyle}
-            placeholder={placeholder}
-            onChange={(e) => setSelectionContent(e.target.value)} />
+            <input
+                type="input"
+                className={`worry-option-${id}`}
+                style={worryOptionStyle}
+                placeholder={placeholder}
+                onChange={(e) => setSelectionContent(e.target.value)} />
         </div>
     );
 };
