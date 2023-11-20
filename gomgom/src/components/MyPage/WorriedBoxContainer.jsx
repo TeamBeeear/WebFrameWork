@@ -14,43 +14,21 @@ function WorriedBoxContainer({ id = 'test1', category = 1 }) {
         flexDireaction:"row",
         marginBottom:"34px",
         justifyContent:"space-between",
-    }
+    };
     const separateDivStyle={
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-between",
-    }
+    };
     const colDivStyle={
         display:"flex",
         flexDirection:"column",
-    }
+    };
     const colRightDivStyle={
         display:"flex",
         flexDirection:"column",
         marginLeft:"20px"
-    }
-    const firstTitleFontStyle={
-        // marginTop:"0px",
-        color: "#67594C",
-        fontSize: "20px",
-        fontWeight: "700",
-        lineHeight: "100%",
-        margin:"auto 0"
-    }
-    const secondTitleFontStyle={
-        color: "rgba(103, 89, 76, 0.50)",
-        fontSize: "12px",
-        fontWeight: "600",
-        lineHeight: "160%",
-        margin:"auto 0"
-    }
-    const LeftsecondTitleFontStyle={
-        color: "#FAF9F6",
-        fontSize: "12px",
-        fontWeight: "600",
-        lineHeight: "160%",
-        margin:"auto 0"
-    }
+    };
 
     useEffect(() => {
         // 새로운 쿼리 매개변수를 포함한 업데이트된 URL로 GET 요청 보냄
@@ -68,9 +46,6 @@ function WorriedBoxContainer({ id = 'test1', category = 1 }) {
                 width:"1024px",
             }}>
                 <div style={titleDivStyle}>
-                    {/* <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>
-                    <p style={firstTitleFontStyle}>오늘의 고민들</p>
-                    <p style={secondTitleFontStyle}>+ 더 많은 고민 보러가기</p> */}
                 </div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>

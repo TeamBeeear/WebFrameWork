@@ -46,7 +46,7 @@ function MainContent(){
             </div>
             <img src={bearImg} style={{width:"919px",height:"164px",position:"absolute",bottom:"0",transform: "translateX(-50%)"}} alt="" />
         </div> 
-    )
+    );
 }
 
 export default MainContent;

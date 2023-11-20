@@ -16,17 +16,17 @@ function WorriedBox({
     content,
     userId,
     nminutesAgo
-}){
+    }){
     const data = [
         {
           imgSrc: worriedImg, // 이미지 URL
           question: firstSelectionContent, // 문제 텍스트
         },
         {
-          imgSrc: worriedImg,
-          question: secondSelectionContent,
+            imgSrc: worriedImg,
+            question: secondSelectionContent,
         },
-      ];
+    ];
     
     const boxStyle = {
         borderRadius: "8px",
@@ -35,27 +35,27 @@ function WorriedBox({
         padding: "24px 20px 15px 20px",
         height:"fit-content",
         width:"24em"
-    }
+    };
     const rowflexStyle = {
         display:"flex",
         flexDireaction:"row",
-    }
+    };
     const rowSpaceFlexStyle = {
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center"
-    }
+    };
     const colFlexStyle = {
         display:"flex",
         flexDirection:"cloumn",
-    }
+    };
     const titleFontStyle={
         color: "#67594C",
         fontSize: "20px",
         fontWeight: "700",
         lineHeight: "100%",
-    }
+    };
     const contentFontStyle={
         textAlign:"left",
         color: "#67594C",
@@ -63,20 +63,20 @@ function WorriedBox({
         fontWeight: "400",
         lineHeight: "100%",
         marginTop:"10px"
-    }
+    };
     const userNameFontStyle={
         color: "rgba(103, 89, 76, 0.50)",
         fontSize: "15px",
         fontWeight: "700",
         lineHeight: "160%",
-    }
+    };
     const timeFontStyle={
         color: "rgba(103, 89, 76, 0.50)",
         fontSize: "13px",
         fontWeight: "500",
         lineHeight: "160%",
         marginRight:"10px",
-    }
+    };
     const textDivStyle={
         width:"10em",
         height:"3.5em",
@@ -90,37 +90,37 @@ function WorriedBox({
         textAlign:"center",
         margin:"auto 0",
         marginLeft: "8px"
-    }
+    };
     const numFontStyle={
         color: "#D2CDBC",
         fontSize: "13px",
         fontWeight: "500",
         lineHeight: "160%",
-    }
+    };
     const iconSizeStyle={
         width:"24px",
         height:"24px",
         margin:"auto 0",
         marginRight:"3px"
-    }
+    };
     const userIconSizeStyle={
         width:"30px",
         height:"30px",
         margin:"auto 0",
         marginRight:"8px",
         marginLeft:"10px"
-    }
+    };
     const imgSizeStyle={
         width:"4.5em",
         height:"4.5em"
-    }
+    };
     const verticalCenterStyle={
         margin:"auto 0",
-    }
+    };
     const linkStyle = {
         textDecoration: 'none',
         color: 'inherit',
-      };
+    };
     return(
         <div style={{width:"27em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
@@ -140,7 +140,6 @@ function WorriedBox({
                 <div style={rowSpaceFlexStyle} >
                     {data.map((item, innerIndex) => (
                         <div key={innerIndex} style={rowflexStyle}>
-                            {/* <img src={item.imgSrc} style={imgSizeStyle} alt="" /> */}
                             <div style={textDivStyle}>
                                 <p>{item.question}</p>
                             </div>
@@ -157,7 +156,7 @@ function WorriedBox({
                 <div style={timeFontStyle}>{nminutesAgo}</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default WorriedBox;

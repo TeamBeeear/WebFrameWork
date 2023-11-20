@@ -50,15 +50,15 @@ function GominPost(){
             <Nav />
             <GominStyle UserName="곰곰이"/>
             <GominBox 
-              title = {data.title}
-              content = {data.content}
-              imagePath={images[id - 1]}
+                title = {data.title}
+                content = {data.content}
+                imagePath={images[id - 1]}
             />
             {Array.isArray(commentData) && commentData.map((item) => (
                     <GominCommentList
                         userId={item.userId}
-                      content={item.content}
-                      nminutesAgo={item.nminutesAgo}
+                        content={item.content}
+                        nminutesAgo={item.nminutesAgo}
                     />
                     ))} 
             <GominCommentGomgomPost />

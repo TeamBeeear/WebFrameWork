@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import GominImgSub from "../GomGomBoard/GominImgSub"; 
 import ButtonBack from "../../img/buttonBack.png"; 
 
@@ -7,12 +7,12 @@ function GominImg(){
         border:"none",
         background:"none", 
         marginRight:"5.12rem"
-    }
+    };
     const rightbutton = { 
         border:"none",
         background:"none", 
         marginLeft:"5.12rem"
-    }
+    };
 
     return (
         <div style={{marginTop:"1.94rem", display:"flex", justifyContent:"center"}}>

@@ -145,7 +145,7 @@ const AnswerContainer = () => {
         backgroundColor: "transparent",
     };
 
-  // 다시하기 버튼
+    // 다시하기 버튼
     const showAnswerButtonStyle = {
         margin: "1.5em",
         padding: "10px 20px",
@@ -161,12 +161,6 @@ const AnswerContainer = () => {
     const refreshIconStyle = {
         marginRight: "0.8em", // 8px
     };
-    const worryBoxContentsStyle2 = { 
-        width:"-webkit-fill-available", 
-        height:'unset', 
-        marginLeft:'50px', 
-        marginRight:'50px'
-    }
 
     return (
     <div style={containerStyle}>
@@ -210,7 +204,7 @@ const AnswerContainer = () => {
         </div>
         </form>
     </div>
-    ) ;
-};
+    );
+}
 
 export default AnswerContainer;

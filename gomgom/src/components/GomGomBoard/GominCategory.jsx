@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 
 function GominCategory({ category, onClick }){
     const box = { 
@@ -10,7 +9,7 @@ function GominCategory({ category, onClick }){
         borderRadius: "1.0625rem",
         border: "2px solid var(--d-2-cdbc, #D2CDBC)",
         background: "var(--e-9-e-5-da, #E9E5DA)"
-    }
+    };
     const text = { 
         color: "var(--67594-c, rgba(103, 89, 76, 0.50))",
         fontFamily: "Pretendard",
@@ -18,12 +17,12 @@ function GominCategory({ category, onClick }){
         fontStyle: "normal",
         fontWeight: "700",
         lineHeight: "100%",
-        margin:"0"
-    }
+        margin: "0"
+    };
 
     return (
         <button onClick={onClick} style={box}>
-           <p style={text}>{category}</p>
+            <p style={text}>{category}</p>
         </button>
     );
 }

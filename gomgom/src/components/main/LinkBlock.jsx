@@ -54,7 +54,7 @@ function LinkBlock(){
                     곰곰이 바로가기</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default LinkBlock;

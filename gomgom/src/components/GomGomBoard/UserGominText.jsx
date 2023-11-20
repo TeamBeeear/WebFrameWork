@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function UserGominText({gominContents}){
     const box = { 
@@ -7,7 +7,7 @@ function UserGominText({gominContents}){
         margin:"0 auto", 
         marginTop:"3.7%", 
         marginLeft:"2rem"
-    }
+    };
     const text = { 
         color:"#67594C", 
         fontFamily: "Pretendard",
@@ -17,7 +17,7 @@ function UserGominText({gominContents}){
         lineHeight: "160%", 
         margin:"0", 
         textAlign:"start"
-    }
+    };
 
     return (
         <div style={box}>

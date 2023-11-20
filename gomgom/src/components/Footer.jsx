@@ -8,7 +8,7 @@ function Footer(){
             <img style={{width:"142px",height:"28px",marginRight:"200px"}} src={logo} alt="" />
             <p style={{color:"#FAF9F6",fontSize: "20px",fontWeight: "500"}}>이서연 강민서 신승혜 임수진</p>
         </div>
-    )
+    );
 }
 
 export default Footer;

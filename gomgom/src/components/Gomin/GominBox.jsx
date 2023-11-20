@@ -1,6 +1,5 @@
 import React from "react";
 import GomgomGomin from "../Gomin/GomgomGomin"; 
-import UserComment from "../Gomin/UserComment"; 
 
 function GominBox({
     title,
@@ -22,9 +21,9 @@ function GominBox({
                 style={imgSize}
                 />
             </div>
-            <div style={{height:"0.125rem", backgroundColor:"#E9E5DA"}}/> {/* 밑 라인 */}
+            <div style={{height:"0.125rem", backgroundColor:"#E9E5DA"}} />
         </div>
-    )
+    );
 }
 
 export default GominBox;

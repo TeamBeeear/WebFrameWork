@@ -40,14 +40,14 @@ function GomGomBoardDeatail(){
             <Nav />
             <GominStyle UserName={data.userId}/>
             <UserGomin 
-            title = {data.title}
-            content = {data.content}
-            firstSelectionId={data.firstSelectionId}
-            firstSelectionContent={data.firstSelectionContent}
-            firstSelectionVotePercentage={data.firstSelectionVotePercentage}
-            secondSelectionId={data.secondSelectionId}
-            secondSelectionContent={data.secondSelectionContent}
-            secondSelectionVotePercentage={data.secondSelectionVotePercentage}
+                title = {data.title}
+                content = {data.content}
+                firstSelectionId={data.firstSelectionId}
+                firstSelectionContent={data.firstSelectionContent}
+                firstSelectionVotePercentage={data.firstSelectionVotePercentage}
+                secondSelectionId={data.secondSelectionId}
+                secondSelectionContent={data.secondSelectionContent}
+                secondSelectionVotePercentage={data.secondSelectionVotePercentage}
             />
 
                 {Array.isArray(commentData) && commentData.map((item) => (

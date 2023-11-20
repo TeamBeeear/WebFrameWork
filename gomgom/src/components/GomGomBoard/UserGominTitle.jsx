@@ -82,12 +82,12 @@ function UserGominTitle({ gominTitle }) {
             <div style={{marginRight:"5%", display:"-webkit-inline-box", marginTop:"5%"}}>
             <p style={hearttext}>공감돼요!</p>
             <img
+                alt="heart Img"
                 style={{ marginLeft: "0.63rem", marginTop: "4%", cursor: "pointer" }}
                 src={hasLiked? HeartAfter : HeartBefore}
                 onClick={handleHeartClick}
             />
             </div>
-
         </div>
     );
 }

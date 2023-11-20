@@ -10,26 +10,26 @@ function GomgomGomin({
     const profile = {
         width:"7.5rem", 
         height:"5.625rem"
-    }
+    };
     const gominMainPart = {
         width: "46.125rem", 
         backgroundColor: "var(--ffffff, #FFF)", 
         borderRadius:"1.5rem", 
         boxShadow: "0px 2px 4px 0px rgba(210, 205, 189, 0.50)", 
         marginLeft:"1.37rem"
-    }
+    };
     const gominSubPart = { 
         marginTop:"2.25rem", 
         marginBottom:"2.5rem", 
         marginLeft:"2rem",
         display:"flex"
-    }
+    };
     const titleFrame = { 
         width: "fit-content", 
         height:"1.9375rem", 
         backgroundColor:"var(--e-9-e-5-da, #E9E5DA)", 
         display:"flex"
-    }
+    };
     const titleText = { 
         color:" var(--67594-c, #67594C)", 
         textAlign:"center", 
@@ -39,7 +39,7 @@ function GomgomGomin({
         fontWeight:"700", 
         lineHeight:"160%", 
         margin:"0"
-    }
+    };
     const contentText = {
         margin:"0", 
         color:" var(--67594-c, #67594C)", 
@@ -50,7 +50,7 @@ function GomgomGomin({
         width: "26rem", 
         marginTop:"1.5rem", 
         textAlign:"start"
-    } 
+    } ;
     const gomimImg = { 
         marginLeft: "1.75rem", 
         alignSelf:"flex-end"
@@ -62,8 +62,8 @@ function GomgomGomin({
 
     return(
         <div style={{display:"flex", justifyContent:"center"}}>
-           <img style={profile} src={GomgomImg}/>
-           <div style={gominMainPart}>
+            <img style={profile} src={GomgomImg}/>
+            <div style={gominMainPart}>
                 <div style={gominSubPart}>
                     <div>
                         <div style={titleFrame}>
@@ -77,7 +77,7 @@ function GomgomGomin({
                         <img src={imagePath} style={imgSize}/>    
                     </div>
                 </div>
-           </div>
+            </div>
         </div>
     )
 }

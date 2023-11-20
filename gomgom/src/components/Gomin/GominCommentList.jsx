@@ -1,5 +1,4 @@
 import React from "react";
-import sunde from "../../img/sunde.png"; 
 import userImg from "../../img/smallUserImg.png"; 
 
 function GominCommentList({
@@ -15,7 +14,7 @@ function GominCommentList({
         fontStyle: "normal",
         fontWeight: "700",
         lineHeight: "160%"
-    }
+    };
     const commnetText = { 
         margin:"0", 
         color: "var(--67594-c, #67594C)",
@@ -25,7 +24,7 @@ function GominCommentList({
         fontWeight: "500",
         lineHeight: "160%", 
         marginTop:"0.94rem"
-    }
+    };
     const timeText = { 
         margin:"0", 
         color: "var(--d-2-cdbc, #D2CDBC)",
@@ -35,7 +34,7 @@ function GominCommentList({
         fontWeight: "500",
         lineHeight: "160%", 
         marginTop:"2.94rem"
-    }
+    };
 
     return(
         <div style={{backgroundColor:"var(--ffffff, #FFF)"}}>
@@ -52,7 +51,6 @@ function GominCommentList({
                         </div>
                     </div>
                     <div style={{alignSelf:"flex-end", marginLeft:"14.06rem"}}>
-                        {/* <img src={sunde}/> */}
                     </div>
                 </div>
                 <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>

@@ -13,7 +13,7 @@ function MyPage() {
         // 세션 저장소에서 userId 값을 불러오는 비동기 함수
         const fetchUserIdFromSession = async () => {
             try {
-                // 세션 저장소에서 userId를 가져오는 비동기 처리 (예시)
+                // 세션 저장소에서 userId를 가져오는 비동기 처리
                 const storedUserId = await getSessionStorageValue('userId');
 
                 // 가져온 userId를 state에 설정

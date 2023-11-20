@@ -13,7 +13,7 @@ function UserComment(){
         flexDirection: "column",
         justifyContent:"center", 
         marginRight:"1.31rem"
-    }
+    };
     const userCommnetText = { 
         margin:"0", 
         color:"var(--67594-c, #67594C)", 
@@ -23,16 +23,16 @@ function UserComment(){
         fontWeight:"500", 
         lineHeight:"160%", 
         marginTop:"0"
-    }
+    };
 
     return(
         <div style={{marginTop:"2.19rem", display:"flex", justifyContent:"center", marginLeft:"40rem"}}>
             <div style={userCommnetBox}>
-                <p style={userCommnetText}>한국인은 이열치열! 시원한 콩국수먹다 질리면 순대국은 어때?</p>
+                <p style={userCommnetText}>{}</p>
             </div>
             <img src={UserImg}/>
         </div>
-    )
+    );
 }
 
 export default UserComment;

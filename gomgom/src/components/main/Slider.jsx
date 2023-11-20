@@ -22,7 +22,6 @@ function Slider({ style }){
     }
     const CustomPrevArrow = (props) => (
         <div className="slick-prev" onClick={props.onClick} style={{marginRight:"20px"}}>
-          {/* <img style={btnStyle} src={SliderLeftBtn}></img> */}
         </div>
     );
     
@@ -36,7 +35,7 @@ function Slider({ style }){
     const linkStyle = {
         textDecoration: 'none',
         color: 'inherit',
-      };
+    };
 
     const settings = {
         infinite: true,
@@ -45,9 +44,9 @@ function Slider({ style }){
         slidesToScroll: 3,
         prevArrow: <CustomPrevArrow />, 
         nextArrow: <CustomNextArrow />, 
-      };    
+    };    
 
-    const [data, setData] = useState('')
+    const [data, setData] = useState('');
 
     const urlData =[
         Slider0,
@@ -58,13 +57,14 @@ function Slider({ style }){
         Slider5,
         Slider6,
         Slider7,
-    ]
+    ];
 
     useEffect(() => {
-          axios.get('api/gomgom-post/all')
-              .then(response => setData(response.data))
-              .catch(error => console.log(error))
-      }, []);
+        axios.get('api/gomgom-post/all')
+            .then(response => setData(response.data))
+            .catch(error => console.log(error))
+    }, []);
+
     return(
         <div style={{...style, height: "385px"}}>
             <p style={{fontSize: "20px",
@@ -73,7 +73,7 @@ function Slider({ style }){
                         color:"#67594C",marginTop:"0px",paddingTop:"60px"}}>곰곰이의 고민</p>
 
 
-            <div style={{marginLeft:"10%"}}> {/* marginRight:"10%" 삭제 */}
+            <div style={{marginLeft:"10%"}}>
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item, index) => (
                     <div>
@@ -83,8 +83,7 @@ function Slider({ style }){
                 </Slide>
             </div>
         </div>
-        
-    )
+    );
 }
 
 export default Slider;

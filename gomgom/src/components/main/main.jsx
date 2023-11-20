@@ -18,7 +18,7 @@ function Main(){
             <WorriedBoxContainer url = 'api/posts'/>
             <Footer/>
         </div>
-    )
+    );
 }
 
 export default Main;

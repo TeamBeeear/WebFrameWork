@@ -7,7 +7,7 @@ function AskToGomGom(){
         fontSize: "40px",
         fontWeight: "700",
         lineHeight: "100%",
-    }
+    };
 
     return (
         <div style={textStyle}>
