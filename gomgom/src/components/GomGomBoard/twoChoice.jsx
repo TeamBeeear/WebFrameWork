@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function twoChoice({gominText, gominPercent, onClick, selected}){
+function twoChoice({gominId, gominText, gominPercent, onClick, selected}){
     const frame = { 
         width: "20.0625rem",
         height: "5.5rem",
