@@ -21,15 +21,15 @@ const WorryDescription = ({ setContent }) => {
         marginLeft: "4rem"
     };
     
-  return (
-    <>
-      <textarea
-        className="description"
-        style={descriptionStyle}
-        placeholder="100자 내외의 짧은 설명을 적어주세요."
-        onChange={(e) => setContent(e.target.value)} />
-    </>
-  );
+    return (
+        <>
+        <textarea
+            className="description"
+            style={descriptionStyle}
+            placeholder="100자 내외의 짧은 설명을 적어주세요."
+            onChange={(e) => setContent(e.target.value)} />
+        </>
+    );
 };
 
 export default WorryDescription;

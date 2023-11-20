@@ -2,7 +2,8 @@ import React from "react";
 import img from "../../img/sliderImg.png"
 
 function SliderContent({
-    title
+    title,
+    url
 }){
     const boxStyle={
         width:"280px",
@@ -34,7 +35,7 @@ function SliderContent({
     return(
         <div>
             <div style={boxStyle}>
-                <img src={img} style={imgStyle} alt="" />
+                <img src={url} style={imgStyle} alt="" />
                 <div style={textContainerStyle}>
                     <p style={textStyle}>{title}</p>
                 </div>

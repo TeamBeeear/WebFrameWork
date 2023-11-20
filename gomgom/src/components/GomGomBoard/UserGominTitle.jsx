@@ -4,46 +4,43 @@ import HeartBefore from "../../img/heartBefore.png";
 import HeartAfter from "../../img/heartAfter.png";
 
 function UserGominTitle({ gominTitle }) {
-    const [heartClicked, setHeartClicked] = useState(false);
-    const userId = 'test1';  // 더미 데이터로 userId 설정
-    const postId = 1;        // 더미 데이터로 postId 설정
+    const [hasLiked, setHasLiked] = useState(false);
+    const userId = sessionStorage.getItem("userId");
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('postId');
 
     useEffect(() => {
         // 사용자가 게시물에 좋아요를 눌렀는지 확인하기 위해 GET 요청 수행
         Axios.get(`/api/heart/${userId}/${postId}`)
             .then(response => {
+                console.log(response.data);
                 // 응답을 기반으로 heartClicked 상태 업데이트
-                setHeartClicked(response.data.hasLiked);
+                setHasLiked(response.data);
             })
             .catch(error => {
                 console.error("좋아요 상태 확인 중 오류:", error);
             });
-    }, []); // 의존성 배열이 비어 있으므로 컴포넌트가 마운트될 때만 이 효과가 실행됨
+    }, [userId, postId]); 
+
     const handleHeartClick = () => {
         const url = '/api/heart';
 
-        if (heartClicked) {
-            // 이미 좋아요 상태인 경우, DELETE 요청 수행
-            Axios.delete(url, { data: { userId, postId } })
-                .then(response => {
-                    console.log("좋아요 해제:", response);
-                })
-                .catch(error => {
-                    console.error("좋아요 해제 중 오류:", error);
-                });
-        } else {
-            // 좋아요 상태가 아닌 경우, POST 요청 수행
-            Axios.post(url, { userId, postId })
-                .then(response => {
-                    console.log("좋아요:", response);
-                })
-                .catch(error => {
-                    console.error("좋아요 중 오류:", error);
-                });
-        }
-        // 클릭 이벤트 처리 및 좋아요 상태 업데이트
-        setHeartClicked(!heartClicked);
+        // 반환된 좋아요 상태에 따라 다른 api 요청 수행
+        const axiosRequest = hasLiked ? 
+        Axios.delete(url, { data: { userId, postId } }) : Axios.post(url, { userId, postId });
+
+        axiosRequest
+            .then(response => {
+                console.log(hasLiked ? "좋아요 취소:" : "좋아요:", response);
+                setHasLiked(!hasLiked);
+            })
+            .catch(error => {
+                console.error(hasLiked ? "좋아요 취소 중 오류:" : "좋아요 중 오류:", error);
+            });
+        setHasLiked(!hasLiked)
     };
+
+    
     const subBox = {
         textAlign: "start",
         marginLeft: "3.7%",
@@ -86,7 +83,7 @@ function UserGominTitle({ gominTitle }) {
             <p style={hearttext}>공감돼요!</p>
             <img
                 style={{ marginLeft: "0.63rem", marginTop: "4%", cursor: "pointer" }}
-                src={heartClicked ? HeartAfter : HeartBefore}
+                src={hasLiked? HeartAfter : HeartBefore}
                 onClick={handleHeartClick}
             />
             </div>

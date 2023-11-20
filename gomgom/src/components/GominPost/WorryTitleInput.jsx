@@ -16,19 +16,18 @@ const WorryTitleInput = ({ setTitle }) => {
         lineHeight: "24px",
         wordWrap: "break-word",
         marginLeft: "4rem"
-    } 
+    };
     
-  return (
-    <>
-      <input
-        type="input"
-        className="worry-title-input"
-        placeholder="제목을 입력하세요."
-        style={worrtTitleInputStyle}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-    </>
-  );
+    return (
+        <>
+        <input
+            type="input"
+            className="worry-title-input"
+            placeholder="제목을 입력하세요."
+            style={worrtTitleInputStyle}
+            onChange={(e) => setTitle(e.target.value)} />
+        </>
+    );
 };
 
 export default WorryTitleInput;

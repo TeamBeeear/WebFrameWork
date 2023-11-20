@@ -7,16 +7,16 @@ import PostCompleteButton from '../components/PostComplete/PostCompleteButton';
 import Footer from '../components/Footer';
 
 const PostComplete = () => {
-  return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <Header />
-      <Nav />
-      <GomGomImage />
-      <PostCompleteText />
-      <PostCompleteButton />
-      <Footer />
-    </div>
-  );
+    return (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+        <Header />
+        <Nav />
+        <GomGomImage />
+        <PostCompleteText />
+        <PostCompleteButton />
+        <Footer />
+        </div>
+    );
 };
 
 export default PostComplete;

@@ -2,8 +2,15 @@ import React,{useEffect, useState} from "react";
 import Slide from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SliderLeftBtn from "../../img/SliderLeftBtn.png";
-import SliderRightBtn from "../../img/SliderRightBtn.png";
+import Slider0 from "../../img/slider/Slider0.png";
+import Slider1 from "../../img/slider/Slider1.png";
+import Slider2 from "../../img/slider/Slider2.png";
+import Slider3 from "../../img/slider/Slider3.png";
+import Slider4 from "../../img/slider/Slider4.png";
+import Slider5 from "../../img/slider/Slider5.png";
+import Slider6 from "../../img/slider/Slider6.png";
+import Slider7 from "../../img/slider/Slider7.png";
+
 import SliderContent from "./SliderContent";
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -42,6 +49,17 @@ function Slider({ style }){
 
     const [data, setData] = useState('')
 
+    const urlData =[
+        Slider0,
+        Slider1,
+        Slider2,
+        Slider3,
+        Slider4,
+        Slider5,
+        Slider6,
+        Slider7,
+    ]
+
     useEffect(() => {
           axios.get('api/gomgom-post/all')
               .then(response => setData(response.data))
@@ -57,9 +75,9 @@ function Slider({ style }){
 
             <div style={{marginLeft:"10%"}}> {/* marginRight:"10%" 삭제 */}
                 <Slide {...settings}>
-                {Array.isArray(data) && data.map((item) => (
+                {Array.isArray(data) && data.map((item, index) => (
                     <div>
-                        <Link to={`/gomin-post?id=${item.id}`} style={linkStyle}><SliderContent title={item.title}/></Link>
+                        <Link to={`/gomin-post?id=${item.id}`} style={linkStyle}><SliderContent title={item.title} url={urlData[index]}/></Link>
                     </div>
                 ))}
                 </Slide>
