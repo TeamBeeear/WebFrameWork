@@ -26,7 +26,10 @@ function WorriedBoxContainer({
         fontSize: "12px",
         fontWeight: "600",
         lineHeight: "160%",
-        margin:"auto 0"
+        margin:"auto 0",
+        textDecoration: 'none',
+
+
     }
     const LeftsecondTitleFontStyle={
         color: "#FAF9F6",

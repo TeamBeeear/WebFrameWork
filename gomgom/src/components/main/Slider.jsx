@@ -10,6 +10,7 @@ import Slider4 from "../../img/slider/Slider4.png";
 import Slider5 from "../../img/slider/Slider5.png";
 import Slider6 from "../../img/slider/Slider6.png";
 import Slider7 from "../../img/slider/Slider7.png";
+import Slider8 from "../../img/slider/Slider8.png";
 
 import SliderContent from "./SliderContent";
 import axios from 'axios';
@@ -58,6 +59,7 @@ function Slider({ style }){
         Slider5,
         Slider6,
         Slider7,
+        Slider8
     ]
 
     useEffect(() => {

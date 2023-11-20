@@ -7,6 +7,7 @@ function GominBox({
     content
 }){
     return(
+        
         <div>
             <div style={{marginTop:"4.25rem",  marginBottom:"7.5rem"}}>
                 <GomgomGomin
