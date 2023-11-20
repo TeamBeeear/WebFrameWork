@@ -13,6 +13,7 @@ import GomGomBoardDetail from './pages/GomGomBoardDetail';
 import GomGomAI from './pages/GomGomAI';
 import MyPage from './pages/MyPage';
 import UserGominTitle from './components/GomGomBoard/UserGominTitle'; 
+import NotFound from './pages/NotFound';
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ function App(){
             <Route path="/gomgom-ai" element={<ProtectedRoute><GomGomAI /></ProtectedRoute>} />
             <Route path="/my-page" element={<ProtectedRoute><MyPage /></ProtectedRoute>} />
             <Route path="/heart" element={<ProtectedRoute><UserGominTitle /></ProtectedRoute>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
       </BrowserRouter>
     </div>
