@@ -2,11 +2,13 @@ import React, {useState,useEffect} from 'react';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import GominBox from "../components/Gomin/GominBox";
-import GominComment from "../components/Gomin/GominComment";
+import GominCommentGomgomPost from "../components/Gomin/GominCommentGomgomPost";
 import GominCommentList from '../components/Gomin/GominCommentList';
 import GominStyle from "../components/Gomin/GominStyle";
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+
+// 곰곰이 게시글
 
 function GominPost(){
     const location = useLocation();
@@ -45,7 +47,7 @@ function GominPost(){
                       nminutesAgo={item.nminutesAgo}
                     />
                     ))} 
-            <GominComment />
+            <GominCommentGomgomPost />
         </div>
     );
 }

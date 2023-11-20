@@ -1,14 +1,14 @@
 import React, {useState,useEffect} from 'react';
 import Header from "../components/Header";
 import Nav from "../components/Nav";
-import GominBox from "../components/Gomin/GominBox";
-import GominComment from "../components/Gomin/GominComment";
-import GominCommentList from '../components/Gomin/GominCommentList';
+import GominCommentUserPost from "../components/Gomin/GominCommentUserPost";
 import GominStyle from "../components/Gomin/GominStyle";
 import UserGomin from "../components/GomGomBoard/UserGomin";
-import UserCommentList from '../components/Gomin/GominCommentList';
+import GominCommentList from '../components/Gomin/GominCommentList';
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
+
+// 사용자 게시글
 
 function GomGomBoardDeatail(){
     const location = useLocation();
@@ -51,13 +51,13 @@ function GomGomBoardDeatail(){
             />
 
                 {Array.isArray(commentData) && commentData.map((item) => (
-                    <UserCommentList
+                    <GominCommentList
                         userId={item.userId}
-                      content={item.content}
-                      nminutesAgo={item.nminutesAgo}
+                        content={item.content}
+                        nminutesAgo={item.nminutesAgo}
                     />
                     ))}              
-            <GominComment />
+            <GominCommentUserPost setCommentData={setCommentData} />
         </div>
     );
 }

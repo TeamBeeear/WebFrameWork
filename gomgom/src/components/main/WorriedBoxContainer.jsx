@@ -42,7 +42,7 @@ function WorriedBoxContainer({
         justifyContent:"center",
         }}>
             <div style={{
-                width:"1024px",
+                width:"894px",
             }}>
                 <div style={titleDivStyle}>
                     <p style={LeftsecondTitleFontStyle}>+ 더 많은 고민 보러가기</p>

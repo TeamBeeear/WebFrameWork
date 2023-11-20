@@ -34,7 +34,7 @@ function WorriedBox({
         boxShadow: "0px 2px 4px 0px rgba(210, 205, 189, 0.50)",
         padding: "24px 20px 15px 20px",
         height:"fit-content",
-        width:"27em"
+        width:"24em"
     }
     const rowflexStyle = {
         display:"flex",
@@ -122,7 +122,7 @@ function WorriedBox({
         color: 'inherit',
       };
     return(
-        <div style={{width:"30em",height:"fit-content",paddingBottom:"45px"}}>
+        <div style={{width:"27em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>
                 <div style={rowSpaceFlexStyle}>
                     <Link  to={`/gomgom-board/detail?postId=${postId}&boardId=${boardId}` } style={linkStyle}><p style={titleFontStyle}>{title}</p></Link>

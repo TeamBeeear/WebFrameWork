@@ -39,22 +39,24 @@ function GominCommentList({
 
     return(
         <div style={{backgroundColor:"var(--ffffff, #FFF)"}}>
-            <div style={{backgroundColor: "var(--ffffff, #FFF)", paddingTop:"2.5rem", display:"flex", justifyContent:"center"}}> {/* 이미지까지 감싸는 div */}
-                <div style={{display:"flex"}}>
-                    <div>
-                        <img src={userImg}/>
+            <div style={{backgroundColor:"var(--ffffff, #FFF)", marginLeft:'37%'}}> 
+                <div style={{backgroundColor: "var(--ffffff, #FFF)", paddingTop:"2.5rem", display:"flex"}}> {/* 이미지까지 감싸는 div */}
+                    <div style={{display:"flex"}}>
+                        <div>
+                            <img src={userImg}/>
+                        </div>
+                        <div style={{textAlign:"start", marginLeft:"1rem"}}>
+                            <p style={idText}>{userId}</p>
+                            <p style={commnetText}>{content}</p>
+                            <p style={timeText}>{nminutesAgo}</p>
+                        </div>
                     </div>
-                    <div style={{textAlign:"start", marginLeft:"1rem"}}>
-                        <p style={idText}>{userId}</p>
-                        <p style={commnetText}>{content}</p>
-                        <p style={timeText}>{nminutesAgo}</p>
+                    <div style={{alignSelf:"flex-end", marginLeft:"14.06rem"}}>
+                        {/* <img src={sunde}/> */}
                     </div>
                 </div>
-                <div style={{alignSelf:"flex-end", marginLeft:"14.06rem"}}>
-                    {/* <img src={sunde}/> */}
-                </div>
+                <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>
             </div>
-            <div style={{width:"68.25rem", height:"0.125rem", background:"#ffffff", paddingTop:"0.87rem"}}/>
         </div>
     )
 }
