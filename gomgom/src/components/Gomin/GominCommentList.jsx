@@ -38,7 +38,7 @@ function GominCommentList({
 
     return(
         <div style={{backgroundColor:"var(--ffffff, #FFF)"}}>
-            <div style={{backgroundColor:"var(--ffffff, #FFF)", marginLeft:'35%'}}> 
+            <div style={{backgroundColor:"var(--ffffff, #FFF)", marginLeft:'30%'}}> 
                 <div style={{backgroundColor: "var(--ffffff, #FFF)", paddingTop:"2.5rem", display:"flex"}}> {/* 이미지까지 감싸는 div */}
                     <div style={{display:"flex"}}>
                         <div>
