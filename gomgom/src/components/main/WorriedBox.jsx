@@ -19,15 +19,14 @@ function WorriedBox({
     }){
     const data = [
         {
-          imgSrc: worriedImg, // 이미지 URL
-          question: firstSelectionContent, // 문제 텍스트
+          imgSrc: worriedImg, 
+          question: firstSelectionContent,
         },
         {
             imgSrc: worriedImg,
             question: secondSelectionContent,
         },
     ];
-    
     const boxStyle = {
         borderRadius: "8px",
         background: "#FFF",
@@ -110,6 +109,7 @@ function WorriedBox({
         textDecoration: 'none',
         color: 'inherit',
     };
+    
     return(
         <div style={{width:"27em",height:"fit-content",paddingBottom:"45px"}}>
             <div style={boxStyle}>

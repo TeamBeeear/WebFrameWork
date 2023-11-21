@@ -22,7 +22,6 @@ const options = [
     { value: "shopping", label: "쇼핑" },
     { value: "other", label: "기타" },
 ];
-
 const Post = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -30,12 +29,10 @@ const Post = () => {
     const [firstSelectionContent, setFirstSelectionContent] = useState("");
     const [secondSelectionContent, setSecondSelectionContent] = useState("");
     const navigate = useNavigate();
-    const [selectedOption, setSelectedOption] = useState(null); // 카테고리 상태값
+    const [selectedOption, setSelectedOption] = useState(null); 
     const boardId = selectedOption ? selectedOption.id : null;
-
     const handlePostClick = async (e) => {
         e.preventDefault();
-
         console.log("보낼 데이터:", {
             title: title,
             content: content,
@@ -44,10 +41,8 @@ const Post = () => {
             firstSelectionContent: firstSelectionContent,
             secondSelectionContent: secondSelectionContent
         });
-
         try {
             const response = await axios.post("/api/post", {
-                // POST 요청 보낼 데이터
                 title: title,
                 content: content,
                 userId: userId,
@@ -58,10 +53,9 @@ const Post = () => {
             console.log("응답 데이터:", response.data);
             navigate("/post-complete");
         } catch (error) {
-            console.error("게시글 작성 실패:", error); // 오류 처리
+            console.error("게시글 작성 실패:", error); 
         }
     };
-
     const handleOptionChange = (selectedOption) => {
         setSelectedOption({ ...selectedOption,
                             id: options.findIndex(option => option.value === selectedOption.value) + 1 });

@@ -8,27 +8,20 @@ function UserGominTitle({ gominTitle }) {
     const userId = sessionStorage.getItem("userId");
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
-
     useEffect(() => {
-        // 사용자가 게시물에 좋아요를 눌렀는지 확인하기 위해 GET 요청 수행
         Axios.get(`/api/heart/${userId}/${postId}`)
             .then(response => {
                 console.log(response.data);
-                // 응답을 기반으로 heartClicked 상태 업데이트
                 setHasLiked(response.data);
             })
             .catch(error => {
                 console.error("좋아요 상태 확인 중 오류:", error);
             });
     }, [userId, postId]); 
-
     const handleHeartClick = () => {
         const url = '/api/heart';
-
-        // 반환된 좋아요 상태에 따라 다른 api 요청 수행
         const axiosRequest = hasLiked ? 
         Axios.delete(url, { data: { userId, postId } }) : Axios.post(url, { userId, postId });
-
         axiosRequest
             .then(response => {
                 console.log(hasLiked ? "좋아요 취소:" : "좋아요:", response);
@@ -39,8 +32,6 @@ function UserGominTitle({ gominTitle }) {
             });
         setHasLiked(!hasLiked)
     };
-
-    
     const subBox = {
         textAlign: "start",
         marginLeft: "3.7%",
@@ -69,7 +60,6 @@ function UserGominTitle({ gominTitle }) {
         fontWeight: "500",
         lineHeight: "160%",
         margin: "0",
-        // marginLeft: "60%",
         marginTop: "5%"
     };
 
@@ -78,7 +68,6 @@ function UserGominTitle({ gominTitle }) {
             <div style={subBox}>
                 <p style={text}>{gominTitle}</p>
             </div>
-
             <div style={{marginRight:"5%", display:"-webkit-inline-box", marginTop:"5%"}}>
             <p style={hearttext}>공감돼요!</p>
             <img

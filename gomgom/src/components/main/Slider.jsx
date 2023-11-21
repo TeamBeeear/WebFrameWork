@@ -11,7 +11,6 @@ import Slider5 from "../../img/slider/Slider5.png";
 import Slider6 from "../../img/slider/Slider6.png";
 import Slider7 from "../../img/slider/Slider7.png";
 import Slider8 from "../../img/slider/Slider8.png";
-
 import SliderContent from "./SliderContent";
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -26,19 +25,15 @@ function Slider({ style }){
           {/* <img style={btnStyle} src={SliderLeftBtn}></img> */}
         </div>
     );
-    
-
     const CustomNextArrow = (props) => (
         <div className="slick-next" onClick={props.onClick}>
          {/* <img style={btnStyle} src={SliderRightBtn}></img> */}
         </div>
     );
-
     const linkStyle = {
         textDecoration: 'none',
         color: 'inherit',
-      };
-
+    };
     const settings = {
         infinite: true,
         speed: 500,
@@ -46,10 +41,8 @@ function Slider({ style }){
         slidesToScroll: 3,
         prevArrow: <CustomPrevArrow />, 
         nextArrow: <CustomNextArrow />, 
-      };    
-
+    };    
     const [data, setData] = useState('')
-
     const urlData =[
         Slider0,
         Slider1,
@@ -61,21 +54,19 @@ function Slider({ style }){
         Slider7,
         Slider8
     ]
-
     useEffect(() => {
           axios.get('api/gomgom-post/all')
               .then(response => setData(response.data))
               .catch(error => console.log(error))
       }, []);
+
     return(
         <div style={{...style, height: "385px"}}>
             <p style={{fontSize: "20px",
                         fontWeight: "700",
                         lineHeight: "100%",
                         color:"#67594C",marginTop:"0px",paddingTop:"60px"}}>곰곰이의 고민</p>
-
-
-            <div style={{marginLeft:"10%"}}> {/* marginRight:"10%" 삭제 */}
+            <div style={{marginLeft:"10%"}}> 
                 <Slide {...settings}>
                 {Array.isArray(data) && data.map((item, index) => (
                     <div>
@@ -85,7 +76,6 @@ function Slider({ style }){
                 </Slide>
             </div>
         </div>
-        
     )
 }
 

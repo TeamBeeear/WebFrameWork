@@ -3,32 +3,21 @@ import WorriedBox from "../main/WorriedBox";
 import axios from 'axios';
 
 function WorriedBoxContainer({ category = 1 }) {
-    
-    const [userId, setUserId] = useState(''); // userId 상태값 추가
-
+    const [userId, setUserId] = useState(''); 
     const getUserIdFromSession = () => {
-        const userIdFromSession = sessionStorage.getItem('userId'); // 세션 저장소에서 userId 가져오기
-        setUserId(userIdFromSession); // userId 상태 업데이트
+        const userIdFromSession = sessionStorage.getItem('userId'); 
+        setUserId(userIdFromSession); 
     };
-
     useEffect(() => {
-        getUserIdFromSession(); // 컴포넌트가 마운트될 때 userId 가져오기
+        getUserIdFromSession(); 
     }, []);
-
-    const apiUrl = `/api/my-page?id=${userId}&category=${category}`; // apiUrl에 userId 적용
-
+    const apiUrl = `/api/my-page?id=${userId}&category=${category}`; 
     const [data, setData] = useState('');
-
-    // ... 이하 동일
-
     useEffect(() => {
-        // userId가 변경될 때마다 업데이트된 URL로 GET 요청 보냄
         axios.get(apiUrl)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
-    }, [apiUrl, userId]); // apiUrl과 userId를 의존성으로 지정
-
-
+    }, [apiUrl, userId]); 
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
@@ -62,7 +51,7 @@ function WorriedBoxContainer({ category = 1 }) {
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
                         {Array.isArray(data) && data.slice().reverse().map((item, index) => (
-                            index % 2 === 0 ? ( // 짝수번째 요소
+                            index % 2 === 0 ? ( 
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}
@@ -82,7 +71,7 @@ function WorriedBoxContainer({ category = 1 }) {
                     </div>
                     <div style={colRightDivStyle}>
                         {Array.isArray(data) && data.slice().reverse().map((item, index) => (
-                            index % 2 === 1 ? ( // 홀수번째 요소
+                            index % 2 === 1 ? ( 
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}

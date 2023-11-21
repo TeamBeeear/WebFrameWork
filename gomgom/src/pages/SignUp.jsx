@@ -20,15 +20,12 @@ const SignUp = () => {
     const [passwordError, setPasswordError] = useState("");
     const [selectedImage, setSelectedImage] = useState(userIcon);
     const navigate = useNavigate();
-
     const handleIdChange = (e) => {
         setId(e.target.value);
     };
-
     const handlePasswordChange = (e) => {
         const enteredPassword = e.target.value;
         setPassword(enteredPassword);
-        // 비밀번호가 6자리 미만이거나 영문/숫자 조합이 아닐 경우
         if (enteredPassword.length < 6 ||
             !( /(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z]{6,}/.test(enteredPassword))) {
             setPasswordError("비밀번호는 6자리 이상의 영문/숫자 조합이어야 합니다.");
@@ -36,20 +33,18 @@ const SignUp = () => {
             setPasswordError("");
         }
     };
-
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
         const reader = new FileReader();
         reader.onloadend = () => {
             const base64String = reader.result;
-            setSelectedImage(base64String); // 이미지를 화면에 표시하기 위해 이미지를 Base64 형태로 인코딩
-            sessionStorage.setItem("profileImage", base64String); // 세션 스토리지에 이미지 URL 저장
+            setSelectedImage(base64String); 
+            sessionStorage.setItem("profileImage", base64String);
         };
         reader.readAsDataURL(file);
         }
     };
-
     const handleSignupClick = async (e) => {
         e.preventDefault();
 
@@ -58,17 +53,13 @@ const SignUp = () => {
             userId: id,
             userPw: password,
         });
-
         const securedResponse = {
             userId: response.data.userId,
             userPw: "****",
         };
-
         console.log("회원가입 응답:", securedResponse);
         navigate("/login");
-
         } catch (error) {
-            // 서버에서 반환한 에러에 따라 다른 메시지 설정
             if (error.response.status === 409) {
                 setIdError("이미 존재하는 아이디입니다.");
             } else {
@@ -76,7 +67,6 @@ const SignUp = () => {
             }
         }
     };
-
     const idErrorStyle = {
         color: "#67594C",
         fontSize: "18px",
@@ -86,7 +76,6 @@ const SignUp = () => {
         marginRight: "22rem", 
         wordWrap: "break-word"
     };
-
     const passwordErrorStyle = {
         color: "#67594C",
         fontSize: "18px",
