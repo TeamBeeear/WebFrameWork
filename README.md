@@ -110,3 +110,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npm install react-select
 ```
 고민 카테고리를 정의할 때 react-select 라이브러리 이용
+
+```
+npm install slick-carousel
+```
+슬라이더를 이용할때 slick-carousel 라이브러리 이용

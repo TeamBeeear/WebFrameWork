@@ -41,6 +41,6 @@ const UserImageUpload = ({ selectedImage, handleImageUpload }) => {
         </label>
         </>
     );
-};
+}
 
 export default UserImageUpload;

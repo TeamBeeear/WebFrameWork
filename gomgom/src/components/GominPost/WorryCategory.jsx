@@ -16,6 +16,6 @@ const WorryCategory = ({ options, handleOptionChange, selectedOption }) => {
             value={selectedOption ? options.find((option) => option.id === selectedOption.id) : null}
         />
     );
-};
+}
 
 export default WorryCategory;

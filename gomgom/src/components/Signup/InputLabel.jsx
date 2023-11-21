@@ -16,6 +16,6 @@ const InputLabel = ({ text }) => {
         {text}
         </p>
     );
-};
+}
 
 export default InputLabel;
