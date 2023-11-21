@@ -5,11 +5,9 @@
 }
 
 .slick-prev {
-  /* 화살표 위치 조정 */
   left: -10%;
 }
 
 .slick-next {
-  /* 화살표 위치 조정 */
   right: 4%;
 }

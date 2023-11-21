@@ -13,7 +13,6 @@ function GomGomBoard(){
         console.log(newUrl);
     };
     useEffect(() => {
-        // gominUrl이 변경될 때마다 실행
         console.log('gominUrl updated:', gominUrl);
     }, [gominUrl]);
 

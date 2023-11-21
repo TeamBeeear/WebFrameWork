@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState(""); // 에러 메시지 상태
+    const [error, setError] = useState(""); 
     const navigate = useNavigate();
 
     const handleIdChange = (e) => {
@@ -27,13 +27,13 @@ const Login = () => {
     const handleLoginClick = (e) => {
         e.preventDefault();
     
-    // 서버에 로그인 요청을 보내고 응답 처리
+    
     axios.post("/api/login", { userId: id, userPw: password })
 		.then((response) => {
 			if (response.status === 200) {
-            	const userId = response.data.userId; // userId 추출
-            	sessionStorage.setItem("userId", userId); // userId를 세션 스토리지에 저장
-            	navigate("/"); // 로그인 상태로 처리 후 메인 페이지로 이동
+            	const userId = response.data.userId; 
+            	sessionStorage.setItem("userId", userId); 
+            	navigate("/"); 
 			}
 		})
         .catch((error) => {
