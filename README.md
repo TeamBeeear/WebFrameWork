@@ -110,18 +110,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ```
 npm install react-select
 ```
+## 2. React-Slick 
 슬라이더를 이용할때 slick-carousel 라이브러리 이용
 ```
 npm install slick-carousel
 ```
+## 3. Axios
 axios 통신을 위해 axios 라이브러리 사용
 ```
 npm install axios
 ```
+## 4. Proxy Server 구축
 proxy를 사용하기 위해 http-proxy-middleware 라이브러리 사용
 ```
 npm install http-proxy-middleware
 ```
+## 5. React Router
 라우팅을 이용하기 위해 react-router-dom 라이브러리 사용
 ```
 npm install react-router-dom
