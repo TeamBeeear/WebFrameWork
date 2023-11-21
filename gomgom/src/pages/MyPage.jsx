@@ -10,23 +10,16 @@ function MyPage() {
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        // 세션 저장소에서 userId 값을 불러오는 비동기 함수
         const fetchUserIdFromSession = async () => {
             try {
-                // 세션 저장소에서 userId를 가져오는 비동기 처리
                 const storedUserId = await getSessionStorageValue('userId');
-
-                // 가져온 userId를 state에 설정
                 setUserId(storedUserId);
             } catch (error) {
                 console.error('Error fetching userId from session storage:', error);
             }
         };
-
-        // 함수 호출
         fetchUserIdFromSession();
-    }, []); // 최초 렌더링 시 한 번만 호출
-
+    }, []);
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
     };
@@ -36,14 +29,12 @@ function MyPage() {
             <Header />
             <Nav />
             <CategoryBtn onButtonClick={handleCategoryChange} />
-            {/* userId 값이 존재하면 WorriedBoxContainer에 전달 */}
             {userId && <WorriedBoxContainer id={userId} category={selectedCategory} />}
             <Footer />
         </div>
     );
 }
 
-// 예시로 사용할 세션 저장소에서 값 가져오는 함수
 const getSessionStorageValue = async (key) => {
     return new Promise((resolve, reject) => {
         try {

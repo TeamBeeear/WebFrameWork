@@ -22,12 +22,10 @@ function Slider({ style }){
     }
     const CustomPrevArrow = (props) => (
         <div className="slick-prev" onClick={props.onClick} style={{marginRight:"20px"}}>
-          {/* <img style={btnStyle} src={SliderLeftBtn}></img> */}
         </div>
     );
     const CustomNextArrow = (props) => (
         <div className="slick-next" onClick={props.onClick}>
-         {/* <img style={btnStyle} src={SliderRightBtn}></img> */}
         </div>
     );
     const linkStyle = {
