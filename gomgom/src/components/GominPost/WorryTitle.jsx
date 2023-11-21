@@ -17,6 +17,6 @@ const WorryTitle = ({titleText}) => {
             {titleText}
         </p>
     );
-};
+}
 
 export default WorryTitle;

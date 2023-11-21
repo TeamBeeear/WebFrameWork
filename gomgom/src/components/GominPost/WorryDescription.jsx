@@ -30,6 +30,6 @@ const WorryDescription = ({ setContent }) => {
             onChange={(e) => setContent(e.target.value)} />
         </>
     );
-};
+}
 
 export default WorryDescription;

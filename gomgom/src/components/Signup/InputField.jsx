@@ -30,6 +30,6 @@ const InputField = ({ type, placeholder, onChange, value }) => {
         style={inputStyle}
         />
     );
-};
+}
 
 export default InputField;

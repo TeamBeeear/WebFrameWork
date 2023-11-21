@@ -30,6 +30,6 @@ const PostSubmitButton = ({ onClick, buttonText, isDisabled }) => {
         {buttonText}
         </button>
     );
-};
+}
 
 export default PostSubmitButton;

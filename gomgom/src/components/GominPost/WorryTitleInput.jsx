@@ -28,6 +28,6 @@ const WorryTitleInput = ({ setTitle }) => {
             onChange={(e) => setTitle(e.target.value)} />
         </>
     );
-};
+}
 
 export default WorryTitleInput;

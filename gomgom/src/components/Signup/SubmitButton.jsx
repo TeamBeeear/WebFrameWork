@@ -21,14 +21,14 @@ const SubmitButton = ({ onClick, isDisabled, buttonText }) => {
 
     return (
         <button
-        type="submit"
-        style={buttonStyle}
-        disabled={isDisabled}
-        onClick={onClick}
+            type="submit"
+            style={buttonStyle}
+            disabled={isDisabled}
+            onClick={onClick}
         >
         {buttonText}
         </button>
     );
-};
+}
 
 export default SubmitButton;

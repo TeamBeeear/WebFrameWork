@@ -10,6 +10,6 @@ const GomGomImage = () => {
     };
 
     return <img src={gomgom} style={gomgomImgStyle} alt="곰곰이 이미지" />;
-};
+}
 
 export default GomGomImage;

@@ -17,6 +17,6 @@ const PostComplete = () => {
         <Footer />
         </div>
     );
-};
+}
 
 export default PostComplete;
