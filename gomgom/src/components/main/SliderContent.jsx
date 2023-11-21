@@ -31,6 +31,7 @@ function SliderContent({
         lineHeight: "160%",
         textAlign:"center",
     };
+    
     return(
         <div>
             <div style={boxStyle}>

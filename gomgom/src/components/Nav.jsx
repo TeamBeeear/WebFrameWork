@@ -4,29 +4,21 @@ import userIcon from "../img/userIcon.png";
 import { useNavigate } from "react-router-dom";
 
 function Nav() {
-    const [userId, setUserId] = useState(null); // 초기에 null로 설정
-    // 메인 페이지 컴포넌트에서 세션 스토리지에서 이미지를 가져와 사용
+    const [userId, setUserId] = useState(null); 
     const profileImage = sessionStorage.getItem("profileImage");
-    const navigate = useNavigate(); // useNavigate 훅 추가
-
+    const navigate = useNavigate(); 
     useEffect(() => {
-        const storedUserId = sessionStorage.getItem("userId"); // 세션 스토리지에서 userId 불러오기
+        const storedUserId = sessionStorage.getItem("userId"); 
         if (storedUserId) {
             setUserId(storedUserId);
         }
     }, []);
-
-    // 로그인 상태를 확인하는 함수
     const isLoggedIn = !!userId;
-
     const handleLogout = () => {
-        setUserId(null); // userId 상태를 빈 문자열로 설정
-        sessionStorage.removeItem("userId"); // 로컬 스토리지에서 삭제
-
-        // 로그아웃 후 로그인 페이지로 리다이렉트
+        setUserId(null); 
+        sessionStorage.removeItem("userId");
         navigate("/login");
     };
-
     const navStyle = {
         display: "flex",
         flexDirection: "row",
@@ -38,7 +30,6 @@ function Nav() {
         fontWeight: "700",
         lineHeight: "100%",
     };
-
     const userIconSizeStyle = {
         width: "30px",
         height: "30px",
@@ -47,12 +38,10 @@ function Nav() {
         marginRight: "10px",
         borderRadius: "50%",
     };
-
     const linkStyle = {
         textDecoration: "none",
         color: "inherit",
     };
-
     const logoutStyle = {
         paddingLeft: 10,
         paddingRight: 10,
@@ -80,15 +69,12 @@ function Nav() {
             <div className="separator-line"></div>
             <div style={{ display: "flex", alignItems: "center" }}>
                 {isLoggedIn ? (
-                // 로그인 상태일 때
                 <div style={{ display: "flex", alignItems: "center" }}>
-                {/* 세션 스토리지에 이미지가 있을 경우 해당 이미지를 보여줌 */}
                 <img src={profileImage || userIcon} style={userIconSizeStyle} alt="프로필 사진" />
                 {userId ? `${userId}님 환영합니다` : null}
                 <button onClick={handleLogout} style={logoutStyle}>로그아웃</button>
                 </div>
                 ) : (
-                // 로그인되지 않은 상태일 때
                 <div>
                     <Link to="/login" style={linkStyle}>로그인</Link> | <Link to="/signup" style={linkStyle}>회원가입</Link>
                 </div>

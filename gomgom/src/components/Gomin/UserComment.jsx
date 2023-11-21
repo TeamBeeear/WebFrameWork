@@ -2,7 +2,6 @@ import React from 'react';
 import UserImg from "../../img/userImg.png";
 
 function UserComment(){
-
     const userCommnetBox = { 
         borderRadius:"1.5rem", 
         backgroundColor:"var(--ffffff, #FFF)", 

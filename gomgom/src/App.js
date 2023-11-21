@@ -18,11 +18,9 @@ function ProtectedRoute({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 로그인 상태 확인
   useEffect(() => {
-    const isLoggedIn = !!sessionStorage.getItem('userId'); // 세션 스토리지에서 userId 가져오기
+    const isLoggedIn = !!sessionStorage.getItem('userId'); 
     if (!isLoggedIn && location.pathname !== '/login') {
-      // 로그인되지 않은 경우, 로그인 페이지로 리디렉션
       navigate('/login');
     }
   }, [location, navigate]);
