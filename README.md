@@ -115,3 +115,15 @@ npm install react-select
 npm install slick-carousel
 ```
 슬라이더를 이용할때 slick-carousel 라이브러리 이용
+```
+npm install axios
+```
+axios 통신을 위해 axios 라이브러리 사용
+```
+npm install http-proxy-middleware
+```
+proxy를 사용하기 위해 http-proxy-middleware 라이브러리 사용
+```
+npm install react-router-dom
+```
+라우팅을 이용하기 위해 react-router-dom 라이브러리 사용
