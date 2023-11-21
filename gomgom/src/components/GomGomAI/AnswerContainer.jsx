@@ -10,19 +10,16 @@ const AnswerContainer = () => {
     const [answer, setAnswer] = useState("");
     const [showAnswer, setShowAnswer] = useState(false);
     const [isTextareaDisabled, setIsTextareaDisabled] = useState(false);
-
     const handleInputChange = (e) => {
         if (!isTextareaDisabled) {
             setQuestion(e.target.value);
         }
     };
-
     const handleKeyDown = (e) => {
         if (e.key === "Enter" && !isTextareaDisabled) {
             handleSubmit(e);
         }
     };
-
     const changeImage = () => {
         if (question) {
             setImageSrc(GominGomGom);
@@ -30,14 +27,12 @@ const AnswerContainer = () => {
             setImageSrc(NormalGomGom);
         }
     };
-
     const handleShowAnswerClick = () => {
         setShowAnswer(false);
         setAnswer("");
         setImageSrc(NormalGomGom);
         setIsTextareaDisabled(false);
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsTextareaDisabled(true);
@@ -66,7 +61,6 @@ const AnswerContainer = () => {
         setIsTextareaDisabled(false);
 
     };
-
     useEffect(() => {
         if (answer) {
             setImageSrc(AnswerGomGom);
@@ -74,17 +68,15 @@ const AnswerContainer = () => {
             setImageSrc(NormalGomGom);
         }
         }, [answer]);
-
     const containerStyle = {
-        marginTop: "2em", // 25px
-        marginBottom: "3em", // 50px
+        marginTop: "2em", 
+        marginBottom: "3em", 
         width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: "24px",
     };
-
     const worryBoxContentsStyle = {
         width: "680px",
         height: "248px",
@@ -99,53 +91,44 @@ const AnswerContainer = () => {
         marginBottom: "2em",
         background: "var(--e-9-e-5-da, #E9E5DA)"
     };
-
     const lineHeightValue = answer ? "" : "248px";
-
     const worryTextStyle = {
         width: "100%",
         height: "100%",
         border: "none",
         resize: "none",
         outline: "none",
-
         textAlign: "center",
         verticalAlign: "middle",
         justifyContent: "center",
         alignItems : "center",
-
         color: "var(--D2CDBC, #D2CDBC)",
         background: answer ? "var(--E9E5DA, #E9E5DA)" : "var(--ffffff, #FFF)",
         fontSize: "24px",
         fontWeight: "700",
         borderRadius: "24px",
-        whiteSpace: answer ? "pre-wrap" : "nowrap", // answer 값이 있을 때 줄바꿈 허용, 없을 때는 허용하지 않음
-        lineHeight: lineHeightValue, // 동적으로 결정된 lineHeight 값 적용
+        whiteSpace: answer ? "pre-wrap" : "nowrap", 
+        lineHeight: lineHeightValue, 
         ...(answer
             ? {
-            cursor: "pointer", // 커서를 숨김
-            caretColor: "transparent", // 커서 색상을 투명하게 설정
+            cursor: "pointer", 
+            caretColor: "transparent", 
             }
             : {}),
         wordBreak: "keep-all",
     };
-
     const placeholderStyle = {
         color: "var(--67594C, #67594C)",
         letterSpacing: "-1px",
         wordSpacing: "-2px",
     };
-
     const imgBtnStyle = {
         border: "none",
         backgroundColor: "transparent",
     };
-
     const btnImgStyle = {
         backgroundColor: "transparent",
     };
-
-    // 다시하기 버튼
     const showAnswerButtonStyle = {
         margin: "1.5em",
         padding: "10px 20px",
@@ -157,9 +140,8 @@ const AnswerContainer = () => {
         borderRadius: "24px",
         alignItems: "center",
     };
-
     const refreshIconStyle = {
-        marginRight: "0.8em", // 8px
+        marginRight: "0.8em", 
     };
 
     return (
@@ -179,29 +161,27 @@ const AnswerContainer = () => {
                     wrap="soft"
                 />    
             </div>
-        
             {showAnswer && (
                     <button style={showAnswerButtonStyle} onClick={handleShowAnswerClick}>
                     <img src={RefreshBtn} alt="Refresh" style={refreshIconStyle} />
                     다시하기
                     </button>
                 )}
-            
-        <div className="image-box">
-            <button
-            type="submit"
-            className="img-button"
-            style={imgBtnStyle}
-            id="submit-button"
-            >
-            <img
-                className="btn-img"
-                style={btnImgStyle}
-                src={imageSrc}
-                alt="GomGom"
-            />
-            </button>
-        </div>
+            <div className="image-box">
+                <button
+                type="submit"
+                className="img-button"
+                style={imgBtnStyle}
+                id="submit-button"
+                >
+                <img
+                    className="btn-img"
+                    style={btnImgStyle}
+                    src={imageSrc}
+                    alt="GomGom"
+                />
+                </button>
+            </div>
         </form>
     </div>
     );
