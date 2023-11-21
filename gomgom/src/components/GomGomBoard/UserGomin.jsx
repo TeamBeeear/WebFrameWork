@@ -96,14 +96,19 @@ function UserGomin({
                         gominId={firstSelectionId}
                         gominText={firstSelectionContent}
                         gominPercent={isGetRequest ? firstSelectionVotePercentage : updatedFirstVotePercentage}
-                        onClick={() => handleVoteClick(firstSelectionId)}
+                        onClick={() => {handleVoteClick(firstSelectionId);
+                            handleOptionSelect(firstSelectionContent)
+                        }}
                         selected={selectedOption === firstSelectionContent}
+                        
                     />
                     <TwoChoice 
                         gominId={secondSelectionId}
                         gominText={secondSelectionContent}
                         gominPercent={isGetRequest ? secondSelectionVotePercentage : updatedSecondVotePercentage}
-                        onClick={() => handleVoteClick(secondSelectionId)}
+                        onClick={() =>  {handleVoteClick(secondSelectionId);
+                            handleOptionSelect(secondSelectionContent)
+                        }}
                         selected={selectedOption === secondSelectionContent}
                     />
                 </div>
