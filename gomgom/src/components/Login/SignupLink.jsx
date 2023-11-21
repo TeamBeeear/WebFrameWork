@@ -14,6 +14,6 @@ const SignupLink = ({ handleSignupClick }) => {
     };
 
     return <p onClick={handleSignupClick} style={toSignupStyle}>회원가입</p>;
-};
+}
 
 export default SignupLink;

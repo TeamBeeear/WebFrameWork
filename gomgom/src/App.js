@@ -1,7 +1,6 @@
-import React,{useEffect, useState}  from 'react';
+import React, { useEffect }  from 'react';
 import './App.css';
 import Main from './components/main/main';
-import axios from 'axios';
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';

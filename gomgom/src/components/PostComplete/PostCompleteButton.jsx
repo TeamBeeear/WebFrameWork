@@ -49,6 +49,6 @@ const PostCompleteButton = () => {
         <p onClick={handleMypageClick} style={moveToMypageStyle}>마이페이지로 이동</p>
         </>
     );
-};
+}
 
 export default PostCompleteButton;

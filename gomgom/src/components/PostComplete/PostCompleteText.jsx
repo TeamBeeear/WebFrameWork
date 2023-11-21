@@ -27,6 +27,6 @@ const PostCompleteText = () => {
             나의 고민은 마이페이지에서 확인 가능해요.</p>
         </>
     );
-};
+}
 
 export default PostCompleteText;

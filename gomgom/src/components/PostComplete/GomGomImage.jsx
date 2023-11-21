@@ -12,11 +12,13 @@ const GomGomImage = () => {
         marginBottom: "2rem"
     };
     
-    return <img 
-                src={gomgom}
-                style={GomGomImageStyle}
-                className="gomgom-img"
-                alt="곰곰이 이미지" />;
-};
+    return (
+        <img 
+            src={gomgom}
+            style={GomGomImageStyle}
+            className="gomgom-img"
+            alt="곰곰이 이미지" />
+    );
+}
 
 export default GomGomImage;

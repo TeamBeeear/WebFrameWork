@@ -11,7 +11,9 @@ const PageTitle = ({ text }) => {
         wordWrap: "break-word",
     };
 
-    return <p style={titleStyle}>{text}</p>;
-};
+    return (
+        <p style={titleStyle}>{text}</p>
+    );
+}
 
 export default PageTitle;

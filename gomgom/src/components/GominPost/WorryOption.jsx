@@ -30,6 +30,6 @@ const WorryOption = ({ id, setSelectionContent, placeholder }) => {
                 onChange={(e) => setSelectionContent(e.target.value)} />
         </div>
     );
-};
+}
 
 export default WorryOption;

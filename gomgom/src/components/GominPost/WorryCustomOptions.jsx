@@ -27,6 +27,6 @@ const WorryCustomOptions = (props) => {
             {label}
         </label>
     );
-};
+}
 
 export default WorryCustomOptions;
