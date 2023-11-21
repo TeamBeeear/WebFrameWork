@@ -139,9 +139,10 @@ const AnswerContainer = () => {
         fontWeight: "700",
         borderRadius: "24px",
         alignItems: "center",
+        border:'solid'
     };
     const refreshIconStyle = {
-        marginRight: "0.8em", 
+        marginRight: "0.8em"
     };
 
     return (
