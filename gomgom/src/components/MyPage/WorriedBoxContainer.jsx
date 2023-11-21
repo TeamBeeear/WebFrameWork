@@ -2,12 +2,32 @@ import React,{useEffect, useState} from "react";
 import WorriedBox from "../main/WorriedBox";
 import axios from 'axios';
 
-function WorriedBoxContainer({ id = 'test1', category = 1 }) {
+function WorriedBoxContainer({ category = 1 }) {
     
-    const apiUrl = `/api/my-page?id=${id}&category=${category}`;
+    const [userId, setUserId] = useState(''); // userId 상태값 추가
+
+    const getUserIdFromSession = () => {
+        const userIdFromSession = sessionStorage.getItem('userId'); // 세션 저장소에서 userId 가져오기
+        setUserId(userIdFromSession); // userId 상태 업데이트
+    };
+
+    useEffect(() => {
+        getUserIdFromSession(); // 컴포넌트가 마운트될 때 userId 가져오기
+    }, []);
+
+    const apiUrl = `/api/my-page?id=${userId}&category=${category}`; // apiUrl에 userId 적용
 
     const [data, setData] = useState('');
-    // URL에 id와 category 쿼리 매개변수를 포함시킴
+
+    // ... 이하 동일
+
+    useEffect(() => {
+        // userId가 변경될 때마다 업데이트된 URL로 GET 요청 보냄
+        axios.get(apiUrl)
+            .then(response => setData(response.data))
+            .catch(error => console.log(error))
+    }, [apiUrl, userId]); // apiUrl과 userId를 의존성으로 지정
+
 
     const titleDivStyle={
         display:"flex",
@@ -31,29 +51,23 @@ function WorriedBoxContainer({ id = 'test1', category = 1 }) {
     };
 
     useEffect(() => {
-        // 새로운 쿼리 매개변수를 포함한 업데이트된 URL로 GET 요청 보냄
         axios.get(apiUrl)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
-    }, [apiUrl]); // id나 category가 변경될 때 useEffect가 다시 실행되도록 apiUrl을 의존성으로 지정
+    }, [apiUrl]);
 
     return(
-        <div style={{backgroundColor:"#FAF9F6",
-        display:"flex",
-        justifyContent:"center",
-        }}>
-            <div style={{
-                width:"1024px",
-            }}>
-                <div style={titleDivStyle}>
-                </div>
+        <div style={{backgroundColor:"#FAF9F6", display:"flex", justifyContent:"center",}}>
+                <div style={titleDivStyle}></div>
                 <div style={separateDivStyle}>
                     <div style={colDivStyle}>
-                        {Array.isArray(data) && data.map((item, index) => (
+                        {Array.isArray(data) && data.slice().reverse().map((item, index) => (
                             index % 2 === 0 ? ( // 짝수번째 요소
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     title={item.title}
                                     content={item.content}
                                     commentsCount={item.commentsCount}
@@ -67,11 +81,13 @@ function WorriedBoxContainer({ id = 'test1', category = 1 }) {
                         ))}
                     </div>
                     <div style={colRightDivStyle}>
-                        {Array.isArray(data) && data.map((item, index) => (
+                        {Array.isArray(data) && data.slice().reverse().map((item, index) => (
                             index % 2 === 1 ? ( // 홀수번째 요소
                                 <WorriedBox
                                     key={item.postId}
                                     data={item}
+                                    postId={item.postId}
+                                    boardId={item.boardId}
                                     title={item.title}
                                     content={item.content}
                                     commentsCount={item.commentsCount}
@@ -86,7 +102,6 @@ function WorriedBoxContainer({ id = 'test1', category = 1 }) {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
