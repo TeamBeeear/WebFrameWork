@@ -1,7 +1,6 @@
 # WebFrameWork A반 2팀
 
 <br>
-<br>
 
 ### 팀원 구성
 | **강민서** | **신승혜** | **이서연** | **임수진** |
@@ -10,8 +9,8 @@
 
 <br>
 
-### Back-end 서버 실행 방법
-#### 1) 파일 다운 받은 후, 압축 풀기
+### Back-end 서버 실행 방법 (gomgom-0.0.1-SNAPSHOT.jar.zip)
+#### 1) 압축 풀기
 파일명은 `gomgom-0.0.1-SNAPSHOT.jar`
 
 <br>
@@ -43,7 +42,7 @@ nohup java –jar gomgom-0.0.1-SNAPSHOT.jar &
 <br>
 <br>
 
-### Front-end 서버 실행 방법
+### Front-end 서버 실행 방법 (TeamBear.zip)
 
 #### 1) `cd gomgom`
 zip 파일 압축해제 후 이동
