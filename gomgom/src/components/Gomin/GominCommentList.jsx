@@ -6,6 +6,7 @@ function GominCommentList({
     content,
     nminutesAgo
 }){
+    const profileImg = sessionStorage.getItem("profileImage");
     const idText = { 
         margin:"0", 
         color: "var(--67594-c, #67594C)",
@@ -36,13 +37,22 @@ function GominCommentList({
         marginTop:"2.94rem"
     };
 
+    const userImgStyle = {
+        width: "30px",
+        height: "30px",
+        margin: "auto 0",
+        marginLeft: "20px",
+        marginRight: "10px",
+        borderRadius: "50%",
+    };
+
     return(
         <div style={{backgroundColor:"var(--ffffff, #FFF)"}}>
             <div style={{backgroundColor:"var(--ffffff, #FFF)", marginLeft:'30%'}}> 
                 <div style={{backgroundColor: "var(--ffffff, #FFF)", paddingTop:"2.5rem", display:"flex"}}> {/* 이미지까지 감싸는 div */}
                     <div style={{display:"flex"}}>
                         <div>
-                            <img src={userImg}/>
+                            <img src={profileImg || userImg} style={userImgStyle} alt="프로필 사진" />
                         </div>
                         <div style={{textAlign:"start", marginLeft:"1rem"}}>
                             <p style={idText}>{userId}</p>
