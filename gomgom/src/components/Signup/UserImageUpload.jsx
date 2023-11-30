@@ -9,7 +9,6 @@ const UserImageUpload = ({ selectedImage, handleImageUpload }) => {
         display: "block",
         margin: "0 auto",
     };
-
     const uploadBtnStyle = {
         width: "120px",
         height: "44px",

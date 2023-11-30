@@ -1,5 +1,4 @@
 function AskToGomGomExplain(){
-    
     const textStyle = { 
         marginTop: "50px",
         marginBottom: "50px",
@@ -10,7 +9,6 @@ function AskToGomGomExplain(){
         fontWeight: "500",
         lineHeight: "100%",
     };
-
     const paragraphStyle = {
         margin: "0", 
         marginBottom: "15px",

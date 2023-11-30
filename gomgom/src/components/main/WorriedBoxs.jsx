@@ -18,17 +18,17 @@ function WorriedBoxs({ url }){
         marginLeft:"20px"
     };
     const [data, setData] = useState([]);
-
     useEffect(() => {
         axios.get(url)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, [url]);
+
     return(
         <div style={separateDivStyle}>
             <div style={colDivStyle}>
                 {Array.isArray(data) && data.slice().reverse().map((item, index) => (
-                    index % 2 === 0 ? ( // 짝수번째 요소
+                    index % 2 === 0 ? ( 
                         <WorriedBox
                             key={item.postId}
                             postId={item.postId}
@@ -48,7 +48,7 @@ function WorriedBoxs({ url }){
             </div>
             <div style={colRightDivStyle}>
                 {Array.isArray(data) && data.slice().reverse().map((item, index) => (
-                    index % 2 === 1 ? ( // 홀수번째 요소
+                    index % 2 === 1 ? ( 
                         <WorriedBox
                             key={item.postId}
                             data={item}

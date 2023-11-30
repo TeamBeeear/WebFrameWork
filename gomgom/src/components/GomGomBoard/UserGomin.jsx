@@ -36,7 +36,7 @@ function UserGomin({
     }
 
     async function sendVoteToServer(userId, postId, selectionId) {
-        const url = `http://localhost:8080/api/vote/${userId}/${postId}/${selectionId}`;
+        const url = `https://3.34.129.245:8080/api/vote/${userId}/${postId}/${selectionId}`;
 
         try {
         const response = await fetch(url, {

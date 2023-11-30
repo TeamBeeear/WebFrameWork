@@ -27,20 +27,15 @@ function TodayGomin({updateUrl}){
     const handleClick = (category) => {
         const boardId = categoryToBoardId[category];
         const newUrl = `/api/board/${boardId}`;
-
         console.log(`Button clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
-
         updateUrl(newUrl);
     };
     useEffect(() => {
         if (!updateUrl) return;
-        const category = "전체"; // "전체" 카테고리를 기본값으로 설정
+        const category = "전체"; 
         const boardId = categoryToBoardId[category];
         const newUrl = `/api/board/${boardId}`;
-
         console.log(`Category clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
-        
-        // updateUrl 함수를 호출하여 URL을 업데이트
         updateUrl(newUrl);
     }, [updateUrl]);
     

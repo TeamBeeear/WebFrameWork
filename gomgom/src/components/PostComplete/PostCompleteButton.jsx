@@ -3,15 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const PostCompleteButton = () => {
     const navigate = useNavigate();
-
     const handleBoardClick = () => {
         navigate("/board");
     };
-
     const handleMypageClick = () => {
         navigate("/my-page");
     };
-
     const moveToBoardStyle =  {
         width: "340px",
         height: "75px",
@@ -30,7 +27,6 @@ const PostCompleteButton = () => {
         wordWrap: "break-word",
         cursor: "pointer"
     };
-    
     const moveToMypageStyle = {
         color: "#67594C",
         fontSize: "20px",

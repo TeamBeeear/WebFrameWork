@@ -8,7 +8,7 @@ const InputField = ({ type, placeholder, onChange, value }) => {
         borderRadius: "24px",
         border: "2px solid #E9E5DA",
         display: "block",
-        margin: "0 auto", // 가운데 정렬
+        margin: "0 auto", 
         marginBottom: "22px",
         marginTop: "10px",
         color: "#67594C",

@@ -9,7 +9,6 @@ const PostCompleteText = () => {
         lineHeight: "24px",
         wordWrap: "break-word",
     };
-    
     const completeDetailStyle = {
         color: "#67594C",
         fontSize: "18px",

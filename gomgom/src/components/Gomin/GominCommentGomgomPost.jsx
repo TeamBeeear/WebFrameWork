@@ -4,13 +4,11 @@ import gominPost from "../../img/gominPost.png";
 function GominCommentGomgomPost() {
     const [content, setContent] = useState("");
     const [error, setError] = useState(null);
-
     const commentMainStyle = {
         width: "100%",
         height: "13.1875rem",
         background: "var(--e-9-e-5-da, #E9E5DA)",
     };
-
     const commentSubStyle = {
         width: "51.625rem",
         height: "4.5rem",
@@ -18,7 +16,6 @@ function GominCommentGomgomPost() {
         background: "#FFF",
         alignItems: "center",
     };
-
     const commentAbout = {
         color: "var(--67594-c, #67594C)",
         fontFamily: "Pretendard",
@@ -36,24 +33,20 @@ function GominCommentGomgomPost() {
         marginTop: "1.25rem",
         overflow: "hidden",
     };
-
     const gominPostButton = {
         border: "none",
         background: "none",
         marginLeft: "1.25rem",
     };
-
     const handleCommentPost = () => {
         const postId = new URLSearchParams(window.location.search).get("id");
         const userId = sessionStorage.getItem("userId");
-
         const requestBody = {
         gomgomPostId: postId,
         userId: userId,
         content: content,
         };
-
-        fetch("http://localhost:8080/api/comment/gomgom", {
+        fetch("https://3.34.129.245:8080/api/comment/gomgom", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -76,7 +69,6 @@ function GominCommentGomgomPost() {
             setError("댓글 작성 중 오류가 발생했습니다.");
         });
     };
-
     const handleKeyDown = (e) => {
         if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();

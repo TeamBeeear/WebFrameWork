@@ -11,7 +11,6 @@ const WorryOption = ({ id, setSelectionContent, placeholder }) => {
         marginBottom: "16px",
         paddingLeft: "20px",
         marginTop: "5px",
-
         color: "#67594C",
         fontSize: "20px",
         fontFamily: "Pretendard",

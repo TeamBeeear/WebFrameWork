@@ -21,7 +21,7 @@ function SliderContent({
         left: "0",
         width: "100%",
         height:"50px",
-        backgroundColor: "rgba(103, 89, 76, 0.50)", /* 불투명한 배경 색상 및 투명도 조절 */
+        backgroundColor: "rgba(103, 89, 76, 0.50)", 
         borderRadius:"0px 0px 24px 24px",
     };
     const textStyle={

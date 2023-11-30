@@ -5,16 +5,13 @@ import WorriedBoxs from "./WorriedBoxs";
 function WorriedBoxContainer({
     url
 }){
-    
     const titleDivStyle={
         display:"flex",
         flexDireaction:"row",
         marginBottom:"34px",
         justifyContent:"space-between",
     }
-
     const firstTitleFontStyle={
-        // marginTop:"0px",
         color: "#67594C",
         fontSize: "20px",
         fontWeight: "700",
@@ -28,8 +25,6 @@ function WorriedBoxContainer({
         lineHeight: "160%",
         margin:"auto 0",
         textDecoration: 'none',
-
-
     }
     const LeftsecondTitleFontStyle={
         color: "#FAF9F6",
@@ -55,9 +50,7 @@ function WorriedBoxContainer({
                 <WorriedBoxs 
                     url = {url}
                 />
-
             </div>
-            
         </div>
     )
 }

@@ -46,7 +46,7 @@ function GominCommentUserPost() {
             userId: userId,
             content: content,
         };
-        fetch("http://localhost:8080/api/comment/user", {
+        fetch("https://3.34.129.245:8080/api/comment/user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

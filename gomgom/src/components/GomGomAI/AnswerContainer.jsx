@@ -36,7 +36,7 @@ const AnswerContainer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsTextareaDisabled(true);
-        fetch("http://localhost:8080/api/gpt", {
+        fetch("https://3.34.129.245:8080/api/gpt", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

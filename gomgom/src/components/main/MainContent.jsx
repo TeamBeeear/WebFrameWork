@@ -4,7 +4,6 @@ import bearImg from "../../img/bearHi.png"
 
 function MainContent(){
     const navigate = useNavigate();
-
     const handleButtonClick = () => {
         navigate("/post");
         window.scrollTo(0, 0);

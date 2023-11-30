@@ -2,24 +2,20 @@ import React, { useState } from "react";
 
 function CategoryBtn( { onButtonClick } ) {
     const [selectedButton, setSelectedButton] = useState(0);
-
     const handleButtonClick = (index) => {
         setSelectedButton(index);
         onButtonClick(index + 1);
     };
-
     const buttons = [
         "나의 고민",
         "내가 공감한 고민",
         "내가 답변한 고민"
     ];
-
     const containerStyle = {
         display: "flex",
         justifyContent: "center",
         margin: "50px 0"
     };
-
     const buttonStyle = {
         width: "248px",
         height: "104px",
@@ -31,14 +27,12 @@ function CategoryBtn( { onButtonClick } ) {
         cursor: "pointer",
         margin: "0 20px"
     };
-
     const selectedButtonStyle = {
         ...buttonStyle,
         backgroundColor: "#67594C",
         color: "#FAF9F6",
         border:"2px solid #67594C",
     };
-
     const unselectedButtonStyle = {
         ...buttonStyle,
         backgroundColor: "#E9E5DA",
