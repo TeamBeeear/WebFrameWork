@@ -9,7 +9,7 @@ function UserGominTitle({ gominTitle }) {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
     useEffect(() => {
-        Axios.get(`/api/heart/${userId}/${postId}`)
+        Axios.get(`https://3.34.129.245/api/heart/${userId}/${postId}`)
             .then(response => {
                 console.log(response.data);
                 setHasLiked(response.data);
@@ -19,7 +19,7 @@ function UserGominTitle({ gominTitle }) {
             });
     }, [userId, postId]); 
     const handleHeartClick = () => {
-        const url = '/api/heart';
+        const url = 'https://3.34.129.245/api/heart';
         const axiosRequest = hasLiked ? 
         Axios.delete(url, { data: { userId, postId } }) : Axios.post(url, { userId, postId });
         axiosRequest

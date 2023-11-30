@@ -25,13 +25,13 @@ function GominPost(){
     const [images, setImages] = useState([]);
     
     useEffect(() => {
-        axios.get('http://localhost:8080/api/gomgom-post/'+id)
+        axios.get('https://3.34.129.245/api/gomgom-post/'+id)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/comment/'+id)
+        axios.get('https://3.34.129.245/api/comment/'+id)
         .then(response => {
             console.log('Comment Data:', response.data);
             setCommentData(response.data);

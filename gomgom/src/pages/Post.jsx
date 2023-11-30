@@ -42,7 +42,7 @@ const Post = () => {
             secondSelectionContent: secondSelectionContent
         });
         try {
-            const response = await axios.post("/api/post", {
+            const response = await axios.post("https://3.34.129.245/api/post", {
                 title: title,
                 content: content,
                 userId: userId,

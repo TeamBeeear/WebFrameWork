@@ -49,7 +49,7 @@ const SignUp = () => {
         e.preventDefault();
 
     try {
-        const response = await axios.post("/api/signup", {
+        const response = await axios.post("https://3.34.129.245/api/signup", {
             userId: id,
             userPw: password,
         });

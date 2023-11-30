@@ -7,7 +7,7 @@ import TodayGomin from "../components/GomGomBoard/TodayGomin";
 import WorriedBoxs from '../components/main/WorriedBoxs';
 
 function GomGomBoard(){
-    const [gominUrl, setGominUrl] = useState('/api/posts');
+    const [gominUrl, setGominUrl] = useState('https://3.34.129.245/api/posts');
     const updateGominUrl = (newUrl) => {
         setGominUrl(newUrl);
         console.log(newUrl);

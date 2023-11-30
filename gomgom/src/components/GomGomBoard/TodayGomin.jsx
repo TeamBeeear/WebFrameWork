@@ -26,7 +26,7 @@ function TodayGomin({updateUrl}){
     };
     const handleClick = (category) => {
         const boardId = categoryToBoardId[category];
-        const newUrl = `/api/board/${boardId}`;
+        const newUrl = `https://3.34.129.245/api/board/${boardId}`;
         console.log(`Button clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
         updateUrl(newUrl);
     };
@@ -34,7 +34,7 @@ function TodayGomin({updateUrl}){
         if (!updateUrl) return;
         const category = "전체"; 
         const boardId = categoryToBoardId[category];
-        const newUrl = `/api/board/${boardId}`;
+        const newUrl = `https://3.34.129.245/api/board/${boardId}`;
         console.log(`Category clicked. category: ${category}, boardId: ${boardId}, newUrl: ${newUrl}`);
         updateUrl(newUrl);
     }, [updateUrl]);

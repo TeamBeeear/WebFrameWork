@@ -18,13 +18,13 @@ function GomGomBoardDeatail(){
     const [commentData, setCommentData] = useState('')
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/post/'+boardId+'/'+postId)
+        axios.get('https://3.34.129.245/api/post/'+boardId+'/'+postId)
             .then(response => setData(response.data))
             .catch(error => console.log(error))
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/comment/'+boardId+'/'+postId)
+        axios.get('https://3.34.129.245/api/comment/'+boardId+'/'+postId)
         .then(response => {
             console.log('Comment Data:', response.data);
             setCommentData(response.data);
