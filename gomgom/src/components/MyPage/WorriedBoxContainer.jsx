@@ -11,7 +11,7 @@ function WorriedBoxContainer({ category = 1 }) {
     useEffect(() => {
         getUserIdFromSession(); 
     }, []);
-    const apiUrl = `/api/my-page?id=${userId}&category=${category}`; 
+    const apiUrl = `https://3.34.129.245/api/my-page?id=${userId}&category=${category}`; 
     const [data, setData] = useState('');
     useEffect(() => {
         axios.get(apiUrl)

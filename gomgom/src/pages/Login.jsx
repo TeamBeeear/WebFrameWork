@@ -28,7 +28,7 @@ const Login = () => {
         e.preventDefault();
     
     
-    axios.post("/api/login", { userId: id, userPw: password })
+    axios.post("https://3.34.129.245/api/login", { userId: id, userPw: password })
 		.then((response) => {
 			if (response.status === 200) {
             	const userId = response.data.userId; 

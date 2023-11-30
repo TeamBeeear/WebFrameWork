@@ -53,7 +53,7 @@ function Slider({ style }){
         Slider8
     ]
     useEffect(() => {
-          axios.get('api/gomgom-post/all')
+          axios.get('https://3.34.129.245/api/gomgom-post/all')
               .then(response => setData(response.data))
               .catch(error => console.log(error))
       }, []);
